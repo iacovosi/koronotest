@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHP" type="php">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/composer" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/dnoegel/php-xdg-base-dir" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/doctrine/inflector" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/doctrine/instantiator" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/erusev/parsedown" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/evenement/evenement" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/fzaninotto/faker" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/greggilbert/recaptcha" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/hamcrest/hamcrest-php" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/jakub-onderka/php-console-color" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/jakub-onderka/php-console-highlighter" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/kylekatarnls/update-helper" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/laravel/framework" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/laravel/tinker" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/league/flysystem" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/mockery/mockery" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/monolog/monolog" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/mpociot/botman" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/mpociot/pipeline" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/mtdowling/cron-expression" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/myclabs/deep-copy" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/nesbot/carbon" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/nikic/php-parser" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/opis/closure" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/paragonie/random_compat" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpdocumentor/reflection-common" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpdocumentor/reflection-docblock" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpdocumentor/type-resolver" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpspec/prophecy" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/php-code-coverage" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/php-file-iterator" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/php-text-template" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/php-timer" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/php-token-stream" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/phpunit" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/phpunit-mock-objects" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/predis/predis" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/psr/container" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/psr/log" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/psy/psysh" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/ramsey/uuid" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/react/cache" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/react/dns" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/react/event-loop" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/react/promise" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/react/promise-timer" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/react/socket" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/react/stream" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/code-unit-reverse-lookup" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/comparator" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/diff" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/environment" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/exporter" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/global-state" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/object-enumerator" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/recursion-context" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/resource-operations" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/version" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/spatie/macroable" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/swiftmailer/swiftmailer" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/console" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/css-selector" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/debug" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/event-dispatcher" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/event-dispatcher-contracts" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/finder" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/http-foundation" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/http-kernel" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/polyfill-ctype" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/polyfill-mbstring" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/polyfill-php56" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/polyfill-php70" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/polyfill-util" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/process" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/routing" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/translation" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/translation-contracts" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/var-dumper" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/yaml" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/tijsverkoyen/css-to-inline-styles" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/vlucas/phpdotenv" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/webmozart/assert" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/zizaco/entrust" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/composer" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/dnoegel/php-xdg-base-dir" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/doctrine/inflector" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/doctrine/instantiator" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/erusev/parsedown" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/evenement/evenement" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/fzaninotto/faker" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/greggilbert/recaptcha" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/hamcrest/hamcrest-php" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/jakub-onderka/php-console-color" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/jakub-onderka/php-console-highlighter" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/kylekatarnls/update-helper" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/laravel/framework" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/laravel/tinker" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/league/flysystem" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/mockery/mockery" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/monolog/monolog" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/mpociot/botman" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/mpociot/pipeline" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/mtdowling/cron-expression" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/myclabs/deep-copy" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/nesbot/carbon" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/nikic/php-parser" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/opis/closure" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/paragonie/random_compat" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpdocumentor/reflection-common" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpdocumentor/reflection-docblock" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpdocumentor/type-resolver" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpspec/prophecy" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/php-code-coverage" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/php-file-iterator" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/php-text-template" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/php-timer" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/php-token-stream" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/phpunit" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/phpunit-mock-objects" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/predis/predis" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/psr/container" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/psr/log" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/psy/psysh" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/ramsey/uuid" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/react/cache" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/react/dns" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/react/event-loop" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/react/promise" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/react/promise-timer" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/react/socket" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/react/stream" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/code-unit-reverse-lookup" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/comparator" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/diff" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/environment" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/exporter" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/global-state" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/object-enumerator" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/recursion-context" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/resource-operations" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/sebastian/version" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/spatie/macroable" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/swiftmailer/swiftmailer" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/console" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/css-selector" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/debug" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/event-dispatcher" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/event-dispatcher-contracts" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/finder" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/http-foundation" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/http-kernel" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/polyfill-ctype" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/polyfill-mbstring" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/polyfill-php56" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/polyfill-php70" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/polyfill-util" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/process" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/routing" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/translation" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/translation-contracts" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/var-dumper" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/symfony/yaml" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/tijsverkoyen/css-to-inline-styles" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/vlucas/phpdotenv" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/webmozart/assert" />
+          <root url="file://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/zizaco/entrust" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PHARS">
+        <CLASSES>
+          <root url="phar://$MODULE_DIR$/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-3.0.3.phar/" />
+          <root url="phar://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
+          <root url="phar://$MODULE_DIR$/vendor/phar-io/manifest/tests/_fixture/test.phar/" />
+        </CLASSES>
+        <SOURCES>
+          <root url="phar://$MODULE_DIR$/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-3.0.3.phar/" />
+          <root url="phar://$MODULE_DIR$/../../cyber safety/cyber_safety_project/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
+          <root url="phar://$MODULE_DIR$/vendor/phar-io/manifest/tests/_fixture/test.phar/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
