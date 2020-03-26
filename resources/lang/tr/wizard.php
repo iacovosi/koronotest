@@ -72,6 +72,8 @@ return [
     'mandatory' => '* İle işaretli olan alanların doldurulması zorunludur, bilgilerin geri kalanı istatistiksel amaçlar için kullanılır',
     'age_required' => 'Dikkat! Yaş zorunlu bir alandır!',
     'body_temperature_required' => 'Dikkat! Vücut Sıcaklığı zorunlu bir alandır!',
+    'loss_of_taste' => 'Lezzet Kaybı',
+    'loss_of_smell' => 'Koku Kaybı',
 
 
 ];

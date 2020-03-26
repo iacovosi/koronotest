@@ -72,4 +72,6 @@ return [
                         purposes',
     'age_required' => 'Attention! The Age is a required field!',
     'body_temperature_required' => 'Attention! The Body Temperature is a required field!',
+    'loss_of_taste' => 'Loss of Taste',
+    'loss_of_smell' => 'Loss of Smell',
 ];

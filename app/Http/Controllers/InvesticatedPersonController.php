@@ -84,6 +84,18 @@ class InvesticatedPersonController extends Controller
             $data["breathing_difficulties"] = 0;
         }
 
+        if (isset($data["loss_of_taste"]) && $data["loss_of_taste"] == "true") {
+            $data["loss_of_taste"] = 1;
+        } else {
+            $data["loss_of_taste"] = 0;
+        }
+
+        if (isset($data["loss_of_smell"]) && $data["loss_of_smell"] == "true") {
+            $data["loss_of_smell"] = 1;
+        } else {
+            $data["loss_of_smell"] = 0;
+        }
+
 
         if (isset($data["symptoms_start"]) && !empty($data["symptoms_start"])) {
             $date_symptoms_start = DateTime::createFromFormat('d/m/Y', $data["symptoms_start"]);
@@ -156,7 +168,7 @@ class InvesticatedPersonController extends Controller
             } else {
                 $suggest = "nothing_for_now_not_infected"; //nothing for now  . What text should we present to the user?
             }
-        } else if ($data["malaise"] || $data["fever"] > 37.3 || $data["cough"] || $data["myalgia"] || $data["breathing_difficulties"]) {
+        } else if ($data["malaise"] || $data["fever"] > 37.3 || $data["cough"] || $data["myalgia"] || $data["breathing_difficulties"] || $data["loss_of_taste"] || $data["loss_of_smell"]) {
             if ($data["flight_recently"] || $data["covid_19_contact_within_14_from_symptoms"]) { //if used did not give take today date. Ask.Ask Doctor!
                 if ($data['vulnerable_group'] || $data["age"] > 60 || $data["fever"] > 38.5 || $data["breathing_difficulties"] || $data["chest_pain"] || $data["symptoms_more_than_two_days"]) {
                     $suggest = "go_and_seek_public_health_care"; //change to go_and_seek_public_health_care

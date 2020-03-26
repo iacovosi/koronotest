@@ -22,6 +22,8 @@ class CreateInvesticatedPeopleTable extends Migration
             $table->float("fever")->default(0);
             $table->boolean("cough")->default(0);
             $table->boolean("myalgia")->default(0);
+            $table->boolean("loss_of_taste")->default(0);
+            $table->boolean("loss_of_smell")->default(0);
             $table->boolean("breathing_difficulties")->default(0);
             $table->boolean("symptoms_more_than_two_days")->default(0);
             $table->boolean("other_symptom")->default(0);

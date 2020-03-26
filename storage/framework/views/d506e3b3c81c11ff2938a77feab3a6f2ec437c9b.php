@@ -268,6 +268,32 @@
                                                     </label>
                                                 </div>
                                             </li>
+
+                                            <li class="list-group-item">
+                                                <!-- Default checked -->
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                           id="loss_of_taste"
+                                                           name="loss_of_taste" value="true">
+                                                    <label class="custom-control-label"
+                                                           for="loss_of_taste"><?php echo app('translator')->get('wizard.loss_of_taste'); ?>
+                                                    </label>
+                                                </div>
+                                            </li>
+
+                                            <li class="list-group-item">
+                                                <!-- Default checked -->
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                           id="loss_of_smell"
+                                                           name="loss_of_smell" value="true">
+                                                    <label class="custom-control-label"
+                                                           for="loss_of_smell"><?php echo app('translator')->get('wizard.loss_of_smell'); ?>
+                                                    </label>
+                                                </div>
+                                            </li>
+
+
                                             <li class="list-group-item">
                                                 <!-- Default checked -->
                                                 <div class="custom-control custom-checkbox">
@@ -506,7 +532,7 @@
                 $(this).attr('value', 'true');
             } else {
                 if ($("#nothing").is('[disabled=disabled]')) {
-                    if (!($("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked'))) {
+                    if (!($("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked'))) {
                         $("#nothing").removeAttr("disabled");
                     }
                     $(this).attr('value', 'false');
@@ -521,7 +547,7 @@
                 $(this).attr('value', 'true');
             } else {
                 if ($("#nothing").is('[disabled=disabled]')) {
-                    if (!($("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#malaise").is(':checked'))) {
+                    if (!($("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#malaise").is(':checked'))) {
                         $("#nothing").removeAttr("disabled");
                     }
                     $(this).attr('value', 'false');
@@ -536,7 +562,7 @@
                 $(this).attr('value', 'true');
             } else {
                 if ($("#nothing").is('[disabled=disabled]')) {
-                    if (!($("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
+                    if (!($("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
                         $("#nothing").removeAttr("disabled");
                     }
                     $(this).attr('value', 'false');
@@ -551,7 +577,7 @@
                 $(this).attr('value', 'true');
             } else {
                 if ($("#nothing").is('[disabled=disabled]')) {
-                    if (!($("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
+                    if (!($("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') ||$("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
                         $("#nothing").removeAttr("disabled");
                     }
                     $(this).attr('value', 'false');
@@ -566,13 +592,46 @@
                 $(this).attr('value', 'true');
             } else {
                 if ($("#nothing").is('[disabled=disabled]')) {
-                    if (!($("#other_symptom").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
+                    if (!($("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') ||$("#other_symptom").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
                         $("#nothing").removeAttr("disabled");
                     }
                     $(this).attr('value', 'false');
                 }
             }
         });
+
+
+
+
+        $("#loss_of_taste").on('change', function () {
+            if ($(this).is(':checked')) {
+                $("#nothing").attr("disabled", true);
+                $(this).attr('value', 'true');
+            } else {
+                if ($("#nothing").is('[disabled=disabled]')) {
+                    if (!($("#loss_of_smell").is(':checked') || $("#chest_pain").is(':checked') || $("#other_symptom").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
+                        $("#nothing").removeAttr("disabled");
+                    }
+                    $(this).attr('value', 'false');
+                }
+            }
+        });
+
+
+        $("#loss_of_smell").on('change', function () {
+            if ($(this).is(':checked')) {
+                $("#nothing").attr("disabled", true);
+                $(this).attr('value', 'true');
+            } else {
+                if ($("#nothing").is('[disabled=disabled]')) {
+                    if (!($("#loss_of_taste").is(':checked') || $("#chest_pain").is(':checked') || $("#other_symptom").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
+                        $("#nothing").removeAttr("disabled");
+                    }
+                    $(this).attr('value', 'false');
+                }
+            }
+        });
+
 
 
         $("#other_symptom").on('change', function () {
@@ -600,6 +659,8 @@
                 $("#malaise").attr("disabled", true);
                 $("#symptoms_start").attr("disabled", true);
                 $("#covid_19_contact_within_14_from_symptoms").attr("disabled", true);
+                $("#loss_of_taste").attr("disabled", true);
+                $("#loss_of_smell").attr("disabled", true);
                 $(this).attr('value', 'true');
             } else {
 
@@ -611,6 +672,8 @@
                 $("#malaise").removeAttr("disabled");
                 $("#symptoms_start").removeAttr("disabled");
                 $("#covid_19_contact_within_14_from_symptoms").removeAttr("disabled");
+                $("#loss_of_taste").removeAttr("disabled");
+                $("#loss_of_smell").removeAttr("disabled");
                 $(this).attr('value', 'false');
             }
         });
