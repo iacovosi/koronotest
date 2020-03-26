@@ -7,7 +7,8 @@
     <title>Coronavirus Test</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    {{--    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">--}}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           crossorigin="anonymous">
     <link href="{{asset('css/lang.css')}}" rel="stylesheet">
@@ -17,122 +18,186 @@
 </head>
 <body>
 
+{{--<header>--}}
+{{--    <div id="navbar-main">--}}
+{{--        <!-- Fixed navbar -->--}}
+{{--        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">--}}
+{{--            <a class="navbar-brand" href="/">CORONAVIRUS TEST</a>--}}
+{{--            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"--}}
+{{--                    aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">--}}
+{{--                <span class="navbar-toggler-icon"></span>--}}
+{{--            </button>--}}
+{{--            <div class="collapse navbar-collapse" id="navbarsExample09">--}}
+{{--                <ul class="navbar-nav mr-auto">--}}
+{{--                </ul>--}}
+{{--                <form class="form-inline my-2 my-md-0">--}}
+{{--                    <ul class="navbar-nav mr-auto">--}}
+{{--                        <li class="nav-item dropdown">--}}
+
+{{--                            @if (App::isLocale('en'))--}}
+{{--                                <a class="nav-link dropdown-toggle" href="en/" id="dropdown09"--}}
+{{--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span--}}
+{{--                                            class="flag-icon flag-icon-us"> </span> English</a>--}}
+{{--                                <div class="dropdown-menu" aria-labelledby="dropdown09">--}}
+{{--                                    <a class="dropdown-item" href="gr/"><span class="flag-icon flag-icon-gr"> </span>--}}
+{{--                                        Greek</a>--}}
+{{--                                    <a class="dropdown-item" href="tr/"><span class="flag-icon flag-icon-tr"> </span>--}}
+{{--                                        Turkish</a>--}}
+{{--                                </div>--}}
+{{--                            @elseif(App::isLocale('gr'))--}}
+{{--                                <a class="nav-link dropdown-toggle" href="gr/" id="dropdown09"--}}
+{{--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span--}}
+{{--                                            class="flag-icon flag-icon-gr"> </span> Greek</a>--}}
+{{--                                <div class="dropdown-menu" aria-labelledby="dropdown09">--}}
+{{--                                    <a class="dropdown-item" href="en/"><span class="flag-icon flag-icon-us"> </span>--}}
+{{--                                        English</a>--}}
+{{--                                    <a class="dropdown-item" href="tr/"><span class="flag-icon flag-icon-tr"> </span>--}}
+{{--                                        Turkish</a>--}}
+{{--                                </div>--}}
+{{--                            @elseif(App::isLocale('tr'))--}}
+{{--                                <a class="nav-link dropdown-toggle" href="tr/" id="dropdown09"--}}
+{{--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span--}}
+{{--                                            class="flag-icon flag-icon-tr"> </span> Turkish</a>--}}
+{{--                                <div class="dropdown-menu" aria-labelledby="dropdown09">--}}
+{{--                                    <a class="dropdown-item" href="en/"><span class="flag-icon flag-icon-us"> </span>--}}
+{{--                                        English</a>--}}
+{{--                                    <a class="dropdown-item" href="gr/"><span class="flag-icon flag-icon-gr"> </span>--}}
+{{--                                        Greek</a>--}}
+{{--                                </div>--}}
+
+{{--                            @endif--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </form>--}}
+{{--            </div>--}}
+{{--        </nav>--}}
+{{--    </div>--}}
+{{--</header>--}}
+
+
 <header>
-    <div id="navbar-main">
-        <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-            <a class="navbar-brand" href="/">CORONAVIRUS TEST</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"
-                    aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarsExample09">
+    <nav class="navbar fixed-top navbar-expand"
+         style="background-color:white;border-bottom: 2px solid rgb(44, 169, 240);">
+        <a class="navbar-brand" href="/">
+            <img src="{{asset('images/rise-new.png')}}" width="100" height="30" class="d-inline-block align-top" alt="" >
+            <span class="d-none d-sm-inline">
+		<img src="{{asset('images/brand.png')}}" width="235" height="30" class="d-inline-block align-top ml-2 mt-1"
+             alt="">
+	</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"
+                aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExample09">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <form class="form-inline my-2 my-md-0">
                 <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+
+                        @if (App::isLocale('en'))
+                            <a class="nav-link dropdown-toggle" href="en" id="dropdown09"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                        class="flag-icon flag-icon-us"> </span> English</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown09">
+                                <a class="dropdown-item" href="gr"><span class="flag-icon flag-icon-gr"> </span>
+                                    Greek</a>
+                                <a class="dropdown-item" href="tr"><span class="flag-icon flag-icon-tr"> </span>
+                                    Turkish</a>
+                            </div>
+                        @elseif(App::isLocale('gr'))
+                            <a class="nav-link dropdown-toggle" href="gr" id="dropdown09"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                        class="flag-icon flag-icon-gr"> </span> Greek</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown09">
+                                <a class="dropdown-item" href="en"><span class="flag-icon flag-icon-us"> </span>
+                                    English</a>
+                                <a class="dropdown-item" href="tr"><span class="flag-icon flag-icon-tr"> </span>
+                                    Turkish</a>
+                            </div>
+                        @elseif(App::isLocale('tr'))
+                            <a class="nav-link dropdown-toggle" href="tr" id="dropdown09"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                        class="flag-icon flag-icon-tr"> </span> Turkish</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown09">
+                                <a class="dropdown-item" href="en"><span class="flag-icon flag-icon-us"> </span>
+                                    English</a>
+                                <a class="dropdown-item" href="gr"><span class="flag-icon flag-icon-gr"> </span>
+                                    Greek</a>
+                            </div>
+
+                        @endif
+                    </li>
                 </ul>
-                <form class="form-inline my-2 my-md-0">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
+            </form>
+        </div>
+    </nav>
 
-                            @if (App::isLocale('en'))
-                                <a class="nav-link dropdown-toggle" href="en/" id="dropdown09"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
-                                            class="flag-icon flag-icon-us"> </span> English</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown09">
-                                    <a class="dropdown-item" href="gr/"><span class="flag-icon flag-icon-gr"> </span>
-                                        Greek</a>
-                                    <a class="dropdown-item" href="tr/"><span class="flag-icon flag-icon-tr"> </span>
-                                        Turkey</a>
-                                </div>
-                            @elseif(App::isLocale('gr'))
-                                <a class="nav-link dropdown-toggle" href="gr/" id="dropdown09"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
-                                            class="flag-icon flag-icon-gr"> </span> Greek</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown09">
-                                    <a class="dropdown-item" href="en/"><span class="flag-icon flag-icon-us"> </span>
-                                        English</a>
-                                    <a class="dropdown-item" href="tr/"><span class="flag-icon flag-icon-tr"> </span>
-                                        Turkey</a>
-                                </div>
-                            @elseif(App::isLocale('tr'))
-                                <a class="nav-link dropdown-toggle" href="tr/" id="dropdown09"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
-                                            class="flag-icon flag-icon-tr"> </span> Turkey</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown09">
-                                    <a class="dropdown-item" href="en/"><span class="flag-icon flag-icon-us"> </span>
-                                        English</a>
-                                    <a class="dropdown-item" href="gr/"><span class="flag-icon flag-icon-gr"> </span>
-                                        Greek</a>
-                                </div>
-
-                            @endif
-                        </li>
-                    </ul>
-                </form>
-            </div>
-        </nav>
-    </div>
 </header>
+
 
 <div class="flex-center position-ref full-height">
     @if (Route::has('login'))
         <div class="top-right links">
             @auth
                 <a href="{{ url('/home') }}">Home</a>
-                @else
-                    <a href="{{ route('login') }}">Login</a>
+            @else
+                <a href="{{ route('login') }}">Login</a>
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
-                    @endif
-                    @endauth
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}">Register</a>
+                @endif
+            @endauth
         </div>
 @endif
 
 <!-- MultiStep Form -->
-    <div class="container-fluid" id="grad1">
+    <div class="container-fluid mt-5" id="grad1">
         <div class="row justify-content-center mt-0">
             <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
                 <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-                    <h2><strong>@lang('wizard.KoronaVirusTest')</strong></h2>
+                    <h2 style="color: #5bc0de">@lang('wizard.coronaVirusTest')</h2>
                     <p>
-                    <center><img src="{{asset('images/RISE.jpg')}}" width="30%"></center>
+                    <center><img src="{{asset('images/RISE.png')}}" width="35%"></center>
                     </p>
-                    <p> While based upon the guidelines and recommendations of the CDC, this content
-                        is not intended to be a substitute for professional medical advice, diagnosis, or treatment.
-                        Always seek the advice of your physician or other qualified health provider with any questions
-                        you may have regarding a medical condition.</p>
-                    <p>The fields marked with * are required for the Test, all other are used for statistical
-                        purposes</p>
+                    <p> @lang('wizard.disclaimer')</p>
+                    <p>@lang('wizard.mandatory')</p>
                     <div class="row">
                         <div class="col-md-12 mx-0">
                             <form id="msform" action=" {{ route('save-test') }}" method="post">
                                 <!-- progressbar -->
+                                {{--                                <div class="col-sm-9 col-md-12 col-lg-12">--}}
                                 <ul id="progressbar">
-                                    <li class="fas fa-user-alt active"><strong>Personal</strong></li>
-                                    <li class="fas fa-notes-medical"><strong>Medical</strong></li>
-                                    <li class="fas fa-comments"><strong>Comments</strong></li>
+                                    <li class="fas fa-user-alt active"><strong>@lang('wizard.personal')</strong></li>
+                                    <li class="fas fa-notes-medical"><strong>@lang('wizard.medical')</strong></li>
+                                    <li class="fas fa-comments"><strong>@lang('wizard.comments')</strong></li>
                                     <li></li>
                                 </ul> <!-- fieldsets -->
+                                {{--                                </div>--}}
+
                                 <fieldset name="first" id="1">
                                     <div class="form-card">
-                                        <h2 class="fs-title "><i class="fa fa-user"></i>Personal Information</h2>
-                                        <label for="email">Email</label>
-                                        <input type="email" name="email" placeholder="Email" type="email"/>
-                                        <label for="name">Name & Surname</label>
-                                        <input type="text" name="name" placeholder="Name & Surname"/>
-                                        <label for="zipcode">Zip Code</label>
-                                        <input type="number" name="zipcode" placeholder="Zip Code" pattern="\d+"/>
-                                        <label for="age">Age (*)</label>
-                                        <input type="number" name="age" id="age" placeholder="Age" pattern="\d+"
+                                        <h2 class="fs-title "><i class="fa fa-user"></i>@lang('wizard.personalInfo')
+                                        </h2>
+                                        <label for="email">@lang('wizard.email')</label>
+                                        <input type="email" name="email" placeholder="" />
+                                        <label for="name">@lang('wizard.full')</label>
+                                        <input type="text" name="name" placeholder=""/>
+                                        <label for="zipcode">@lang('wizard.zip')</label>
+                                        <input type="number" name="zipcode" placeholder="" pattern="\d+"/>
+                                        <label for="age">@lang('wizard.age')</label>
+                                        <input type="number" name="age" id="age" placeholder="" pattern="\d+"
                                                required/>
-                                        <label for="mobile">Mobile Number</label>
-                                        <input type="mobile" name="mobile" placeholder="Mobile Number"/>
-                                        <label for="gender">Gender (*)</label>
+                                        <label for="mobile">@lang('wizard.mobileNo')</label>
+                                        <input type="mobile" name="mobile" placeholder=""/>
+                                        <label for="gender">@lang('wizard.gender')</label>
                                         <!-- Group of default radios - option 1 -->
                                         <div class="custom-control custom-radio">
                                             <input type="radio" class="custom-control-input" id="defaultGroupExample1"
                                                    name="gender" value="male" checked>
-                                            <label class="custom-control-label" for="defaultGroupExample1">Male</label>
+                                            <label class="custom-control-label"
+                                                   for="defaultGroupExample1">@lang('wizard.male')</label>
                                         </div>
 
                                         <!-- Group of default radios - option 2 -->
@@ -140,10 +205,10 @@
                                             <input type="radio" class="custom-control-input" id="defaultGroupExample2"
                                                    name="gender" value="female">
                                             <label class="custom-control-label"
-                                                   for="defaultGroupExample2">Female</label>
+                                                   for="defaultGroupExample2">@lang('wizard.female')</label>
                                         </div>
                                         <br/>
-                                        <p>Please select what is right for your case:</p>
+                                        <p>@lang('wizard.selection')</p>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">
                                                 <!-- Default checked -->
@@ -152,9 +217,7 @@
                                                            id="covid_19_contact_within_14_from_today"
                                                            name="covid_19_contact_within_14_from_today" value="true">
                                                     <label class="custom-control-label"
-                                                           for="covid_19_contact_within_14_from_today">Contact with a
-                                                        COVID-19
-                                                        infected person withing 14 days from today</label>
+                                                           for="covid_19_contact_within_14_from_today">@lang('wizard.contact')</label>
                                                 </div>
                                             </li>
 
@@ -165,25 +228,29 @@
                                                            id="flight_recently"
                                                            name="flight_recently" value="true">
                                                     <label class="custom-control-label"
-                                                           for="flight_recently">Did you travel abroad recendly?</label>
+                                                           for="flight_recently">@lang('wizard.travel')</label>
                                                 </div>
                                             </li>
                                         </ul>
                                     </div>
-                                    <input type="button" name="next" class="next action-button" value="Next Step"/>
+                                    {{--                                    <input type="button" name="next" class="next action-button" value="Next Step"/>--}}
+                                    <button type="button" name="next" class=" next btn btn-info"
+                                            value="Next Step">@lang('wizard.next')
+                                    </button>
                                 </fieldset>
                                 <fieldset name="second" id="2">
                                     <div class="form-card">
-                                        <h2 class="fs-title"><i class="fa fa-notes-medical"></i>Medical Information</h2>
-                                        <label for="fever">Body Temperature Measurment in Celsius(*)</label>
+                                        <h2 class="fs-title"><i
+                                                    class="fa fa-notes-medical"></i>@lang('wizard.medicalInfo')</h2>
+                                        <label for="fever">@lang('wizard.bodyTemp')</label>
                                         <input type="number" id="fever" name="fever"
-                                               placeholder="Body Temperature Measurment"
-                                               type="number" required min="0" value="37.4" step="0.01"/>
-                                        <label for="symptoms_start">Begining of Symptoms Date</label>
+                                               placeholder=""
+                                               type="number" required min="0" value="" step="0.01"/>
+                                        <label for="symptoms_start">@lang('wizard.symptomsDate')</label>
                                         <input class="form-control" type="text" value="" id="symptoms_start"
                                                name="symptoms_start">
                                         <br/>
-                                        <p>Please select what is right medical information for your case:</p>
+                                        <p>@lang('wizard.medicalInfoSelection')</p>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">
                                                 <!-- Default checked -->
@@ -192,9 +259,7 @@
                                                            id="covid_19_contact_within_14_from_symptoms"
                                                            name="covid_19_contact_within_14_from_symptoms" value="true">
                                                     <label class="custom-control-label"
-                                                           for="covid_19_contact_within_14_from_symptoms">Contact with a
-                                                        COVID-19
-                                                        infected person withing 14 days from symptoms</label>
+                                                           for="covid_19_contact_within_14_from_symptoms">@lang('wizard.contact')</label>
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
@@ -204,13 +269,12 @@
                                                            id="vulnerable_group"
                                                            name="vulnerable_group" value="true">
                                                     <label class="custom-control-label" for="vulnerable_group">
-                                                        Cronical issues (diabetes/heart disease/lung
-                                                        disease/cancer/smoking/other issues)</label>
+                                                        @lang('wizard.chronic')</label>
                                                 </div>
                                             </li>
                                         </ul>
                                         <br/>
-                                        <p>Please select what is right about medical symptoms for your case:</p>
+                                        <p>@lang('wizard.symptomsSelection')</p>
                                         <ul class="list-group list-group-flush">
 
                                             <li class="list-group-item">
@@ -218,7 +282,8 @@
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="malaise"
                                                            name="malaise" value="true">
-                                                    <label class="custom-control-label" for="malaise">Malaise</label>
+                                                    <label class="custom-control-label"
+                                                           for="malaise">@lang('wizard.malaise')</label>
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
@@ -226,7 +291,8 @@
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="myalgia"
                                                            name="myalgia" value="true">
-                                                    <label class="custom-control-label" for="myalgia">Myalgia</label>
+                                                    <label class="custom-control-label"
+                                                           for="myalgia">@lang('wizard.myalgia')</label>
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
@@ -234,7 +300,8 @@
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="cough"
                                                            name="cough" value="true">
-                                                    <label class="custom-control-label" for="cough">Cough</label>
+                                                    <label class="custom-control-label"
+                                                           for="cough">@lang('wizard.cough')</label>
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
@@ -243,8 +310,8 @@
                                                     <input type="checkbox" class="custom-control-input"
                                                            id="breathing_difficulties" name="breathing_difficulties"
                                                            value="true">
-                                                    <label class="custom-control-label" for="breathing_difficulties">Breathing
-                                                        difficulties</label>
+                                                    <label class="custom-control-label"
+                                                           for="breathing_difficulties">@lang('wizard.breath')</label>
                                                 </div>
                                             </li>
                                             <!-- Default checked -->
@@ -264,8 +331,9 @@
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="chest_pain"
                                                            name="chest_pain" value="true">
-                                                    <label class="custom-control-label" for="chest_pain">Chest
-                                                        pain</label>
+                                                    <label class="custom-control-label"
+                                                           for="chest_pain">@lang('wizard.chest')
+                                                    </label>
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
@@ -274,8 +342,9 @@
                                                     <input type="checkbox" class="custom-control-input"
                                                            id="other_symptom"
                                                            name="other_symptom" value="true">
-                                                    <label class="custom-control-label" for="other_symptom">Other
-                                                        Symptom</label>
+                                                    <label class="custom-control-label"
+                                                           for="other_symptom">@lang('wizard.other')
+                                                    </label>
                                                 </div>
                                             </li>
 
@@ -285,8 +354,8 @@
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="nothing"
                                                            name="nothing" value="true">
-                                                    <label class="custom-control-label" for="nothing">Nothing from the
-                                                        above</label>
+                                                    <label class="custom-control-label"
+                                                           for="nothing">@lang('wizard.none')</label>
                                                 </div>
                                             </li>
 
@@ -296,26 +365,46 @@
                                     </div>
 
 
-                                    <input type="button" name="previous" class="previous action-button-previous"
-                                           value="Previous"/>
+                                    {{--                                    <button type="button" name="next" class=" next btn btn-info"--}}
+                                    {{--                                            value="Next Step">@lang('wizard.next')--}}
+                                    {{--                                    </button>--}}
+                                    {{--                                    --}}
 
 
-                                    <input type="button" name="next"
-                                           class="next action-button" value="Next Step"/>
+                                    <button type="button" name="previous" class="previous btn btn-secondary"
+                                            value="Previous">@lang('wizard.previous')</button>
+
+
+                                    <button type="button" name="next" class=" next btn btn-info"
+                                            value="Next Step">@lang('wizard.next')
+                                    </button>
+
+
                                 </fieldset>
                                 <fieldset name="third" id="3">
                                     <div class="form-card">
-                                        <h2 class="fs-title"><i class="fa fa-comments"></i>Comments</h2>
+                                        <h2 class="fs-title"><i class="fa fa-comments"></i>@lang('wizard.comments')</h2>
                                         <div class="form-group">
-                                            <label for="comments">Comments</label>
+{{--                                            <label for="comments">@lang('wizard.comments')</label>--}}
                                             <textarea class="form-control" id="comments" rows="3"
                                                       name="comments"></textarea>
                                         </div>
                                     </div>
-                                    <input type="button" name="previous" class="previous action-button-previous"
-                                           value="Previous"/>
+                                    {{--                                    <input type="button" name="previous" class="previous action-button-previous"--}}
+                                    {{--                                           value="Previous"/>--}}
+
+                                    <button type="button" name="previous" class="previous btn btn-secondary"
+                                            value="Previous">@lang('wizard.previous')</button>
+
+
                                     {{ csrf_field() }}
-                                    <input type="submit" name="test" class="next action-button" value="Test"/>
+                                    {{--                                    <input type="submit" name="test" class="next action-button" value="Test"/>--}}
+
+                                    <button type="submit" name="next" class=" next btn btn-success"
+                                    >@lang('wizard.test')
+                                    </button>
+
+
                                 </fieldset>
                                 <input type="hidden" id="lat" name="lat" value="3487">
                                 <input type="hidden" id="long" name="long" value="3487">
@@ -328,8 +417,8 @@
     </div>
 </div>
 <footer class="footer">
-    <div class="container">
-        <span class="text-muted">Research Centre on Interactive Media, Smart Systems and Emerging Technologies - RISE Ltd.</span>
+    <div class="container text-center">
+        <span class="text-muted" style="text-align: center">Research Centre on Interactive Media, Smart Systems and Emerging Technologies - RISE Ltd.</span>
     </div>
 </footer>
 </body>

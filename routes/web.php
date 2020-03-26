@@ -24,6 +24,7 @@ Route::get('/{locale}', function ($locale) {
 
 Route::resource('/result','InvesticatedPersonController',[
     'names' => [
+        'store_locale'=>'store-locale',
         'create' => 'create-test',
         'store' => 'save-test',
         'destroy' => 'delete-test',
@@ -31,3 +32,4 @@ Route::resource('/result','InvesticatedPersonController',[
         'edit' => 'edit-test',
     ]
 ]);
+

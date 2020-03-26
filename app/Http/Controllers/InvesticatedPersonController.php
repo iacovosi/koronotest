@@ -7,7 +7,7 @@ use App\InvesticatedPerson;
 use DateTime;
 use DatePeriod;
 use DateInterval;
-
+use App;
 class InvesticatedPersonController extends Controller
 {
 
@@ -40,6 +40,15 @@ class InvesticatedPersonController extends Controller
 
     }
 
+    public function __construct(){
+
+       //have to add the locale here
+
+//        App::setLocale();
+
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -48,6 +57,7 @@ class InvesticatedPersonController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->all();
         //dd($data);
         if (isset($data["malaise"]) && $data["malaise"] == "true") {
@@ -77,18 +87,17 @@ class InvesticatedPersonController extends Controller
 
         if (isset($data["symptoms_start"]) && !empty($data["symptoms_start"])) {
             $date_symptoms_start = DateTime::createFromFormat('d/m/Y', $data["symptoms_start"]);
-            $date_today=new DateTime();
-            $diff=$date_today->diff($date_symptoms_start);
-            if ($diff->days>2) {
+            $date_today = new DateTime();
+            $diff = $date_today->diff($date_symptoms_start);
+            if ($diff->days > 2) {
                 $data["symptoms_more_than_two_days"] = 1;
-            }
-            else {
+            } else {
                 $data["symptoms_more_than_two_days"] = 0;
             }
-            $data["symptoms_start"]=$date_symptoms_start->format( 'Y-m-d');
+            $data["symptoms_start"] = $date_symptoms_start->format('Y-m-d');
         } else {
-            $date=new DateTime();
-            $data["symptoms_start"]=$date->format( 'Y-m-d'); //->format('Y-m-d H:i:s');
+            $date = new DateTime();
+            $data["symptoms_start"] = $date->format('Y-m-d'); //->format('Y-m-d H:i:s');
             $data["symptoms_more_than_two_days"] = 0;
         }
 

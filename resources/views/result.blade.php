@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Coronavirus Test Result</title>
+    <title>Coronavirus Test</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+{{--    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">--}}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           crossorigin="anonymous">
     <link href="{{asset('css/lang.css')}}" rel="stylesheet">
@@ -22,61 +23,120 @@
 </head>
 <body>
 
+{{--<header>--}}
+{{--    <div id="navbar-main">--}}
+{{--        <!-- Fixed navbar -->--}}
+{{--        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">--}}
+{{--            <a class="navbar-brand" href="/">CORONAVIRUS TEST RESULT</a>--}}
+{{--            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"--}}
+{{--                    aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">--}}
+{{--                <span class="navbar-toggler-icon"></span>--}}
+{{--            </button>--}}
+{{--            <div class="collapse navbar-collapse" id="navbarsExample09">--}}
+{{--                <ul class="navbar-nav mr-auto">--}}
+{{--                </ul>--}}
+{{--                <form class="form-inline my-2 my-md-0">--}}
+{{--                    <ul class="navbar-nav mr-auto">--}}
+{{--                        <li class="nav-item dropdown">--}}
+{{--                            @if (App::isLocale('en'))--}}
+{{--                                <a class="nav-link dropdown-toggle" href="en/" id="dropdown09"--}}
+{{--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span--}}
+{{--                                            class="flag-icon flag-icon-us"> </span> English</a>--}}
+{{--                                <div class="dropdown-menu" aria-labelledby="dropdown09">--}}
+{{--                                    <a class="dropdown-item" href="gr/"><span class="flag-icon flag-icon-gr"> </span>--}}
+{{--                                        Greek</a>--}}
+{{--                                    <a class="dropdown-item" href="tr/"><span class="flag-icon flag-icon-tr"> </span>--}}
+{{--                                        Turkey</a>--}}
+{{--                                </div>--}}
+{{--                            @elseif(App::isLocale('gr'))--}}
+{{--                                <a class="nav-link dropdown-toggle" href="gr/" id="dropdown09"--}}
+{{--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span--}}
+{{--                                            class="flag-icon flag-icon-gr"> </span> Greek</a>--}}
+{{--                                <div class="dropdown-menu" aria-labelledby="dropdown09">--}}
+{{--                                    <a class="dropdown-item" href="en/"><span class="flag-icon flag-icon-us"> </span>--}}
+{{--                                        English</a>--}}
+{{--                                    <a class="dropdown-item" href="tr/"><span class="flag-icon flag-icon-tr"> </span>--}}
+{{--                                        Turkey</a>--}}
+{{--                                </div>--}}
+{{--                            @elseif(App::isLocale('tr'))--}}
+{{--                                <a class="nav-link dropdown-toggle" href="tr/" id="dropdown09"--}}
+{{--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span--}}
+{{--                                            class="flag-icon flag-icon-tr"> </span> Turkey</a>--}}
+{{--                                <div class="dropdown-menu" aria-labelledby="dropdown09">--}}
+{{--                                    <a class="dropdown-item" href="en/"><span class="flag-icon flag-icon-us"> </span>--}}
+{{--                                        English</a>--}}
+{{--                                    <a class="dropdown-item" href="gr/"><span class="flag-icon flag-icon-gr"> </span>--}}
+{{--                                        Greek</a>--}}
+{{--                                </div>--}}
+
+{{--                            @endif--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </form>--}}
+{{--            </div>--}}
+{{--        </nav>--}}
+{{--    </div>--}}
+{{--</header>--}}
 <header>
-    <div id="navbar-main">
-        <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-            <a class="navbar-brand" href="/">CORONAVIRUS TEST RESULT</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"
-                    aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarsExample09">
+    <nav class="navbar fixed-top navbar-expand"
+         style="background-color:white;border-bottom: 2px solid rgb(44, 169, 240);">
+        <a class="navbar-brand" href="#">
+            <img src="{{asset('images/rise-new.png')}}" width="100" height="30" class="d-inline-block align-top" alt="">
+            <span class="d-none d-sm-inline">
+		<img src="{{asset('images/brand.png')}}" width="235" height="30" class="d-inline-block align-top ml-2 mt-1"
+             alt="">
+	</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"
+                aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExample09">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <form class="form-inline my-2 my-md-0">
                 <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+
+                        @if (App::isLocale('en'))
+                            <a class="nav-link dropdown-toggle" href="en" id="dropdown09"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                        class="flag-icon flag-icon-us"> </span> English</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown09">
+                                <a class="dropdown-item" href="gr"><span class="flag-icon flag-icon-gr"> </span>
+                                    Greek</a>
+                                <a class="dropdown-item" href="tr"><span class="flag-icon flag-icon-tr"> </span>
+                                    Turkey</a>
+                            </div>
+                        @elseif(App::isLocale('gr'))
+                            <a class="nav-link dropdown-toggle" href="gr" id="dropdown09"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                        class="flag-icon flag-icon-gr"> </span> Greek</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown09">
+                                <a class="dropdown-item" href="en"><span class="flag-icon flag-icon-us"> </span>
+                                    English</a>
+                                <a class="dropdown-item" href="tr"><span class="flag-icon flag-icon-tr"> </span>
+                                    Turkey</a>
+                            </div>
+                        @elseif(App::isLocale('tr'))
+                            <a class="nav-link dropdown-toggle" href="tr" id="dropdown09"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                        class="flag-icon flag-icon-tr"> </span> Turkey</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown09">
+                                <a class="dropdown-item" href="en"><span class="flag-icon flag-icon-us"> </span>
+                                    English</a>
+                                <a class="dropdown-item" href="gr"><span class="flag-icon flag-icon-gr"> </span>
+                                    Greek</a>
+                            </div>
+
+                        @endif
+                    </li>
                 </ul>
-                <form class="form-inline my-2 my-md-0">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            @if (App::isLocale('en'))
-                                <a class="nav-link dropdown-toggle" href="en/" id="dropdown09"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
-                                            class="flag-icon flag-icon-us"> </span> English</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown09">
-                                    <a class="dropdown-item" href="gr/"><span class="flag-icon flag-icon-gr"> </span>
-                                        Greek</a>
-                                    <a class="dropdown-item" href="tr/"><span class="flag-icon flag-icon-tr"> </span>
-                                        Turkey</a>
-                                </div>
-                            @elseif(App::isLocale('gr'))
-                                <a class="nav-link dropdown-toggle" href="gr/" id="dropdown09"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
-                                            class="flag-icon flag-icon-gr"> </span> Greek</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown09">
-                                    <a class="dropdown-item" href="en/"><span class="flag-icon flag-icon-us"> </span>
-                                        English</a>
-                                    <a class="dropdown-item" href="tr/"><span class="flag-icon flag-icon-tr"> </span>
-                                        Turkey</a>
-                                </div>
-                            @elseif(App::isLocale('tr'))
-                                <a class="nav-link dropdown-toggle" href="tr/" id="dropdown09"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
-                                            class="flag-icon flag-icon-tr"> </span> Turkey</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown09">
-                                    <a class="dropdown-item" href="en/"><span class="flag-icon flag-icon-us"> </span>
-                                        English</a>
-                                    <a class="dropdown-item" href="gr/"><span class="flag-icon flag-icon-gr"> </span>
-                                        Greek</a>
-                                </div>
+            </form>
+        </div>
+    </nav>
 
-                            @endif
-                        </li>
-                    </ul>
-                </form>
-            </div>
-        </nav>
-    </div>
 </header>
-
 <div class="flex-center position-ref full-height">
     @if (Route::has('login'))
         <div class="top-right links">
@@ -93,41 +153,38 @@
 @endif
 
 <!-- MultiStep Form -->
-    <div class="container-fluid" id="grad1">
+    <div class="container-fluid mt-5" id="grad1">
         <div class="row justify-content-center mt-0">
             <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
                 <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-                    <h2><strong>CoronaVirus Test Result</strong></h2>
+                    <h2><strong>@lang('wizard.results')</strong></h2>
                     <p>
-                    <center><img src="{{asset('images/RISE.jpg')}}" width="30%"></center>
+                    <center><img src="{{asset('images/RISE.png')}}" width="30%"></center>
                     </p>
-                    <p class="disclaimer-2">While based upon the guidelines and recommendations of the CDC, this content
-                        is not intended to be a substitute for professional medical advice, diagnosis, or treatment.
-                        Always seek the advice of your physician or other qualified health provider with any questions
-                        you may have regarding a medical condition.</p>
-                    <p>The Result:</p>
+                    <p class="disclaimer-2">@lang('wizard.disclaimer')</p>
+{{--                    <p>The Result:</p>--}}
                     <div class="row">
                         <div class="col-md-12 mx-0">
                             @switch($suggest)
 
                                 @case("nothing_for_now_not_infected")
-                                <div style="background-color: #7e806c;">
+                                <div style="background-color:	#C0C0C0;">
                                     <h1>
-                                        <span><b>You should follow the direction given from the Goverment of Cyprus!</b><br/></span>
+                                        <span><b>@lang('wizard.guides')</b><br/></span>
                                     </h1>
-                                    <p>The test result shown that you may not have Corona Virus (COVID-19)</p>
-                                    <p>Nothing for now!Not Affected!</p>
-                                    </h1>
+                                    <p><b>@lang('wizard.caseResultsNot')</b></p>
+{{--                                    <p>Nothing for now!Not Affected!</p>--}}
+
                                 </div>
                                 @break
 
                                 @case("odigies_apo_pi")
-                                <div style="background-color: #008080;">
+                                <div style="background-color: 	#C0C0C0;">
                                     <h1>
-                                        <span><b>You should follow the direction given from the Goverment of Cyprus!</b><br/></span>
+                                        <span><b>@lang('wizard.guides')</b><br/></span>
                                     </h1>
-                                    <p>The test result shown that you may not have Corona Virus (COVID-19)</p>
-                                    <p>You should get directions from your personal doctor</p>
+                                    <p>@lang('wizard.caseResultsNot')</p>
+                                    <p>@lang('wizard.personalDrGuides')</p>
                                     </h1>
                                 </div>
                                 @break
@@ -135,13 +192,13 @@
                                 @case("stay_home_14_days_asymptomatic")
                                 <div style="background-color: #09c7ff;">
                                     <h1>
-                                        <span><b>The test result shown that you may have Corona Virus (COVID-19)</b></span>
+                                        <span><b>@lang('wizard.caseResultsInfected')</b></span>
                                     </h1>
                                     <p>
-                                        <span><b>Tips</b></span> <br/>
-                                        Restriction at home for 14 days from today <br/>
-                                        Self-monitoring <br/>
-                                        Telephone contact with Personal Doctor in 24-48 hours
+                                        <span><b>@lang('wizard.tips')</b></span> <br/>
+                                        @lang('wizard.restriction') <br/>
+                                        @lang('wizard.selfMonitoring') <br/>
+                                        @lang('wizard.telephoneContact')
                                     </p>
                                 </div>
                                 @break
@@ -149,34 +206,34 @@
                                 @case("stay_home_14_days_symptomatic")
                                 <div style="background-color: #09c7ff;">
                                     <h1>
-                                        <span><b>The test result shown that you may have Corona Virus (COVID-19)</b></span>
+                                        <span><b>@lang('wizard.caseResultsInfected')</b></span>
                                     </h1>
                                     <p>
-                                        <span><b>Tips</b></span> <br/>
-                                        Restricted to home for 14 days <br/>
-                                        Contact 1420 for instructions <br/>
-                                        Self-monitoring <br/>
-                                        Telephone contact with Personal Doctor in 24-48 hours
+                                        <span><b>@lang('wizard.tips')</b></span> <br/>
+                                        <br/>
+                                        @lang('wizard.1420') <br/> @lang('wizard.restriction')
+                                        @lang('wizard.selfMonitoring') <br/>
+                                        @lang('wizard.telephoneContact')
                                     </p>
                                 </div>
                                 @break
                                 <div style="background-color: red;">
                                     @case("go_and_seek_public_health_care")
-                                    <h1><b>Probably you have Corona Virus (COVID-19)</b></h1> <br/>
-                                    <p>Go and seek public care! Go to your nearest Hospital!</p>
+                                    <h1><b> @lang('wizard.probablyInfected')</b></h1> <br/>
+                                    <p> @lang('wizard.healthcare')</p>
                                     </p>
                                 </div>
                                 @break
                                 <div style="background-color: #ffd000;">
                                     @case("error_occured")
-                                    <h1><b>Error Occured in the System!!! Please try again Later!</b></h1> <br/>
-                                    <p>Error!</p>
+                                    <h1><b>@lang('wizard.systemError')</b></h1> <br/>
+                                    <p>@lang('wizard.error')</p>
                                     </p>
                                 </div>
                                 @break
 
                                 @default
-                                <span>Something went wrong, please try again</span>
+                                <span>@lang('wizard.tryAgain')</span>
                                 @break
                             @endswitch
                         </div>
@@ -187,7 +244,7 @@
     </div>
 </div>
 <footer class="footer">
-    <div class="container">
+    <div class="container text-center">
         <span class="text-muted">Research Centre on Interactive Media, Smart Systems and Emerging Technologies - RISE Ltd.</span>
     </div>
 </footer>

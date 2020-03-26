@@ -3,13 +3,21 @@
     padding: 0
 }
 
+
+body{
+
+    font-family: 'Roboto', sans-serif;
+
+
+}
+
 html {
     height: 100%
 }
 
 #grad1 {
-    background-color: #9C27B0;
-    background-image: linear-gradient(120deg, #65caff, #401afa)
+    background-color:#5bc0de;
+    /*background-image: linear-gradient(120deg, #65caff, #401afa)*/
 }
 
 #msform {
@@ -60,7 +68,7 @@ html {
     margin-top: 2px;
     width: 100%;
     box-sizing: border-box;
-    font-family: montserrat;
+    font-family: 'Roboto', sans-serif;;
     color: #2C3E50;
     font-size: 16px;
     letter-spacing: 1px
@@ -79,9 +87,9 @@ html {
 
 #msform .action-button {
     width: 100px;
-    background: skyblue;
-    font-weight: bold;
-    color: white;
+    /*background: skyblue;*/
+    /*font-weight: bold;*/
+    /*color: white;*/
     border: 0 none;
     border-radius: 0px;
     cursor: pointer;
@@ -91,14 +99,14 @@ html {
 
 #msform .action-button:hover,
 #msform .action-button:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px skyblue
+    /*box-shadow: 0 0 0 2px white, 0 0 0 3px skyblue*/
 }
 
 #msform .action-button-previous {
     width: 100px;
-    background: #616161;
-    font-weight: bold;
-    color: white;
+    /*background: #616161;*/
+    /*font-weight: bold;*/
+    /*color: white;*/
     border: 0 none;
     border-radius: 0px;
     cursor: pointer;
@@ -108,7 +116,7 @@ html {
 
 #msform .action-button-previous:hover,
 #msform .action-button-previous:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #616161
+    /*box-shadow: 0 0 0 2px white, 0 0 0 3px #616161*/
 }
 
 select.list-dt {
@@ -132,7 +140,7 @@ select.list-dt:focus {
 
 .fs-title {
     font-size: 25px;
-    color: #2C3E50;
+    color: #C0C0C0;
     margin-bottom: 10px;
     font-weight: bold;
     text-align: left
@@ -141,7 +149,7 @@ select.list-dt:focus {
 #progressbar {
     margin-bottom: 30px;
     overflow: hidden;
-    color: lightgrey
+    color: #C0C0C0
 }
 
 #progressbar .active {
@@ -150,9 +158,9 @@ select.list-dt:focus {
 
 #progressbar li {
     list-style-type: none;
-    font-size: 12px;
-    width: 25%;
-    float: left;
+    font-size: 14px;
+    width: 27%;
+    /*float: right;*/
     position: relative
 }
 
@@ -166,7 +174,7 @@ select.list-dt:focus {
     background: lightgray;
     border-radius: 50%;
     margin: 0 auto 10px auto;
-    padding: 2px
+    padding: 1px
 }
 
 #progressbar li:after {
@@ -182,7 +190,7 @@ select.list-dt:focus {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: skyblue
+    background: #5bc0de
 }
 
 .radio-group {
@@ -193,7 +201,7 @@ select.list-dt:focus {
 .radio {
     display: inline-block;
     border-radius: 0;
-    background: lightblue;
+    background: black;
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     cursor: pointer;
@@ -206,6 +214,9 @@ select.list-dt:focus {
 
 .radio.selected {
     box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1)
+
+
+
 }
 
 .fit-image {
