@@ -69,7 +69,9 @@ return [
                     Herhangi bir sorunuz olduğunda daima doktorunuzun veya diğer nitelikli sağlık uzmanınızın tavsiyelerine başvurun.
                     tıbbi bir durumunuz olabilir.',
 
-    'mandatory' => '* İle işaretli olan alanların doldurulması zorunludur, bilgilerin geri kalanı istatistiksel amaçlar için kullanılır'
+    'mandatory' => '* İle işaretli olan alanların doldurulması zorunludur, bilgilerin geri kalanı istatistiksel amaçlar için kullanılır',
+    'age_required' => 'Dikkat! Yaş zorunlu bir alandır!',
+    'body_temperature_required' => 'Dikkat! Vücut Sıcaklığı zorunlu bir alandır!',
 
 
 ];

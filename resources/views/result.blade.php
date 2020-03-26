@@ -22,65 +22,10 @@
     </style>
 </head>
 <body>
-
-{{--<header>--}}
-{{--    <div id="navbar-main">--}}
-{{--        <!-- Fixed navbar -->--}}
-{{--        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">--}}
-{{--            <a class="navbar-brand" href="/">CORONAVIRUS TEST RESULT</a>--}}
-{{--            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"--}}
-{{--                    aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">--}}
-{{--                <span class="navbar-toggler-icon"></span>--}}
-{{--            </button>--}}
-{{--            <div class="collapse navbar-collapse" id="navbarsExample09">--}}
-{{--                <ul class="navbar-nav mr-auto">--}}
-{{--                </ul>--}}
-{{--                <form class="form-inline my-2 my-md-0">--}}
-{{--                    <ul class="navbar-nav mr-auto">--}}
-{{--                        <li class="nav-item dropdown">--}}
-{{--                            @if (App::isLocale('en'))--}}
-{{--                                <a class="nav-link dropdown-toggle" href="en/" id="dropdown09"--}}
-{{--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span--}}
-{{--                                            class="flag-icon flag-icon-us"> </span> English</a>--}}
-{{--                                <div class="dropdown-menu" aria-labelledby="dropdown09">--}}
-{{--                                    <a class="dropdown-item" href="gr/"><span class="flag-icon flag-icon-gr"> </span>--}}
-{{--                                        Greek</a>--}}
-{{--                                    <a class="dropdown-item" href="tr/"><span class="flag-icon flag-icon-tr"> </span>--}}
-{{--                                        Turkey</a>--}}
-{{--                                </div>--}}
-{{--                            @elseif(App::isLocale('gr'))--}}
-{{--                                <a class="nav-link dropdown-toggle" href="gr/" id="dropdown09"--}}
-{{--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span--}}
-{{--                                            class="flag-icon flag-icon-gr"> </span> Greek</a>--}}
-{{--                                <div class="dropdown-menu" aria-labelledby="dropdown09">--}}
-{{--                                    <a class="dropdown-item" href="en/"><span class="flag-icon flag-icon-us"> </span>--}}
-{{--                                        English</a>--}}
-{{--                                    <a class="dropdown-item" href="tr/"><span class="flag-icon flag-icon-tr"> </span>--}}
-{{--                                        Turkey</a>--}}
-{{--                                </div>--}}
-{{--                            @elseif(App::isLocale('tr'))--}}
-{{--                                <a class="nav-link dropdown-toggle" href="tr/" id="dropdown09"--}}
-{{--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span--}}
-{{--                                            class="flag-icon flag-icon-tr"> </span> Turkey</a>--}}
-{{--                                <div class="dropdown-menu" aria-labelledby="dropdown09">--}}
-{{--                                    <a class="dropdown-item" href="en/"><span class="flag-icon flag-icon-us"> </span>--}}
-{{--                                        English</a>--}}
-{{--                                    <a class="dropdown-item" href="gr/"><span class="flag-icon flag-icon-gr"> </span>--}}
-{{--                                        Greek</a>--}}
-{{--                                </div>--}}
-
-{{--                            @endif--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </form>--}}
-{{--            </div>--}}
-{{--        </nav>--}}
-{{--    </div>--}}
-{{--</header>--}}
 <header>
     <nav class="navbar fixed-top navbar-expand"
          style="background-color:white;border-bottom: 2px solid rgb(44, 169, 240);">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
             <img src="{{asset('images/rise-new.png')}}" width="100" height="30" class="d-inline-block align-top" alt="">
             <span class="d-none d-sm-inline">
 		<img src="{{asset('images/brand.png')}}" width="235" height="30" class="d-inline-block align-top ml-2 mt-1"

@@ -22,14 +22,4 @@ Route::get('/{locale}', function ($locale) {
     return view('welcome');
 });
 
-Route::resource('/result','InvesticatedPersonController',[
-    'names' => [
-        'store_locale'=>'store-locale',
-        'create' => 'create-test',
-        'store' => 'save-test',
-        'destroy' => 'delete-test',
-        'show' => 'show-test',
-        'edit' => 'edit-test',
-    ]
-]);
-
+Route::post('/{locale}',  ['as' => 'save-test','uses'=>'InvesticatedPersonController@store']);

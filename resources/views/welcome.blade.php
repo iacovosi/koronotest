@@ -18,78 +18,21 @@
 </head>
 <body>
 
-{{--<header>--}}
-{{--    <div id="navbar-main">--}}
-{{--        <!-- Fixed navbar -->--}}
-{{--        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">--}}
-{{--            <a class="navbar-brand" href="/">CORONAVIRUS TEST</a>--}}
-{{--            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"--}}
-{{--                    aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">--}}
-{{--                <span class="navbar-toggler-icon"></span>--}}
-{{--            </button>--}}
-{{--            <div class="collapse navbar-collapse" id="navbarsExample09">--}}
-{{--                <ul class="navbar-nav mr-auto">--}}
-{{--                </ul>--}}
-{{--                <form class="form-inline my-2 my-md-0">--}}
-{{--                    <ul class="navbar-nav mr-auto">--}}
-{{--                        <li class="nav-item dropdown">--}}
-
-{{--                            @if (App::isLocale('en'))--}}
-{{--                                <a class="nav-link dropdown-toggle" href="en/" id="dropdown09"--}}
-{{--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span--}}
-{{--                                            class="flag-icon flag-icon-us"> </span> English</a>--}}
-{{--                                <div class="dropdown-menu" aria-labelledby="dropdown09">--}}
-{{--                                    <a class="dropdown-item" href="gr/"><span class="flag-icon flag-icon-gr"> </span>--}}
-{{--                                        Greek</a>--}}
-{{--                                    <a class="dropdown-item" href="tr/"><span class="flag-icon flag-icon-tr"> </span>--}}
-{{--                                        Turkish</a>--}}
-{{--                                </div>--}}
-{{--                            @elseif(App::isLocale('gr'))--}}
-{{--                                <a class="nav-link dropdown-toggle" href="gr/" id="dropdown09"--}}
-{{--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span--}}
-{{--                                            class="flag-icon flag-icon-gr"> </span> Greek</a>--}}
-{{--                                <div class="dropdown-menu" aria-labelledby="dropdown09">--}}
-{{--                                    <a class="dropdown-item" href="en/"><span class="flag-icon flag-icon-us"> </span>--}}
-{{--                                        English</a>--}}
-{{--                                    <a class="dropdown-item" href="tr/"><span class="flag-icon flag-icon-tr"> </span>--}}
-{{--                                        Turkish</a>--}}
-{{--                                </div>--}}
-{{--                            @elseif(App::isLocale('tr'))--}}
-{{--                                <a class="nav-link dropdown-toggle" href="tr/" id="dropdown09"--}}
-{{--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span--}}
-{{--                                            class="flag-icon flag-icon-tr"> </span> Turkish</a>--}}
-{{--                                <div class="dropdown-menu" aria-labelledby="dropdown09">--}}
-{{--                                    <a class="dropdown-item" href="en/"><span class="flag-icon flag-icon-us"> </span>--}}
-{{--                                        English</a>--}}
-{{--                                    <a class="dropdown-item" href="gr/"><span class="flag-icon flag-icon-gr"> </span>--}}
-{{--                                        Greek</a>--}}
-{{--                                </div>--}}
-
-{{--                            @endif--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </form>--}}
-{{--            </div>--}}
-{{--        </nav>--}}
-{{--    </div>--}}
-{{--</header>--}}
-
-
 <header>
     <nav class="navbar fixed-top navbar-expand"
          style="background-color:white;border-bottom: 2px solid rgb(44, 169, 240);">
         <a class="navbar-brand" href="/">
-            <img src="{{asset('images/rise-new.png')}}" width="100" height="30" class="d-inline-block align-top" alt="" >
+            <img src="{{asset('images/rise-new.png')}}" width="100" height="30" class="d-inline-block align-top" alt="">
             <span class="d-none d-sm-inline">
 		<img src="{{asset('images/brand.png')}}" width="235" height="30" class="d-inline-block align-top ml-2 mt-1"
              alt="">
 	</span>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"
-                aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarsExample09">
+        <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mr-auto">
             </ul>
             <form class="form-inline my-2 my-md-0">
@@ -142,13 +85,13 @@
         <div class="top-right links">
             @auth
                 <a href="{{ url('/home') }}">Home</a>
-            @else
-                <a href="{{ route('login') }}">Login</a>
+                @else
+                    <a href="{{ route('login') }}">Login</a>
 
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Register</a>
-                @endif
-            @endauth
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}">Register</a>
+                    @endif
+                    @endauth
         </div>
 @endif
 
@@ -165,7 +108,8 @@
                     <p>@lang('wizard.mandatory')</p>
                     <div class="row">
                         <div class="col-md-12 mx-0">
-                            <form id="msform" action=" {{ route('save-test') }}" method="post">
+                            <form id="msform" action=" {{ route('save-test', ['locale' => App::getLocale()]) }}"
+                                  method="post">
                                 <!-- progressbar -->
                                 {{--                                <div class="col-sm-9 col-md-12 col-lg-12">--}}
                                 <ul id="progressbar">
@@ -181,7 +125,7 @@
                                         <h2 class="fs-title "><i class="fa fa-user"></i>@lang('wizard.personalInfo')
                                         </h2>
                                         <label for="email">@lang('wizard.email')</label>
-                                        <input type="email" name="email" placeholder="" />
+                                        <input type="email" name="email" placeholder=""/>
                                         <label for="name">@lang('wizard.full')</label>
                                         <input type="text" name="name" placeholder=""/>
                                         <label for="zipcode">@lang('wizard.zip')</label>
@@ -245,7 +189,7 @@
                                         <label for="fever">@lang('wizard.bodyTemp')</label>
                                         <input type="number" id="fever" name="fever"
                                                placeholder=""
-                                               type="number" required min="0" value="" step="0.01"/>
+                                               type="number" required min="0" value="37.2" step="0.01"/>
                                         <label for="symptoms_start">@lang('wizard.symptomsDate')</label>
                                         <input class="form-control" type="text" value="" id="symptoms_start"
                                                name="symptoms_start">
@@ -314,18 +258,6 @@
                                                            for="breathing_difficulties">@lang('wizard.breath')</label>
                                                 </div>
                                             </li>
-                                            <!-- Default checked -->
-                                            <!--
-                                            <li class="list-group-item">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                           id="symptoms_more_than_two_days"
-                                                           name="symptoms_more_than_two_days" value="true">
-                                                    <label class="custom-control-label"
-                                                           for="symptoms_more_than_two_days">Symptoms more than two
-                                                        days</label>
-                                                </div>
-                                            </li> -->
                                             <li class="list-group-item">
                                                 <!-- Default checked -->
                                                 <div class="custom-control custom-checkbox">
@@ -365,12 +297,6 @@
                                     </div>
 
 
-                                    {{--                                    <button type="button" name="next" class=" next btn btn-info"--}}
-                                    {{--                                            value="Next Step">@lang('wizard.next')--}}
-                                    {{--                                    </button>--}}
-                                    {{--                                    --}}
-
-
                                     <button type="button" name="previous" class="previous btn btn-secondary"
                                             value="Previous">@lang('wizard.previous')</button>
 
@@ -385,20 +311,17 @@
                                     <div class="form-card">
                                         <h2 class="fs-title"><i class="fa fa-comments"></i>@lang('wizard.comments')</h2>
                                         <div class="form-group">
-{{--                                            <label for="comments">@lang('wizard.comments')</label>--}}
+                                            {{--                                            <label for="comments">@lang('wizard.comments')</label>--}}
                                             <textarea class="form-control" id="comments" rows="3"
                                                       name="comments"></textarea>
                                         </div>
                                     </div>
-                                    {{--                                    <input type="button" name="previous" class="previous action-button-previous"--}}
-                                    {{--                                           value="Previous"/>--}}
 
                                     <button type="button" name="previous" class="previous btn btn-secondary"
                                             value="Previous">@lang('wizard.previous')</button>
 
 
                                     {{ csrf_field() }}
-                                    {{--                                    <input type="submit" name="test" class="next action-button" value="Test"/>--}}
 
                                     <button type="submit" name="next" class=" next btn btn-success"
                                     >@lang('wizard.test')
@@ -456,9 +379,7 @@
 
             current_fs = $(this).parent();
             next_fs = $(this).parent().next();
-            //alert(current_fs[0].id);
-            //console.log(next_fs[0]);
-            //console.log($("#age").val());
+
             if (current_fs[0].id == 1) {
                 console.log($("#age").val());
                 if ($("#age").val() == "") {
@@ -637,16 +558,6 @@
             }
         });
 
-        /*
-                $("#symptoms_more_than_two_days").on('change', function () {
-                    if ($(this).is(':checked')) {
-                        $(this).attr('value', 'true');
-                    } else {
-                        $(this).attr('value', 'false');
-                    }
-                });
-        */
-
 
         $("#chest_pain").on('change', function () {
             if ($(this).is(':checked')) {
@@ -686,6 +597,8 @@
                 $("#cough").attr("disabled", true);
                 $("#myalgia").attr("disabled", true);
                 $("#malaise").attr("disabled", true);
+                $("#symptoms_start").attr("disabled", true);
+                $("#covid_19_contact_within_14_from_symptoms").attr("disabled", true);
                 $(this).attr('value', 'true');
             } else {
 
@@ -695,7 +608,8 @@
                 $("#cough").removeAttr("disabled");
                 $("#myalgia").removeAttr("disabled");
                 $("#malaise").removeAttr("disabled");
-
+                $("#symptoms_start").removeAttr("disabled");
+                $("#covid_19_contact_within_14_from_symptoms").removeAttr("disabled");
                 $(this).attr('value', 'false');
             }
         });

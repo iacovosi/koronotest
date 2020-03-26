@@ -69,5 +69,7 @@ return [
                         you may have regarding a medical condition.',
 
     'mandatory'=>'The fields marked with * are required, the rest information is used for statistical
-                        purposes'
+                        purposes',
+    'age_required' => 'Attention! The Age is a required field!',
+    'body_temperature_required' => 'Attention! The Body Temperature is a required field!',
 ];
