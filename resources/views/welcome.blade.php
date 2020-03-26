@@ -40,30 +40,30 @@
                     <li class="nav-item dropdown">
 
                         @if (App::isLocale('en'))
-                            <a class="nav-link dropdown-toggle" href="en" id="dropdown09"
+                            <a class="nav-link dropdown-toggle" href="en" id="dropdown"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
                                         class="flag-icon flag-icon-us"> </span> English</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown09">
+                            <div class="dropdown-menu" aria-labelledby="dropdown">
                                 <a class="dropdown-item" href="gr"><span class="flag-icon flag-icon-gr"> </span>
                                     Greek</a>
                                 <a class="dropdown-item" href="tr"><span class="flag-icon flag-icon-tr"> </span>
                                     Turkish</a>
                             </div>
                         @elseif(App::isLocale('gr'))
-                            <a class="nav-link dropdown-toggle" href="gr" id="dropdown09"
+                            <a class="nav-link dropdown-toggle" href="gr" id="dropdown"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
                                         class="flag-icon flag-icon-gr"> </span> Greek</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown09">
+                            <div class="dropdown-menu" aria-labelledby="dropdown">
                                 <a class="dropdown-item" href="en"><span class="flag-icon flag-icon-us"> </span>
                                     English</a>
                                 <a class="dropdown-item" href="tr"><span class="flag-icon flag-icon-tr"> </span>
                                     Turkish</a>
                             </div>
                         @elseif(App::isLocale('tr'))
-                            <a class="nav-link dropdown-toggle" href="tr" id="dropdown09"
+                            <a class="nav-link dropdown-toggle" href="tr" id="dropdown"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
                                         class="flag-icon flag-icon-tr"> </span> Turkish</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown09">
+                            <div class="dropdown-menu" aria-labelledby="dropdown">
                                 <a class="dropdown-item" href="en"><span class="flag-icon flag-icon-us"> </span>
                                     English</a>
                                 <a class="dropdown-item" href="gr"><span class="flag-icon flag-icon-gr"> </span>
