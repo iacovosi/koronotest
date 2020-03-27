@@ -59,7 +59,9 @@ class InvesticatedPersonController extends Controller
     {
         App::setLocale($locale);
         $data = $request->all();
+        $clientIP = \Request::getClientIp(true);
         //dd($data);
+        $data["IP"]=$clientIP;
         if (isset($data["malaise"]) && $data["malaise"] == "true") {
             $data["malaise"] = 1;
         } else {

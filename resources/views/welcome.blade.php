@@ -389,7 +389,7 @@
     $(document).ready(function () {
         var current_fs, next_fs, previous_fs; //fieldsets
         var opacity;
-        showPosition();
+        //showPosition();
 
         var date_input = $('input[name="symptoms_start"]'); //our date input has the name "date"
         var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
