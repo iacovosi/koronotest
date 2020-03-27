@@ -61,7 +61,7 @@ class InvesticatedPersonController extends Controller
         $data = $request->all();
         $clientIP = \Request::getClientIp(true);
         //dd($data);
-        $data["IP"]=$clientIP;
+        $data["ip"]=$clientIP;
         if (isset($data["malaise"]) && $data["malaise"] == "true") {
             $data["malaise"] = 1;
         } else {
