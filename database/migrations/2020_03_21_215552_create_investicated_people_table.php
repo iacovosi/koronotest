@@ -41,7 +41,7 @@ class CreateInvesticatedPeopleTable extends Migration
             $table->text("comments")->nullable();
             $table->string("result")->nullable();
             $table->integer("zipcode")->nullable();
-            $table->string("IP")->nullable();
+            $table->string("IP")->nullable(); 
             $table->timestamps();
         });
     }
