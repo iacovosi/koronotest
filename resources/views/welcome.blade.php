@@ -11,10 +11,12 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           crossorigin="anonymous">
-    <link href="{{asset('css/lang.css')}}" rel="stylesheet">
-    <link href="{{asset('css/wizard.css')}}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css' rel='stylesheet'>
+    <link href="{{asset('css/lang.css')}}" rel="stylesheet">
+    <link href="{{asset('css/wizard.css')}}" rel="stylesheet">
+    <link href="{{asset('css/niceCountryInput.css')}}" rel='stylesheet'>
+
 </head>
 <body>
 
@@ -105,57 +107,75 @@
                     <center><img src="{{asset('images/RISE.png')}}" width="35%"></center>
                     </p>
                     <p> @lang('wizard.disclaimer')</p>
+                    <p>This test is intended for users in Cyprus. Use the Language tab on top for other
+                        language options.</p>
                     <p>@lang('wizard.mandatory')</p>
                     <div class="row">
                         <div class="col-md-12 mx-0">
                             <form id="msform" action=" {{ route('save-test', ['locale' => App::getLocale()]) }}"
                                   method="post">
-                                <!-- progressbar -->
-                                {{--                                <div class="col-sm-9 col-md-12 col-lg-12">--}}
                                 <ul id="progressbar">
-                                    <li class="fas fa-user-alt active"><strong>@lang('wizard.personal')</strong></li>
-                                    <li class="fas fa-notes-medical"><strong>@lang('wizard.medical')</strong></li>
-                                    <li class="fas fa-comments"><strong>@lang('wizard.comments')</strong></li>
+                                    <li class="fas fa-user-alt active"><strong>@lang('wizard.demographic')</strong></li>
+                                    <li class="fas fa-user-alt"><strong>@lang('wizard.chronic_conditions')</strong></li>
+                                    <li class="fas fa-user-alt"><strong>@lang('wizard.travelling')</strong></li>
+                                    <li class="fas fa-user-alt"><strong>@lang('wizard.symptoms')</strong></li>
+                                    <li class="fas fa-notes-medical"><strong>@lang('wizard.exposure')</strong></li>
                                     <li></li>
-                                </ul> <!-- fieldsets -->
-                                {{--                                </div>--}}
+                                </ul>
 
                                 <fieldset name="first" id="1">
                                     <div class="form-card">
-                                        <h2 class="fs-title "><i class="fa fa-user"></i>@lang('wizard.personalInfo')
+                                        <h2 class="fs-title "><i class="fa fa-user"></i>@lang('wizard.demographic')
                                         </h2>
-                                        <label for="email">@lang('wizard.email')</label>
-                                        <input type="email" name="email" placeholder=""/>
-                                        <label for="name">@lang('wizard.full')</label>
-                                        <input type="text" name="name" placeholder=""/>
-                                        <label for="zipcode">@lang('wizard.zip')</label>
-                                        <input type="number" name="zipcode" placeholder="" pattern="\d+"/>
                                         <label for="age">@lang('wizard.age')</label>
                                         <input type="number" name="age" id="age" placeholder="" pattern="\d+"
                                                required/>
-                                        <label for="mobile">@lang('wizard.mobileNo')</label>
-                                        <input type="mobile" name="mobile" placeholder=""/>
+                                        <br/>
                                         <label for="gender">@lang('wizard.gender')</label>
                                         <!-- Group of default radios - option 1 -->
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input" id="defaultGroupExample1"
+                                            <input type="radio" class="custom-control-input" id="male"
                                                    name="gender" value="male" checked>
                                             <label class="custom-control-label"
                                                    for="defaultGroupExample1">@lang('wizard.male')</label>
                                         </div>
-
                                         <!-- Group of default radios - option 2 -->
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input" id="defaultGroupExample2"
+                                            <input type="radio" class="custom-control-input" id="female"
                                                    name="gender" value="female">
                                             <label class="custom-control-label"
                                                    for="defaultGroupExample2">@lang('wizard.female')</label>
                                         </div>
                                         <br/>
+                                        <label for="zipcode">@lang('wizard.zip')</label>
+                                        <input type="number" name="zipcode" placeholder="" pattern="\d+"/>
+                                        <br/>
+                                        <label for="country">@lang('wizard.country')</label>
+                                        <div>
+                                            <div class="niceCountryInputSelector" style="width: 100%;"
+                                                 data-selectedcountry="CY" data-showspecial="false"
+                                                 data-showflags="true" data-i18nall="All selected"
+                                                 data-i18nnofilter="No selection" data-i18nfilter="Filter"
+                                                 name="country">
+                                            </div>
+                                        </div>
+                                        <br/>
+
+
+                                    <!--
+                                        <br/>
+                                        <label for="email">@lang('wizard.email')</label>
+                                        <input type="email" name="email" placeholder=""/>
+                                        <label for="name">@lang('wizard.full')</label>
+                                        <input type="text" name="name" placeholder=""/>
+
+                                        <label for="mobile">@lang('wizard.mobileNo')</label>
+                                        <input type="mobile" name="mobile" placeholder=""/>
+
+                                        <br/>
                                         <p>@lang('wizard.selection')</p>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">
-                                                <!-- Default checked -->
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input"
                                                            id="covid_19_contact_within_14_from_today"
@@ -166,7 +186,6 @@
                                             </li>
 
                                             <li class="list-group-item">
-                                                <!-- Default checked -->
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input"
                                                            id="flight_recently"
@@ -176,8 +195,10 @@
                                                 </div>
                                             </li>
                                         </ul>
+                                        -->
+
+
                                     </div>
-                                    {{--                                    <input type="button" name="next" class="next action-button" value="Next Step"/>--}}
                                     <button type="button" name="next" class=" next btn btn-info"
                                             value="Next Step">@lang('wizard.next')
                                     </button>
@@ -185,7 +206,88 @@
                                 <fieldset name="second" id="2">
                                     <div class="form-card">
                                         <h2 class="fs-title"><i
-                                                    class="fa fa-notes-medical"></i>@lang('wizard.medicalInfo')</h2>
+                                                    class="fa fa-notes-medical"></i>@lang('wizard.chronic_conditions')
+                                        </h2>
+
+
+                                        <p>Do you have any of the following chronic conditions
+                                            (*)?@lang('wizard.symptomsSelection')</p>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                Cardiovascular disease (including hypertension),
+                                            </li>
+                                            <li class="list-group-item">
+                                                diabetes,
+                                            </li>
+                                            <li class="list-group-item">
+                                                chronic diseases of the lung,
+                                            </li>
+                                            <li class="list-group-item">
+                                                respiratory problems,
+                                            </li>
+                                            <li class="list-group-item">
+                                                cancer,
+                                            </li>
+                                            <li class="list-group-item">
+                                                immunodeficiency,
+                                            </li>
+                                        </ul>
+                                        <br/>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input"
+                                                   id="vulnerable_group"
+                                                   name="vulnerable_group" value="true">
+                                            <label class="custom-control-label"
+                                                   for="vulnerable_group">@lang('wizard.chronic')*</label>
+                                        </div>
+                                        <br/>
+                                    </div>
+                                    <button type="button" name="previous" class="previous btn btn-secondary"
+                                            value="Previous">@lang('wizard.previous')</button>
+
+
+                                    <button type="button" name="next" class=" next btn btn-info"
+                                            value="Next Step">@lang('wizard.next')
+                                    </button>
+
+                                </fieldset>
+
+
+                                <fieldset name="third" id="3">
+                                    <div class="form-card">
+                                        <h2 class="fs-title"><i
+                                                    class="fa fa-notes-medical"></i>@lang('wizard.travelling')
+                                        </h2>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input"
+                                                   id="flight_recently"
+                                                   name="flight_recently" value="true">
+                                            <label class="custom-control-label"
+                                                   for="flight_recently">@lang('wizard.travel')</label>
+                                        </div>
+                                        <br/>
+                                        <label for="country">@lang('wizard.flight_country')</label>
+                                        <div>
+                                            <div class="niceCountryInputSelector" style="width: 100%;"
+                                                 data-showspecial="false" data-selectedcountry="CY"
+                                                 data-showflags="true" data-i18nall="All selected"
+                                                 data-i18nnofilter="No selection" data-i18nfilter="Filter"
+                                                 name="flight_country">
+                                            </div>
+                                        </div>
+                                        <br/>
+                                    </div>
+                                    <button type="button" name="previous" class="previous btn btn-secondary"
+                                            value="Previous">@lang('wizard.previous')</button>
+
+
+                                    <button type="button" name="next" class=" next btn btn-info"
+                                            value="Next Step">@lang('wizard.next')
+                                    </button>
+
+                                </fieldset>
+
+                            <!--
                                         <label for="fever">@lang('wizard.bodyTemp')</label>
                                         <input type="number" id="fever" name="fever"
                                                placeholder=""
@@ -197,7 +299,7 @@
                                         <p>@lang('wizard.medicalInfoSelection')</p>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">
-                                                <!-- Default checked -->
+
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input"
                                                            id="covid_19_contact_within_14_from_symptoms"
@@ -207,7 +309,7 @@
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
-                                                <!-- Default checked -->
+
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input"
                                                            id="vulnerable_group"
@@ -218,6 +320,12 @@
                                             </li>
                                         </ul>
                                         <br/>
+                                        -->
+                                <fieldset name="forth" id="4">
+                                    <div class="form-card">
+                                        <h2 class="fs-title"><i
+                                                    class="fa fa-notes-medical"></i>@lang('wizard.symptoms')
+                                        </h2>
                                         <p>@lang('wizard.symptomsSelection')</p>
                                         <ul class="list-group list-group-flush">
 
@@ -383,13 +491,30 @@
 <!-- Include Date Range Picker -->
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+
+
+<!-- Include Date Range Picker -->
+<script type="text/javascript"
+        src="{{asset('js/niceCountryInput.js')}}"></script>
+
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 <script>
+
+    function onChangeCallback(ctr) {
+        console.log("The country was changed: " + ctr);
+        //$("#selectionSpan").text(ctr);
+    }
+
     $(document).ready(function () {
         var current_fs, next_fs, previous_fs; //fieldsets
         var opacity;
         //showPosition();
+
+
+        $(".niceCountryInputSelector").each(function (i, e) {
+            new NiceCountryInput(e).init();
+        });
 
         var date_input = $('input[name="symptoms_start"]'); //our date input has the name "date"
         var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
@@ -422,6 +547,9 @@
                     return;
                 }
             }
+
+            console.log(current_fs);
+            console.log(next_fs);
 
             //Add Class Active
             $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
@@ -576,7 +704,7 @@
                 $(this).attr('value', 'true');
             } else {
                 if ($("#nothing").is('[disabled=disabled]')) {
-                    if (!($("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') ||$("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
+                    if (!($("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
                         $("#nothing").removeAttr("disabled");
                     }
                     $(this).attr('value', 'false');
@@ -591,15 +719,13 @@
                 $(this).attr('value', 'true');
             } else {
                 if ($("#nothing").is('[disabled=disabled]')) {
-                    if (!($("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') ||$("#other_symptom").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
+                    if (!($("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
                         $("#nothing").removeAttr("disabled");
                     }
                     $(this).attr('value', 'false');
                 }
             }
         });
-
-
 
 
         $("#loss_of_taste").on('change', function () {
@@ -630,7 +756,6 @@
                 }
             }
         });
-
 
 
         $("#other_symptom").on('change', function () {

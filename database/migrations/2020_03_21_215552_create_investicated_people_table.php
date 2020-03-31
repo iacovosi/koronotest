@@ -15,8 +15,11 @@ class CreateInvesticatedPeopleTable extends Migration
     {
         Schema::create('investicated_people', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
             $table->integer("age")->nullable();
+            $table->string("gender")->default("unknown");
+            $table->integer("zipcode")->nullable();
+            $table->string("country")->default("unknown");
+
             $table->boolean("vulnerable_group")->default(0);
             $table->boolean("malaise")->default(0);
             $table->float("fever")->default(0);
@@ -32,16 +35,18 @@ class CreateInvesticatedPeopleTable extends Migration
             $table->boolean("covid_19_contact_within_14_from_symptoms")->default(0);
             $table->boolean("chest_pain")->default(0);
             $table->boolean("nothing")->default(0);
-            $table->string("gender")->default("unknown");
+
             $table->date("symptoms_start")->nullable;
             $table->float("lat")->nullable();
             $table->float("long")->nullable();
-            $table->string("mobile")->nullable();
-            $table->string("email")->nullable();
-            $table->text("comments")->nullable();
             $table->string("result")->nullable();
-            $table->integer("zipcode")->nullable();
             $table->string("ip")->nullable();
+
+            $table->string('name')->nullable();
+            $table->string("email")->nullable();
+            $table->string("mobile")->nullable();
+            $table->text("comments")->nullable();
+
             $table->timestamps();
         });
     }
