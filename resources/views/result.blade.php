@@ -7,7 +7,7 @@
     <title>Coronavirus Test</title>
 
     <!-- Fonts -->
-{{--    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">--}}
+    {{--    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">--}}
     <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           crossorigin="anonymous">
@@ -107,70 +107,93 @@
                     <center><img src="{{asset('images/RISE.png')}}" width="30%"></center>
                     </p>
                     <p class="disclaimer-2">@lang('wizard.disclaimer')</p>
-{{--                    <p>The Result:</p>--}}
+                    {{--                    <p>The Result:</p>--}}
                     <div class="row">
                         <div class="col-md-12 mx-0">
                             @switch($suggest)
 
-                                @case("nothing_for_now_not_infected")
-                                <div style="background-color:	#C0C0C0;">
-                                    <h1>
-                                        <span><b>@lang('wizard.guides')</b><br/></span>
-                                    </h1>
-                                    <p><b>@lang('wizard.caseResultsNot')</b></p>
-{{--                                    <p>Nothing for now!Not Affected!</p>--}}
+                                @case("CASE1")
+                                <h1><b>You are at a low risk for serious illness from COVID-19 and are not showing
+                                        concerning symptoms </b></h1>
+                                <p>
+                                    It is unlikely that you have coronavirus
+                                    We still recommend following general precautionary measures to minimize your risk of
+                                    contracting the disease that are detailed at https://www.pio.gov.cy/coronavirus/
+                                    <br/>
+                                    According to official instructions you should act as follows:
+                                <ul>
+                                    <li>You don't need to stay in quarantine, but as a general rule, everyone who can
+                                        stay at home should do so. If you cannot stay at home, please maintain at least
+                                        a
+                                        2 metre distance with everyone.
+                                    </li>
 
-                                </div>
-                                @break
+                                    <li>Monitor your health, particularly if you are over 60 years old or suffer from a
+                                        chronic condition such as diabetes, lung disease or heart disease
+                                    </li>
 
-                                @case("odigies_apo_pi")
-                                <div style="background-color: 	#C0C0C0;">
-                                    <h1>
-                                        <span><b>@lang('wizard.guides')</b><br/></span>
-                                    </h1>
-                                    <p>@lang('wizard.caseResultsNot')</p>
-                                    <p>@lang('wizard.personalDrGuides')</p>
-                                    </h1>
-                                </div>
-                                @break
+                                    <li>In case you develop symptoms, retake this self-assessment questionnaire.</li>
 
-                                @case("stay_home_14_days_asymptomatic")
-                                <div style="background-color: #09c7ff;">
-                                    <h1>
-                                        <span><b>@lang('wizard.caseResultsInfected')</b></span>
-                                    </h1>
-                                    <p>
-                                        <span><b>@lang('wizard.tips')</b></span> <br/>
-                                        @lang('wizard.restriction') <br/>
-                                        @lang('wizard.selfMonitoring') <br/>
-                                        @lang('wizard.telephoneContact')
-                                    </p>
-                                </div>
+                                    <li>The COVID19 Emergency Response Line (1420) should be called only in case of
+                                        emergency.
+                                    </li>
+                                </ul>
+                                </p>
                                 @break
-
-                                @case("stay_home_14_days_symptomatic")
-                                <div style="background-color: #09c7ff;">
-                                    <h1>
-                                        <span><b>@lang('wizard.caseResultsInfected')</b></span>
-                                    </h1>
-                                    <p>
-                                        <span><b>@lang('wizard.tips')</b></span> <br/>
-                                        <br/>
-                                        @lang('wizard.1420') <br/> @lang('wizard.restriction')
-                                        @lang('wizard.selfMonitoring') <br/>
-                                        @lang('wizard.telephoneContact')
-                                    </p>
-                                </div>
+                                @case("CASE2")
+                                You are at a high risk for getting infected from COVID-19, but are not showing
+                                concerning symptoms
+                                Your symptoms are not indicative of a respiratory virus. However, due to your age
+                                and/or your chronic conditions, if you become infected, you are at risk of having a more
+                                severe course of the disease.
+                                We still recommend following general precautionary measures to minimize your risk of
+                                contracting the disease that are detailed at https://www.pio.gov.cy/coronavirus/
+                                According to official instructions you should act as follows:
+                                Remain secluded for two weeks.
+                                Monitor your health
+                                In case you develop symptoms, contact your General Practitioner.
+                                The COVID19 Emergency Response Line (1420) should be called only in case of
+                                emergency.
                                 @break
-                                <div style="background-color: red;">
-                                    @case("go_and_seek_public_health_care")
-                                    <h1><b> @lang('wizard.probablyInfected')</b></h1> <br/>
-                                    <p> @lang('wizard.healthcare')</p>
-                                    </p>
-                                </div>
+                                @case("CASE3")
+                                You are at low risk for serious illness from COVID-19, but might be infected by the
+                                virus
+                                Your travel history or symptoms indicate that you may be infected by COVID-19.
+                                According to official instructions you should act as follows:
+                                Contact your general practitioner who will arrange your further examination and
+                                treatment.*
+                                Remain in quarantine for two weeks.
+                                Monitor your health, particularly if you are over 60 years old or suffer from a
+                                chronic condition such as diabetes, lung disease or heart disease
+                                In case you develop symptoms, retake this self-assessment questionnaire.
                                 @break
+                                @case("CASE4")
+                                Your travel history and symptoms are indicative of a respiratory virus, which may be
+                                COVID-19.
+                                According to official instructions you should act as follows:
+                                Contact your general practitioner who will arrange your further examination and
+                                treatment.*
+                                Remain in quarantine for two weeks.
+                                The COVID19 Emergency Response Line (1420) should be called only in case of
+                                emergency.
+                                Inform those you have been in close contact with to monitor their health, stay
+                                home if possible, and to fill out this self-assessment questionnaire for further
+                                instructions if necessary
+                                @break
+                                @case("CASE5")
+                                You may have contracted COVID-19
+                                Your travel history and/or symptoms are indicative of a respiratory virus, which may be
+                                COVID-19. Due to your age and/or your chronic conditions, you are at risk of having a
+                                more severe course of the disease.
+                                According to official instructions you should act as follows:
+                                Contact the COVID19 Emergency Response Line (1420)
+                                Remain in quarantine for two weeks.
+                                Inform those you have been in close contact with to monitor their health, stay
+                                home if possible, and to fill out this self-assessment questionnaire for further
+                                instructions if necessary
+                                @break
+                                @case("error_occured")
                                 <div style="background-color: #ffd000;">
-                                    @case("error_occured")
                                     <h1><b>@lang('wizard.systemError')</b></h1> <br/>
                                     <p>@lang('wizard.error')</p>
                                     </p>

@@ -80,6 +80,8 @@ return [
     'symptoms' => 'Symptoms',
     'exposure' => 'Exposure',
     'country' => 'Country',
+    'flight_country' => 'Please select the country you flight to:',
+    'covid_19_contact'=>'Have you been in close contact during the past two weeks or 14 days preceding your symptoms with someone who, before or after was diagnosed with the COVID-19 virus?',
 
 
 ];

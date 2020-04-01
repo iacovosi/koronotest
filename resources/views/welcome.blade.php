@@ -16,7 +16,103 @@
     <link href="{{asset('css/lang.css')}}" rel="stylesheet">
     <link href="{{asset('css/wizard.css')}}" rel="stylesheet">
     <link href="{{asset('css/niceCountryInput.css')}}" rel='stylesheet'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
 
+        .button {
+            background-color: #09c7ff;
+            color: #1be7d0; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        .button.pointer {
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #ccc;
+        }
+
+        input:required:invalid, input:focus:invalid {
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeVJREFUeNqkU01oE1EQ/mazSTdRmqSxLVSJVKU9RYoHD8WfHr16kh5EFA8eSy6hXrwUPBSKZ6E9V1CU4tGf0DZWDEQrGkhprRDbCvlpavan3ezu+LLSUnADLZnHwHvzmJlvvpkhZkY7IqFNaTuAfPhhP/8Uo87SGSaDsP27hgYM/lUpy6lHdqsAtM+BPfvqKp3ufYKwcgmWCug6oKmrrG3PoaqngWjdd/922hOBs5C/jJA6x7AiUt8VYVUAVQXXShfIqCYRMZO8/N1N+B8H1sOUwivpSUSVCJ2MAjtVwBAIdv+AQkHQqbOgc+fBvorjyQENDcch16/BtkQdAlC4E6jrYHGgGU18Io3gmhzJuwub6/fQJYNi/YBpCifhbDaAPXFvCBVxXbvfbNGFeN8DkjogWAd8DljV3KRutcEAeHMN/HXZ4p9bhncJHCyhNx52R0Kv/XNuQvYBnM+CP7xddXL5KaJw0TMAF8qjnMvegeK/SLHubhpKDKIrJDlvXoMX3y9xcSMZyBQ+tpyk5hzsa2Ns7LGdfWdbL6fZvHn92d7dgROH/730YBLtiZmEdGPkFnhX4kxmjVe2xgPfCtrRd6GHRtEh9zsL8xVe+pwSzj+OtwvletZZ/wLeKD71L+ZeHHWZ/gowABkp7AwwnEjFAAAAAElFTkSuQmCC);
+            background-position: right top;
+            background-repeat: no-repeat;
+            -moz-box-shadow: none;
+        }
+
+        input:required:valid {
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAepJREFUeNrEk79PFEEUx9/uDDd7v/AAQQnEQokmJCRGwc7/QeM/YGVxsZJQYI/EhCChICYmUJigNBSGzobQaI5SaYRw6imne0d2D/bYmZ3dGd+YQKEHYiyc5GUyb3Y+77vfeWNpreFfhvXfAWAAJtbKi7dff1rWK9vPHx3mThP2Iaipk5EzTg8Qmru38H7izmkFHAF4WH1R52654PR0Oamzj2dKxYt/Bbg1OPZuY3d9aU82VGem/5LtnJscLxWzfzRxaWNqWJP0XUadIbSzu5DuvUJpzq7sfYBKsP1GJeLB+PWpt8cCXm4+2+zLXx4guKiLXWA2Nc5ChOuacMEPv20FkT+dIawyenVi5VcAbcigWzXLeNiDRCdwId0LFm5IUMBIBgrp8wOEsFlfeCGm23/zoBZWn9a4C314A1nCoM1OAVccuGyCkPs/P+pIdVIOkG9pIh6YlyqCrwhRKD3GygK9PUBImIQQxRi4b2O+JcCLg8+e8NZiLVEygwCrWpYF0jQJziYU/ho2TUuCPTn8hHcQNuZy1/94sAMOzQHDeqaij7Cd8Dt8CatGhX3iWxgtFW/m29pnUjR7TSQcRCIAVW1FSr6KAVYdi+5Pj8yunviYHq7f72po3Y9dbi7CxzDO1+duzCXH9cEPAQYAhJELY/AqBtwAAAAASUVORK5CYII=);
+            background-position: right top;
+            background-repeat: no-repeat;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -116,10 +212,11 @@
                                   method="post">
                                 <ul id="progressbar">
                                     <li class="fas fa-user-alt active"><strong>@lang('wizard.demographic')</strong></li>
-                                    <li class="fas fa-user-alt"><strong>@lang('wizard.chronic_conditions')</strong></li>
+                                    <li class="fas fa-notes-medical"><strong>@lang('wizard.chronic_conditions')</strong>
+                                    </li>
                                     <li class="fas fa-user-alt"><strong>@lang('wizard.travelling')</strong></li>
                                     <li class="fas fa-user-alt"><strong>@lang('wizard.symptoms')</strong></li>
-                                    <li class="fas fa-notes-medical"><strong>@lang('wizard.exposure')</strong></li>
+                                    <li class="fas fa-comments"><strong>@lang('wizard.exposure')</strong></li>
                                     <li></li>
                                 </ul>
 
@@ -129,7 +226,8 @@
                                         </h2>
                                         <label for="age">@lang('wizard.age')</label>
                                         <input type="number" name="age" id="age" placeholder="" pattern="\d+"
-                                               required/>
+                                               required oninvalid='alert("Please Insert a Number");'/>
+                                        <div class="invalid-feedback">can't be blank, is a number</div>
                                         <br/>
                                         <label for="gender">@lang('wizard.gender')</label>
                                         <!-- Group of default radios - option 1 -->
@@ -148,17 +246,20 @@
                                         </div>
                                         <br/>
                                         <label for="zipcode">@lang('wizard.zip')</label>
-                                        <input type="number" name="zipcode" placeholder="" pattern="\d+"/>
+                                        <input type="number" name="zipcode" placeholder="" pattern="\d+" id="zipcode"
+                                               required oninvalid='alert("Please Insert a Number");'/>
+                                        <div class="invalid-feedback">can't be blank, is a number</div>
                                         <br/>
-                                        <label for="country">@lang('wizard.country')</label>
-                                        <div>
-                                            <div class="niceCountryInputSelector" style="width: 100%;"
+                                        <div name="country_div" id="country_div">
+                                            <label for="country">@lang('wizard.country')</label>
+                                            <div id="niceCountryInputSelector" style="width: 100%;"
                                                  data-selectedcountry="CY" data-showspecial="false"
                                                  data-showflags="true" data-i18nall="All selected"
                                                  data-i18nnofilter="No selection" data-i18nfilter="Filter"
-                                                 name="country">
+                                                 data-onchangecallback="onChangeCallback">
                                             </div>
                                         </div>
+                                        <input type="hidden" id="country" name="country">
                                         <br/>
 
 
@@ -202,6 +303,8 @@
                                     <button type="button" name="next" class=" next btn btn-info"
                                             value="Next Step">@lang('wizard.next')
                                     </button>
+
+
                                 </fieldset>
                                 <fieldset name="second" id="2">
                                     <div class="form-card">
@@ -233,14 +336,15 @@
                                             </li>
                                         </ul>
                                         <br/>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input"
-                                                   id="vulnerable_group"
+                                        {{--
+                                        <label for="vulnerable_group">@lang('wizard.chronic')*</label> --}}
+                                        <label class="switch" style="text-align: right;float: right;">
+                                            <input type="checkbox" id="vulnerable_group"
                                                    name="vulnerable_group" value="true">
-                                            <label class="custom-control-label"
-                                                   for="vulnerable_group">@lang('wizard.chronic')*</label>
-                                        </div>
+                                            <span class="slider round"></span>
+                                        </label>
                                         <br/>
+
                                     </div>
                                     <button type="button" name="previous" class="previous btn btn-secondary"
                                             value="Previous">@lang('wizard.previous')</button>
@@ -258,23 +362,25 @@
                                         <h2 class="fs-title"><i
                                                     class="fa fa-notes-medical"></i>@lang('wizard.travelling')
                                         </h2>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input"
-                                                   id="flight_recently"
+                                        <label for="vulnerable_group">@lang('wizard.travel')</label>
+                                        <label class="switch" style="text-align: right;float: right;">
+                                            <input type="checkbox" id="flight_recently"
                                                    name="flight_recently" value="true">
-                                            <label class="custom-control-label"
-                                                   for="flight_recently">@lang('wizard.travel')</label>
-                                        </div>
+                                            <span class="slider round"></span>
+                                        </label>
                                         <br/>
-                                        <label for="country">@lang('wizard.flight_country')</label>
-                                        <div>
-                                            <div class="niceCountryInputSelector" style="width: 100%;"
+                                        <div name="flight_country_div" id="flight_country_div">
+                                            <label for="flight_country">@lang('wizard.flight_country')</label>
+                                            <br/>
+                                            <div id="niceCountryInputSelector2" style="width: 100%;"
                                                  data-showspecial="false" data-selectedcountry="CY"
                                                  data-showflags="true" data-i18nall="All selected"
                                                  data-i18nnofilter="No selection" data-i18nfilter="Filter"
-                                                 name="flight_country">
+                                                 data-onchangecallback="onChangeCallback2"
+                                            >
                                             </div>
                                         </div>
+                                        <input type="hidden" id="flight_country" name="flight_country">
                                         <br/>
                                     </div>
                                     <button type="button" name="previous" class="previous btn btn-secondary"
@@ -441,13 +547,27 @@
 
 
                                 </fieldset>
-                                <fieldset name="third" id="3">
+                                <fieldset name="fifth" id="5">
                                     <div class="form-card">
-                                        <h2 class="fs-title"><i class="fa fa-comments"></i>@lang('wizard.comments')</h2>
+                                        <h2 class="fs-title"><i
+                                                    class="fa fa-comments"></i>@lang('wizard.covid_19_contact')</h2>
                                         <div class="form-group">
-                                            {{--                                            <label for="comments">@lang('wizard.comments')</label>--}}
+                                            <br/>
+                                            <div id="opener" class="button">See here for a definition of close contact
+                                            </div>
+                                            <br/>
+                                            <br/>
+                                            <label for="vulnerable_group">@lang('wizard.covid_19_contact_short')</label>
+                                            <label class="switch" style="text-align: right;float: right;">
+                                                <input type="checkbox" id="covid_19_contact"
+                                                       name="covid_19_contact" value="true">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <br/>
+
+                                            {{--                                            <label for="comments">@lang('wizard.comments')</label>
                                             <textarea class="form-control" id="comments" rows="3"
-                                                      name="comments"></textarea>
+                                                      name="comments"></textarea>--}}
                                         </div>
                                     </div>
 
@@ -463,8 +583,8 @@
 
 
                                 </fieldset>
-                                <input type="hidden" id="lat" name="lat" value="3487">
-                                <input type="hidden" id="long" name="long" value="3487">
+                                <input type="hidden" id="lat" name="lat" value="0">
+                                <input type="hidden" id="long" name="long" value="0">
                             </form>
                         </div>
                     </div>
@@ -478,6 +598,31 @@
         <span class="text-muted" style="text-align: center">Research Centre on Interactive Media, Smart Systems and Emerging Technologies - RISE Ltd.</span>
     </div>
 </footer>
+<div id="dialog" title="Basic dialog">
+    <p>
+    <h1>Close contact of a probable or confirmed case is defined as:</h1>
+    <ul>
+        <li>A person living in the same household as a COVID-19 case</li>
+        <li>A person having had direct physical contact with a COVID-19 case (e.g. shaking hands)</li>
+        <li>A person having unprotected direct contact with infectious secretions of a COVID-19 case (e.g. being coughed
+            on, touching used paper tissues with a bare hand)
+        </li>
+        <li>A person having had face-to-face contact with a COVID-19 case within 2 metres and > 15 minutes</li>
+        <li>A person who was in a closed environment (e.g. classroom, meeting room, hospital waiting room, etc.) with a
+            COVID-19 case for 15 minutes or more and at a distance of less than 2 metres
+        </li>
+        <li>A healthcare worker (HCW) or other person providing direct care for a COVID-19 case, or laboratory workers
+            handling specimens from a COVID-19 case without recommended personal protective equipment (PPE) or with a
+            possible breach of PPE
+        </li>
+        <li>A contact in an aircraft sitting within two seats (in any direction) of the COVID-19 case, travel companions
+            or persons providing care, and crew members serving in the section of the aircraft where the index case was
+            seated (if severity of symptoms or movement of the case indicate more extensive exposure, passengers seated
+            in the entire section or all passengers on the aircraft may be considered close contacts)
+        </li>
+    </ul>
+    </p>
+</div>
 </body>
 
 <!-- Optional JavaScript -->
@@ -497,23 +642,71 @@
 <script type="text/javascript"
         src="{{asset('js/niceCountryInput.js')}}"></script>
 
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
 <script>
 
     function onChangeCallback(ctr) {
         console.log("The country was changed: " + ctr);
+        //$("#selectionSpan").text(ctr);
+        $("#country").val(ctr);
+    }
+
+    function onChangeCallback2(ctr) {
+        console.log("The country was changed: " + ctr);
+        $("#flight_country").val(ctr);
         //$("#selectionSpan").text(ctr);
     }
 
     $(document).ready(function () {
         var current_fs, next_fs, previous_fs; //fieldsets
         var opacity;
+        //
         //showPosition();
+        //var flight_country;
 
 
-        $(".niceCountryInputSelector").each(function (i, e) {
+        $("#dialog").dialog({
+            autoOpen: false,
+            show: {
+                effect: "blind",
+                duration: 1000
+            },
+            hide: {
+                effect: "explode",
+                duration: 1000
+            },
+            width: "50%",
+            hight: "50%",
+        });
+
+        $("#opener").on("click", function () {
+            $("#dialog").dialog("open");
+        });
+
+        $("#niceCountryInputSelector").is(function (i, e) {
             new NiceCountryInput(e).init();
+            $("#country").val("Cyprus (Κύπρος) CY");
+        });
+
+        $("#niceCountryInputSelector2").is(function (i, e) {
+            var test = new NiceCountryInput(e).init();
+            //flight_country=e;
+
+        });
+
+        $("#flight_country_div").is(function (i, e) {
+            if ($("#flight_recently").is(':checked')) {
+                $("#flight_country").val("Cyprus (Κύπρος) CY");
+            }
+            else {
+                e.style.visibility = "hidden";
+                $("#flight_country").val("");
+            }
+            //flight_country.style.visibility = "hidden";
         });
 
         var date_input = $('input[name="symptoms_start"]'); //our date input has the name "date"
@@ -533,23 +726,16 @@
 
             if (current_fs[0].id == 1) {
                 console.log($("#age").val());
-                if ($("#age").val() == "") {
-                    alert("Age is required!");
+                console.log($("#zipcode").val());
+                if ($("#age").val() == "" || $("#zipcode").val() == "") {
+                    alert("Age and ZipCode are required!");
                     return;
                 }
             }
 
 
-            if (current_fs[0].id == 2) {
-                console.log($("#fever").val());
-                if ($("#fever").val() == "") {
-                    alert("Body Temperature is required!");
-                    return;
-                }
-            }
-
-            console.log(current_fs);
-            console.log(next_fs);
+            //console.log(current_fs);
+            //console.log(next_fs);
 
             //Add Class Active
             $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
@@ -570,6 +756,7 @@
                 },
                 duration: 600
             });
+
         });
 
         $(".previous").click(function () {
@@ -622,12 +809,29 @@
         $("#flight_recently").on('change', function () {
             if ($(this).is(':checked')) {
                 $(this).attr('value', 'true');
+                //$("#flight_country").style.visibility = "visible";
+                document.getElementById("flight_country_div").style.visibility = "visible";
+                document.getElementById("flight_country").value = "Cyprus (Κύπρος) CY";
+                //flight_country.style.visibility = "visible";
+            } else {
+                $(this).attr('value', 'false');
+                //$("#flight_country").style.visibility = "hidden";
+                document.getElementById("flight_country_div").style.visibility = "hidden";
+                document.getElementById("flight_country").value = "";
+                //flight_country.style.visibility = "hidden";
+            }
+        });
+
+        /*
+        $("#covid_19_contact_within_14_from_today").on('change', function () {
+            if ($(this).is(':checked')) {
+                $(this).attr('value', 'true');
             } else {
                 $(this).attr('value', 'false');
             }
         });
-
-        $("#covid_19_contact_within_14_from_today").on('change', function () {
+*/
+        $("#covid_19_contact").on('change', function () {
             if ($(this).is(':checked')) {
                 $(this).attr('value', 'true');
             } else {
@@ -644,6 +848,7 @@
             }
         });
 
+        /*
         $("#covid_19_contact_within_14_from_symptoms").on('change', function () {
             if ($(this).is(':checked')) {
                 $(this).attr('value', 'true');
@@ -652,7 +857,7 @@
             }
         });
 
-
+*/
         $("#malaise").on('change', function () {
             if ($(this).is(':checked')) {
                 $("#nothing").attr("disabled", true);
