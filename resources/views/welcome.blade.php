@@ -211,8 +211,8 @@
                                     <li class="fas fa-user-alt active"><strong>@lang('wizard.demographic')</strong></li>
                                     <li class="fas fa-notes-medical"><strong>@lang('wizard.chronic_conditions')</strong>
                                     </li>
-                                    <li class="fas fa-user-alt"><strong>@lang('wizard.travelling')</strong></li>
-                                    <li class="fas fa-user-alt"><strong>@lang('wizard.symptoms')</strong></li>
+                                    <li class="fas fa-plane"><strong>@lang('wizard.travelling')</strong></li>
+                                    <li class="fas fa-clipboard-check"><strong>@lang('wizard.symptoms')</strong></li>
                                     <li class="fas fa-comments"><strong>@lang('wizard.exposure')</strong></li>
                                     <li></li>
                                 </ul>
@@ -321,7 +321,7 @@
                                 <fieldset name="third" id="3">
                                     <div class="form-card">
                                         <h2 class="fs-title"><i
-                                                    class="fa fa-notes-medical"></i>@lang('wizard.travelling')
+                                                    class="fas fa-plane"></i>@lang('wizard.travelling')
                                         </h2>
                                         <label for="vulnerable_group">@lang('wizard.travel')</label>
                                         <label class="switch" style="text-align: right;float: right;">
@@ -357,7 +357,7 @@
                                 <fieldset name="forth" id="4">
                                     <div class="form-card">
                                         <h2 class="fs-title"><i
-                                                    class="fa fa-notes-medical"></i>@lang('wizard.symptoms')
+                                                    class="fas fa-clipboard-check"></i>@lang('wizard.symptoms')
                                         </h2>
                                         <p>@lang('wizard.symptomsSelection')</p>
                                         <ul class="list-group list-group-flush">

@@ -211,8 +211,8 @@
                                     <li class="fas fa-user-alt active"><strong><?php echo app('translator')->get('wizard.demographic'); ?></strong></li>
                                     <li class="fas fa-notes-medical"><strong><?php echo app('translator')->get('wizard.chronic_conditions'); ?></strong>
                                     </li>
-                                    <li class="fas fa-user-alt"><strong><?php echo app('translator')->get('wizard.travelling'); ?></strong></li>
-                                    <li class="fas fa-user-alt"><strong><?php echo app('translator')->get('wizard.symptoms'); ?></strong></li>
+                                    <li class="fas fa-plane"><strong><?php echo app('translator')->get('wizard.travelling'); ?></strong></li>
+                                    <li class="fas fa-clipboard-check"><strong><?php echo app('translator')->get('wizard.symptoms'); ?></strong></li>
                                     <li class="fas fa-comments"><strong><?php echo app('translator')->get('wizard.exposure'); ?></strong></li>
                                     <li></li>
                                 </ul>
@@ -320,7 +320,7 @@
                                 <fieldset name="third" id="3">
                                     <div class="form-card">
                                         <h2 class="fs-title"><i
-                                                    class="fa fa-notes-medical"></i><?php echo app('translator')->get('wizard.travelling'); ?>
+                                                    class="fas fa-plane"></i><?php echo app('translator')->get('wizard.travelling'); ?>
                                         </h2>
                                         <label for="vulnerable_group"><?php echo app('translator')->get('wizard.travel'); ?></label>
                                         <label class="switch" style="text-align: right;float: right;">
@@ -356,7 +356,7 @@
                                 <fieldset name="forth" id="4">
                                     <div class="form-card">
                                         <h2 class="fs-title"><i
-                                                    class="fa fa-notes-medical"></i><?php echo app('translator')->get('wizard.symptoms'); ?>
+                                                    class="fas fa-clipboard-check"></i><?php echo app('translator')->get('wizard.symptoms'); ?>
                                         </h2>
                                         <p><?php echo app('translator')->get('wizard.symptomsSelection'); ?></p>
                                         <ul class="list-group list-group-flush">
