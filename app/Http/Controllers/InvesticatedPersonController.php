@@ -62,7 +62,7 @@ class InvesticatedPersonController extends Controller
         App::setLocale($locale);
         $data = $request->all();
         $clientIP = \Request::getClientIp(true);
-        dd($data);
+        //dd($data);
         $data["ip"] = $clientIP;
         if (isset($data["malaise"]) && $data["malaise"] == "true") {
             $data["malaise"] = 1;
@@ -100,23 +100,6 @@ class InvesticatedPersonController extends Controller
             $data["loss_of_smell"] = 0;
         }
 
-        /*
-                if (isset($data["symptoms_start"]) && !empty($data["symptoms_start"])) {
-                    $date_symptoms_start = DateTime::createFromFormat('d/m/Y', $data["symptoms_start"]);
-                    $date_today = new DateTime();
-                    $diff = $date_today->diff($date_symptoms_start);
-                    if ($diff->days > 2) {
-                        $data["symptoms_more_than_two_days"] = 1;
-                    } else {
-                        $data["symptoms_more_than_two_days"] = 0;
-                    }
-                    $data["symptoms_start"] = $date_symptoms_start->format('Y-m-d');
-                } else {
-                    $date = new DateTime();
-                    $data["symptoms_start"] = $date->format('Y-m-d'); //->format('Y-m-d H:i:s');
-                    $data["symptoms_more_than_two_days"] = 0;
-                }
-        */
         if (isset($data["other_symptom"]) && $data["other_symptom"] == "true") {
             $data["other_symptom"] = 1;
         } else {
@@ -135,21 +118,7 @@ class InvesticatedPersonController extends Controller
         } else {
             $data["covid_19_contact"] = 0;
         }
-        /*
 
-        if (isset($data["covid_19_contact_within_14_from_today"]) && $data["covid_19_contact_within_14_from_today"] == "true") {
-            $data["covid_19_contact_within_14_from_today"] = 1;
-        } else {
-            $data["covid_19_contact_within_14_from_today"] = 0;
-        }
-
-        if (isset($data["covid_19_contact_within_14_from_symptoms"]) && $data["covid_19_contact_within_14_from_symptoms"] == "true") {
-            $data["covid_19_contact_within_14_from_symptoms"] = 1;
-        } else {
-            $data["covid_19_contact_within_14_from_symptoms"] = 0;
-        }
-
-*/
         if (isset($data["chest_pain"]) && $data["chest_pain"] == "true") {
             $data["chest_pain"] = 1;
         } else {
@@ -169,10 +138,15 @@ class InvesticatedPersonController extends Controller
             $data["vulnerable_group"] = 0;
         }
 
+        if (isset($data["fever"]) && $data["fever"] == "true") {
+            $data["fever"] = 1;
+        } else {
+            $data["fever"] = 0;
+        }
 
         $suggest = "error_occured";
 
-        if ($data["malaise"] || $data["cough"] || $data["myalgia"] || $data["breathing_difficulties"] || $data["loss_of_taste"] || $data["loss_of_smell"] || $data["chest_pain"] || $data["other"]) {
+        if ($data["fever"] || $data["malaise"] || $data["cough"] || $data["myalgia"] || $data["breathing_difficulties"] || $data["loss_of_taste"] || $data["loss_of_smell"] || $data["chest_pain"] || $data["other_symptom"]) {
 
             if ($data["flight_recently"] || $data["covid_19_contact"]) {
                 if ($data['vulnerable_group'] || $data["age"] > 60) {
@@ -187,35 +161,7 @@ class InvesticatedPersonController extends Controller
             $suggest = "CASE1";
         }
 
-        /*
 
-        if ($data["nothing"]) {
-            if ($data["flight_recently"] || $data["covid_19_contact_within_14_from_today"]) { //from today?Ask Doctor! Ask also from flight if it is from today?
-                $suggest = "stay_home_14_days_asymptomatic"; //asymptomatic
-                //check sujjestions if stays home 14 days from today
-            } else {
-                $suggest = "nothing_for_now_not_infected"; //nothing for now  . What text should we present to the user?
-            }
-        } else if ($data["malaise"] || $data["fever"] > 37.3 || $data["cough"] || $data["myalgia"] || $data["breathing_difficulties"] || $data["loss_of_taste"] || $data["loss_of_smell"]) {
-            if ($data["flight_recently"] || $data["covid_19_contact_within_14_from_symptoms"]) { //if used did not give take today date. Ask.Ask Doctor!
-                if ($data['vulnerable_group'] || $data["age"] > 60 || $data["fever"] > 38.5 || $data["breathing_difficulties"] || $data["symptoms_more_than_two_days"]) {
-                    $suggest = "go_and_seek_public_health_care"; //change to go_and_seek_public_health_care
-                } else {
-                    $suggest = "stay_home_14_days_symptomatic";
-                }
-            } else {
-                $suggest = "odigies_apo_pi";
-            }
-        } else { // the user did not choose any symptoms or nothing choice. What to do? Handle like it choose nothing?
-            if ($data["flight_recently"] || $data["covid_19_contact_within_14_from_today"]) { //from today?Ask Doctor! Ask also from flight if it is from today?
-                $suggest = "stay_home_14_days_asymptomatic"; //asymptomatic
-                //check sujjestions if stays home 14 days from today
-            } else {
-                $suggest = "nothing_for_now_not_infected"; //nothing for now  . What text should we present to the user?
-            }
-        }
-
-*/
         $data["result"] = $suggest;
         //dd($data);
         $id = InvesticatedPerson::create($data)->id;

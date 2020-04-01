@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,12 +7,12 @@
     <title>Coronavirus Test</title>
 
     <!-- Fonts -->
-    {{--    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">--}}
+    
     <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           crossorigin="anonymous">
-    <link href="{{asset('css/lang.css')}}" rel="stylesheet">
-    <link href="{{asset('css/wizard.css')}}" rel="stylesheet">
+    <link href="<?php echo e(asset('css/lang.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/wizard.css')); ?>" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css' rel='stylesheet'>
 
@@ -26,9 +26,9 @@
     <nav class="navbar fixed-top navbar-expand"
          style="background-color:white;border-bottom: 2px solid rgb(44, 169, 240);">
         <a class="navbar-brand" href="/">
-            <img src="{{asset('images/rise-new.png')}}" width="100" height="30" class="d-inline-block align-top" alt="">
+            <img src="<?php echo e(asset('images/rise-new.png')); ?>" width="100" height="30" class="d-inline-block align-top" alt="">
             <span class="d-none d-sm-inline">
-		<img src="{{asset('images/brand.png')}}" width="235" height="30" class="d-inline-block align-top ml-2 mt-1"
+		<img src="<?php echo e(asset('images/brand.png')); ?>" width="235" height="30" class="d-inline-block align-top ml-2 mt-1"
              alt="">
 	</span>
         </a>
@@ -43,7 +43,7 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
 
-                        @if (App::isLocale('en'))
+                        <?php if(App::isLocale('en')): ?>
                             <a class="nav-link dropdown-toggle" href="en" id="dropdown"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
                                         class="flag-icon flag-icon-us"> </span> English</a>
@@ -53,7 +53,7 @@
                                 <a class="dropdown-item" href="tr"><span class="flag-icon flag-icon-tr"> </span>
                                     Turkey</a>
                             </div>
-                        @elseif(App::isLocale('gr'))
+                        <?php elseif(App::isLocale('gr')): ?>
                             <a class="nav-link dropdown-toggle" href="gr" id="dropdown"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
                                         class="flag-icon flag-icon-gr"> </span> Greek</a>
@@ -63,7 +63,7 @@
                                 <a class="dropdown-item" href="tr"><span class="flag-icon flag-icon-tr"> </span>
                                     Turkey</a>
                             </div>
-                        @elseif(App::isLocale('tr'))
+                        <?php elseif(App::isLocale('tr')): ?>
                             <a class="nav-link dropdown-toggle" href="tr" id="dropdown"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
                                         class="flag-icon flag-icon-tr"> </span> Turkey</a>
@@ -74,7 +74,7 @@
                                     Greek</a>
                             </div>
 
-                        @endif
+                        <?php endif; ?>
                     </li>
                 </ul>
             </form>
@@ -83,36 +83,36 @@
 
 </header>
 <div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
+    <?php if(Route::has('login')): ?>
         <div class="top-right links">
-            @auth
-                <a href="{{ url('/home') }}">Home</a>
-                @else
-                    <a href="{{ route('login') }}">Login</a>
+            <?php if(auth()->guard()->check()): ?>
+                <a href="<?php echo e(url('/home')); ?>">Home</a>
+                <?php else: ?>
+                    <a href="<?php echo e(route('login')); ?>">Login</a>
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
-                    @endif
-                    @endauth
+                    <?php if(Route::has('register')): ?>
+                        <a href="<?php echo e(route('register')); ?>">Register</a>
+                    <?php endif; ?>
+                    <?php endif; ?>
         </div>
-@endif
+<?php endif; ?>
 
 <!-- MultiStep Form -->
     <div class="container-fluid mt-5" id="grad1">
         <div class="row justify-content-center mt-0">
             <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
                 <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-                    <h2><strong>@lang('wizard.results')</strong></h2>
+                    <h2><strong><?php echo app('translator')->get('wizard.results'); ?></strong></h2>
                     <p>
-                    <center><img src="{{asset('images/RISE.png')}}" width="30%"></center>
+                    <center><img src="<?php echo e(asset('images/RISE.png')); ?>" width="30%"></center>
                     </p>
-                    <p class="disclaimer-2">@lang('wizard.disclaimer')</p>
-                    {{--                    <p>The Result:</p>--}}
+                    <p class="disclaimer-2"><?php echo app('translator')->get('wizard.disclaimer'); ?></p>
+                    
                     <div class="row">
                         <div class="col-md-12 mx-0">
-                            @switch($suggest)
+                            <?php switch($suggest):
 
-                                @case("CASE1")
+                                case ("CASE1"): ?>
                                 <h1><b>You are at a low risk for serious illness from COVID-19 and are not showing
                                         concerning symptoms </b></h1>
                                 <p style="text-align: left;float: left;">
@@ -139,8 +139,8 @@
                                     </li>
                                 </ul>
                                 </p>
-                                @break
-                                @case("CASE2")
+                                <?php break; ?>
+                                <?php case ("CASE2"): ?>
                                 <h1><b>You are at a high risk for getting infected from COVID-19, but are not showing
                                         concerning symptoms</b></h1>
                                 <p style="text-align: left;float: left;">
@@ -166,8 +166,8 @@
 
                                 </ul>
                                 </p>
-                                @break
-                                @case("CASE3")
+                                <?php break; ?>
+                                <?php case ("CASE3"): ?>
 
                                 <h1><b>You are at low risk for serious illness from COVID-19, but might be infected by
                                         the
@@ -192,8 +192,8 @@
                                     </li>
                                 </ul>
 
-                                @break
-                                @case("CASE4")
+                                <?php break; ?>
+                                <?php case ("CASE4"): ?>
                                 <h1><b>Your travel history and symptoms are indicative of a respiratory virus, which may
                                         be
                                         COVID-19.</b></h1>
@@ -217,8 +217,8 @@
                                     </li>
                                 </ul>
 
-                                @break
-                                @case("CASE5")
+                                <?php break; ?>
+                                <?php case ("CASE5"): ?>
                                 <h1><b>You may have contracted COVID-19.</b></h1>
                                 <p style="text-align: left;float: left;">
                                     Your travel history and/or symptoms are indicative of a respiratory virus, which may
@@ -242,19 +242,19 @@
                                 </ul>
 
 
-                                @break
-                                @case("error_occured")
+                                <?php break; ?>
+                                <?php case ("error_occured"): ?>
                                 <div style="background-color: #ffd000;">
-                                    <h1><b>@lang('wizard.systemError')</b></h1> <br/>
-                                    <p>@lang('wizard.error')</p>
+                                    <h1><b><?php echo app('translator')->get('wizard.systemError'); ?></b></h1> <br/>
+                                    <p><?php echo app('translator')->get('wizard.error'); ?></p>
                                     </p>
                                 </div>
-                                @break
+                                <?php break; ?>
 
-                                @default
-                                <span>@lang('wizard.tryAgain')</span>
-                                @break
-                            @endswitch
+                                <?php default: ?>
+                                <span><?php echo app('translator')->get('wizard.tryAgain'); ?></span>
+                                <?php break; ?>
+                            <?php endswitch; ?>
                         </div>
                     </div>
                 </div>
@@ -280,3 +280,4 @@
 
 
 </html>
+<?php /**PATH C:\Users\iacovosi\Desktop\1420\koronotest\resources\views/result.blade.php ENDPATH**/ ?>

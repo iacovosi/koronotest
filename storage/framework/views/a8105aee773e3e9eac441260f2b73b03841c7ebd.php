@@ -31,12 +31,9 @@
             font-size: 16px;
         }
 
-        .button.pointer {
-            cursor: pointer;
-        }
-
         .button:hover {
             background-color: #ccc;
+            cursor: pointer;
         }
 
         input:required:invalid, input:focus:invalid {
@@ -263,42 +260,6 @@
                                         <br/>
 
 
-                                    <!--
-                                        <br/>
-                                        <label for="email"><?php echo app('translator')->get('wizard.email'); ?></label>
-                                        <input type="email" name="email" placeholder=""/>
-                                        <label for="name"><?php echo app('translator')->get('wizard.full'); ?></label>
-                                        <input type="text" name="name" placeholder=""/>
-
-                                        <label for="mobile"><?php echo app('translator')->get('wizard.mobileNo'); ?></label>
-                                        <input type="mobile" name="mobile" placeholder=""/>
-
-                                        <br/>
-                                        <p><?php echo app('translator')->get('wizard.selection'); ?></p>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                           id="covid_19_contact_within_14_from_today"
-                                                           name="covid_19_contact_within_14_from_today" value="true">
-                                                    <label class="custom-control-label"
-                                                           for="covid_19_contact_within_14_from_today"><?php echo app('translator')->get('wizard.contact'); ?></label>
-                                                </div>
-                                            </li>
-
-                                            <li class="list-group-item">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                           id="flight_recently"
-                                                           name="flight_recently" value="true">
-                                                    <label class="custom-control-label"
-                                                           for="flight_recently"><?php echo app('translator')->get('wizard.travel'); ?></label>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        -->
-
-
                                     </div>
                                     <button type="button" name="next" class=" next btn btn-info"
                                             value="Next Step"><?php echo app('translator')->get('wizard.next'); ?>
@@ -392,40 +353,6 @@
 
                                 </fieldset>
 
-                            <!--
-                                        <label for="fever"><?php echo app('translator')->get('wizard.bodyTemp'); ?></label>
-                                        <input type="number" id="fever" name="fever"
-                                               placeholder=""
-                                               type="number" required min="0" value="37.2" step="0.01"/>
-                                        <label for="symptoms_start"><?php echo app('translator')->get('wizard.symptomsDate'); ?></label>
-                                        <input class="form-control" type="text" value="" id="symptoms_start"
-                                               name="symptoms_start">
-                                        <br/>
-                                        <p><?php echo app('translator')->get('wizard.medicalInfoSelection'); ?></p>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item">
-
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                           id="covid_19_contact_within_14_from_symptoms"
-                                                           name="covid_19_contact_within_14_from_symptoms" value="true">
-                                                    <label class="custom-control-label"
-                                                           for="covid_19_contact_within_14_from_symptoms"><?php echo app('translator')->get('wizard.contact'); ?></label>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item">
-
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                           id="vulnerable_group"
-                                                           name="vulnerable_group" value="true">
-                                                    <label class="custom-control-label" for="vulnerable_group">
-                                                        <?php echo app('translator')->get('wizard.chronic'); ?></label>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <br/>
-                                        -->
                                 <fieldset name="forth" id="4">
                                     <div class="form-card">
                                         <h2 class="fs-title"><i
@@ -433,6 +360,16 @@
                                         </h2>
                                         <p><?php echo app('translator')->get('wizard.symptomsSelection'); ?></p>
                                         <ul class="list-group list-group-flush">
+
+                                            <li class="list-group-item">
+                                                <!-- Default checked -->
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="fever"
+                                                           name="fever" value="true">
+                                                    <label class="custom-control-label"
+                                                           for="fever"><?php echo app('translator')->get('wizard.fever'); ?></label>
+                                                </div>
+                                            </li>
 
                                             <li class="list-group-item">
                                                 <!-- Default checked -->
@@ -592,11 +529,15 @@
     </div>
 </div>
 <footer class="footer">
-    <div class="container text-center">
-        <span class="text-muted" style="text-align: center">Research Centre on Interactive Media, Smart Systems and Emerging Technologies - RISE Ltd.</span>
+        <div class="container text-center">
+            <span id="opener_about" class="button" style="text-align: center;margin-top: 1%;" >RISE About</span>
+        </div>
+    <div class="container">
+        <img src="<?php echo e(asset('images/rise-new.png')); ?>" width="20%" height="20%"  style='float:left;'/>
+        <img src="<?php echo e(asset('images/Department_of_Computer_Science_en.jpg')); ?>" width="20%" height="20%" style='float:right;'/>
     </div>
 </footer>
-<div id="dialog" title="Basic dialog">
+<div id="dialog" title="Close Contact Definition">
     <p>
     <h1>Close contact of a probable or confirmed case is defined as:</h1>
     <ul>
@@ -621,6 +562,14 @@
     </ul>
     </p>
 </div>
+
+<div id="about_dialog" title="About">
+    <p>
+    <h1>RISE</h1>
+    <img src="<?php echo e(asset('images/acknoledgements_RISE.png')); ?>"/>
+    </p>
+</div>
+
 </body>
 
 <!-- Optional JavaScript -->
@@ -648,23 +597,19 @@
 <script>
 
     function onChangeCallback(ctr) {
-        console.log("The country was changed: " + ctr);
-        //$("#selectionSpan").text(ctr);
         $("#country").val(ctr);
     }
 
     function onChangeCallback2(ctr) {
-        console.log("The country was changed: " + ctr);
         $("#flight_country").val(ctr);
-        //$("#selectionSpan").text(ctr);
     }
 
     $(document).ready(function () {
         var current_fs, next_fs, previous_fs; //fieldsets
         var opacity;
-        //
-        //showPosition();
-        //var flight_country;
+
+        //showPosition(); //to enable when wy have certificate
+
 
 
         $("#dialog").dialog({
@@ -681,9 +626,30 @@
             hight: "50%",
         });
 
+
+        $("#about_dialog").dialog({
+            autoOpen: false,
+            show: {
+                effect: "blind",
+                duration: 1000
+            },
+            hide: {
+                effect: "explode",
+                duration: 1000
+            },
+            width: "50%",
+            hight: "50%",
+        });
+
+
         $("#opener").on("click", function () {
             $("#dialog").dialog("open");
         });
+
+        $("#opener_about").on("click", function () {
+            $("#about_dialog").dialog("open");
+        });
+
 
         $("#niceCountryInputSelector").is(function (i, e) {
             new NiceCountryInput(e).init();
@@ -692,7 +658,6 @@
 
         $("#niceCountryInputSelector2").is(function (i, e) {
             var test = new NiceCountryInput(e).init();
-            //flight_country=e;
 
         });
 
@@ -704,7 +669,6 @@
                 e.style.visibility = "hidden";
                 $("#flight_country").val("");
             }
-            //flight_country.style.visibility = "hidden";
         });
 
         var date_input = $('input[name="symptoms_start"]'); //our date input has the name "date"
@@ -723,17 +687,12 @@
             next_fs = $(this).parent().next();
 
             if (current_fs[0].id == 1) {
-                console.log($("#age").val());
-                console.log($("#zipcode").val());
                 if ($("#age").val() == "" || $("#zipcode").val() == "") {
                     alert("Age and ZipCode are required!");
                     return;
                 }
             }
 
-
-            //console.log(current_fs);
-            //console.log(next_fs);
 
             //Add Class Active
             $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
@@ -807,28 +766,16 @@
         $("#flight_recently").on('change', function () {
             if ($(this).is(':checked')) {
                 $(this).attr('value', 'true');
-                //$("#flight_country").style.visibility = "visible";
                 document.getElementById("flight_country_div").style.visibility = "visible";
                 document.getElementById("flight_country").value = "Cyprus (Κύπρος) CY";
-                //flight_country.style.visibility = "visible";
             } else {
                 $(this).attr('value', 'false');
-                //$("#flight_country").style.visibility = "hidden";
                 document.getElementById("flight_country_div").style.visibility = "hidden";
                 document.getElementById("flight_country").value = "";
-                //flight_country.style.visibility = "hidden";
             }
         });
 
-        /*
-        $("#covid_19_contact_within_14_from_today").on('change', function () {
-            if ($(this).is(':checked')) {
-                $(this).attr('value', 'true');
-            } else {
-                $(this).attr('value', 'false');
-            }
-        });
-*/
+
         $("#covid_19_contact").on('change', function () {
             if ($(this).is(':checked')) {
                 $(this).attr('value', 'true');
@@ -846,23 +793,29 @@
             }
         });
 
-        /*
-        $("#covid_19_contact_within_14_from_symptoms").on('change', function () {
+
+        $("#fever").on('change', function () {
             if ($(this).is(':checked')) {
+                $("#nothing").attr("disabled", true);
                 $(this).attr('value', 'true');
             } else {
-                $(this).attr('value', 'false');
+                if ($("#nothing").is('[disabled=disabled]')) {
+                    if (!($("#malaise").is(':checked') || $("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked'))) {
+                        $("#nothing").removeAttr("disabled");
+                    }
+                    $(this).attr('value', 'false');
+                }
             }
         });
 
-*/
+
         $("#malaise").on('change', function () {
             if ($(this).is(':checked')) {
                 $("#nothing").attr("disabled", true);
                 $(this).attr('value', 'true');
             } else {
                 if ($("#nothing").is('[disabled=disabled]')) {
-                    if (!($("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked'))) {
+                    if (!($("#fever").is(':checked') || $("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked'))) {
                         $("#nothing").removeAttr("disabled");
                     }
                     $(this).attr('value', 'false');
@@ -877,7 +830,7 @@
                 $(this).attr('value', 'true');
             } else {
                 if ($("#nothing").is('[disabled=disabled]')) {
-                    if (!($("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#malaise").is(':checked'))) {
+                    if (!($("#fever").is(':checked') || $("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#malaise").is(':checked'))) {
                         $("#nothing").removeAttr("disabled");
                     }
                     $(this).attr('value', 'false');
@@ -892,7 +845,7 @@
                 $(this).attr('value', 'true');
             } else {
                 if ($("#nothing").is('[disabled=disabled]')) {
-                    if (!($("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
+                    if (!($("#fever").is(':checked') || $("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
                         $("#nothing").removeAttr("disabled");
                     }
                     $(this).attr('value', 'false');
@@ -907,7 +860,7 @@
                 $(this).attr('value', 'true');
             } else {
                 if ($("#nothing").is('[disabled=disabled]')) {
-                    if (!($("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
+                    if (!($("#fever").is(':checked') || $("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#chest_pain").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
                         $("#nothing").removeAttr("disabled");
                     }
                     $(this).attr('value', 'false');
@@ -922,7 +875,7 @@
                 $(this).attr('value', 'true');
             } else {
                 if ($("#nothing").is('[disabled=disabled]')) {
-                    if (!($("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
+                    if (!($("#fever").is(':checked') || $("#loss_of_taste").is(':checked') || $("#loss_of_smell").is(':checked') || $("#other_symptom").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
                         $("#nothing").removeAttr("disabled");
                     }
                     $(this).attr('value', 'false');
@@ -937,7 +890,7 @@
                 $(this).attr('value', 'true');
             } else {
                 if ($("#nothing").is('[disabled=disabled]')) {
-                    if (!($("#loss_of_smell").is(':checked') || $("#chest_pain").is(':checked') || $("#other_symptom").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
+                    if (!($("#fever").is(':checked') || $("#loss_of_smell").is(':checked') || $("#chest_pain").is(':checked') || $("#other_symptom").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
                         $("#nothing").removeAttr("disabled");
                     }
                     $(this).attr('value', 'false');
@@ -952,7 +905,7 @@
                 $(this).attr('value', 'true');
             } else {
                 if ($("#nothing").is('[disabled=disabled]')) {
-                    if (!($("#loss_of_taste").is(':checked') || $("#chest_pain").is(':checked') || $("#other_symptom").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
+                    if (!($("#fever").is(':checked') || $("#loss_of_taste").is(':checked') || $("#chest_pain").is(':checked') || $("#other_symptom").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
                         $("#nothing").removeAttr("disabled");
                     }
                     $(this).attr('value', 'false');
@@ -967,7 +920,7 @@
                 $(this).attr('value', 'true');
             } else {
                 if ($("#nothing").is('[disabled=disabled]')) {
-                    if (!($("#chest_pain").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
+                    if (!($("#fever").is(':checked') || $("#chest_pain").is(':checked') || $("#breathing_difficulties").is(':checked') || $("#cough").is(':checked') || $("#myalgia").is(':checked') || $("#malaise").is(':checked'))) {
                         $("#nothing").removeAttr("disabled");
                     }
                     $(this).attr('value', 'false');
@@ -978,27 +931,24 @@
 
         $("#nothing").on('change', function () {
             if ($(this).is(':checked')) {
+                $("#fever").attr("disabled", true);
                 $("#other_symptom").attr("disabled", true);
                 $("#chest_pain").attr("disabled", true);
                 $("#breathing_difficulties").attr("disabled", true);
                 $("#cough").attr("disabled", true);
                 $("#myalgia").attr("disabled", true);
                 $("#malaise").attr("disabled", true);
-                $("#symptoms_start").attr("disabled", true);
-                $("#covid_19_contact_within_14_from_symptoms").attr("disabled", true);
                 $("#loss_of_taste").attr("disabled", true);
                 $("#loss_of_smell").attr("disabled", true);
                 $(this).attr('value', 'true');
             } else {
-
+                $("#fever").removeAttr("disabled");
                 $("#other_symptom").removeAttr("disabled");
                 $("#chest_pain").removeAttr("disabled");
                 $("#breathing_difficulties").removeAttr("disabled");
                 $("#cough").removeAttr("disabled");
                 $("#myalgia").removeAttr("disabled");
                 $("#malaise").removeAttr("disabled");
-                $("#symptoms_start").removeAttr("disabled");
-                $("#covid_19_contact_within_14_from_symptoms").removeAttr("disabled");
                 $("#loss_of_taste").removeAttr("disabled");
                 $("#loss_of_smell").removeAttr("disabled");
                 $(this).attr('value', 'false');
