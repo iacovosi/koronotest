@@ -15,10 +15,25 @@
     <link href="<?php echo e(asset('css/wizard.css')); ?>" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css' rel='stylesheet'>
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!-- Styles -->
     <style>
+        .button {
+            background-color: #09c7ff;
+            color: #1be7d0; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
 
+        .button:hover {
+            background-color: #ccc;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -264,9 +279,21 @@
 </div>
 <footer class="footer">
     <div class="container text-center">
-        <span class="text-muted">Research Centre on Interactive Media, Smart Systems and Emerging Technologies - RISE Ltd.</span>
+        <span id="opener_about" class="button" style="text-align: center;margin-top: 1%;" >RISE About</span>
+    </div>
+    <div class="container">
+        <img src="<?php echo e(asset('images/rise-new.png')); ?>" width="20%" height="20%"  style='float:left;'/>
+        <img src="<?php echo e(asset('images/Department_of_Computer_Science_en.jpg')); ?>" width="20%" height="20%" style='float:right;'/>
     </div>
 </footer>
+
+
+<div id="about_dialog" title="About">
+    <p>
+    <h1>RISE</h1>
+    <img src="<?php echo e(asset('images/acknoledgements_RISE.png')); ?>"/>
+    </p>
+</div>
 </body>
 
 <!-- Optional JavaScript -->
@@ -278,6 +305,31 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         crossorigin="anonymous"></script>
 
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+<script>
+    $(document).ready(function () {
+
+        $("#about_dialog").dialog({
+            autoOpen: false,
+            show: {
+                effect: "blind",
+                duration: 1000
+            },
+            hide: {
+                effect: "explode",
+                duration: 1000
+            },
+            width: "50%",
+            hight: "50%",
+        });
+
+
+        $("#opener_about").on("click", function () {
+            $("#about_dialog").dialog("open");
+        });
+    });
+
+</script>
 </html>
 <?php /**PATH C:\Users\iacovosi\Desktop\1420\koronotest\resources\views/result.blade.php ENDPATH**/ ?>

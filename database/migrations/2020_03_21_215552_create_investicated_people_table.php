@@ -22,7 +22,7 @@ class CreateInvesticatedPeopleTable extends Migration
             $table->string("flight_country")->default("unknown");
             $table->boolean("vulnerable_group")->default(0);
             $table->boolean("malaise")->default(0);
-            $table->float("fever")->default(0);
+            $table->boolean("fever")->default(0);
             $table->boolean("cough")->default(0);
             $table->boolean("myalgia")->default(0);
             $table->boolean("loss_of_taste")->default(0);
