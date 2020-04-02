@@ -49,11 +49,32 @@
         </a>
 
 
-        <button id="opener_about" type="button" class="btn btn-light border-0 ml-auto" data-toggle="modal"
-                data-target="#about_rise"
-                style="color: #5bc0de; background-color: transparent; ">
+        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#aboutRise"
+                style="background-color: transparent ;border-style: none; color: #5bc0de">
             About RISE
         </button>
+        <!-- Modal -->
+        <div class="modal fade" id="aboutRise" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog mw-100 w-50" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">About RISE</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{asset('/images/acknoledgements_RISE.png')}}" width="100%" height="100%"
+                             class="d-inline-block align-top" alt="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars"
@@ -127,21 +148,26 @@
             <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
                 <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                     <h2><strong>@lang('wizard.results')</strong></h2>
-                    <p>
-                    <center><img src="{{asset('images/RISE.png')}}" width="30%"></center>
+{{--                    <p>--}}
+{{--                    <center><img src="{{asset('images/RISE.png')}}" width="30%"></center>--}}
+{{--                    </p>--}}
+                    <br><br>
+                    <p style="text-align: center; padding: 0px 20px 0px 20px"> @lang('wizard.disclaimerp1')
+                        <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">WHO</a>,
+                        <a href="https://www.ecdc.europa.eu/en">ECDC </a>@lang('wizard.disclaimerp1.5')
+                        <a href="https://www.cdc.gov/">CDC</a>@lang('wizard.disclaimerp2')
+
                     </p>
-                    <p class="disclaimer-2">@lang('wizard.disclaimer')</p>
-                    {{--                    <p>The Result:</p>--}}
                     <div class="row">
                         <div class="col-md-12 mx-0">
                             @switch($suggest)
 
                                 @case("CASE1")
                                 <h1><b>@lang("wizard.case1")</b></h1>
-                                <p style="text-align: left;float: left;">
+                                <p style="text-align: center; padding-left: 10px">
                                     @lang("wizard.result1")
                                     <br/>
-                                @lang("wizard.case_instructions")
+                               <p class="text-center"><strong>@lang("wizard.case_instructions")</strong></p>
                                 <ul style="text-align: left;float: left;padding-left: 10%;">
                                     <li> @lang("wizard.1instruction1")
                                     </li>
@@ -158,11 +184,11 @@
                                 @break
                                 @case("CASE2")
                                 <h1><b> @lang("wizard.case2")</b></h1>
-                                <p style="text-align: left;float: left;">
+                                <p style="text-align: center; padding-left: 10px">
                                     @lang("wizard.result2")
                                     <br/>
-                                @lang("wizard.case_instructions")
-                                <ul style="text-align: left;float: left; padding-left: 10%;">
+                                <p class="text-center"><strong>@lang("wizard.case_instructions")</strong></p>
+                                <ul style="text-align: center;float: left; padding-left: 10%;">
                                     <li>@lang("wizard.2instruction1")
                                     </li>
 
@@ -180,10 +206,10 @@
                                 @case("CASE3")
 
                                 <h1><b>@lang("wizard.case3")</b></h1>
-                                <p style="text-align: left;float: left;">
+                                <p style="text-align: center; padding-left: 10px">
                                     @lang("wizard.result3")
                                     <br/>
-                                @lang("wizard.case_instructions")
+                                <p class="text-center"><strong>@lang("wizard.case_instructions")</strong></p>
                                 <ul style="text-align: left;float: left;padding-left: 10%;">
                                     <li>@lang("wizard.3instruction1")
                                     </li>
@@ -201,9 +227,9 @@
                                 @break
                                 @case("CASE4")
                                 <h1><b>@lang("wizard.case4")</b></h1>
-                                <p style="text-align: left;float: left;">
-                                @lang("wizard.case_instructions")
-                                <ul style="text-align: left;float: left;padding-left: 10%;">
+                                <p style="text-align: center; padding-left: 10px">
+                                <p class="text-center"><strong>@lang("wizard.case_instructions")</strong></p>
+                                <ul style="text-align: center;float: left;padding-left: 10%;">
                                     <li>@lang("wizard.4instruction1")
                                     </li>
 
@@ -220,11 +246,11 @@
                                 @break
                                 @case("CASE5")
                                 <h1><b>@lang("wizard.case5")</b></h1>
-                                <p style="text-align: left;float: left;">
+                                <p style="text-align: center; padding-left: 10px">
                                     @lang("wizard.result5")
                                     <br/>
-                                @lang("wizard.case_instructions")
-                                <ul style="text-align: left;float: left;padding-left: 10%;">
+                                <p class="text-center"><strong>@lang("wizard.case_instructions")</strong></p>
+                                <ul style="text-align: center;float: left; padding-left: 10%;">
                                     <li>@lang("wizard.5instruction1")
                                     </li>
 
@@ -311,5 +337,6 @@
         });
     });
 
+    $('#aboutRise').appendTo("body");
 </script>
 </html>

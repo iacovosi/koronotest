@@ -15,7 +15,7 @@ return [
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'coronaVirusTest' => 'Coronavirus Test',
+    'coronaVirusTest' => 'COVID-19 Symptoms Self-Check',
     'personal' => 'Personal',
     'medical' => 'Medical',
     'comments' => 'Comments',
@@ -63,12 +63,13 @@ return [
     'systemError' => 'Error Occured in the System!!! Please try again Later!',
     'tryAgain' => 'Something went wrong, please try again',
     'error' => 'Error!',
-    'disclaimer' => 'While based upon the guidelines and recommendations of the CDC, this content
-                        is not intended to be a substitute for professional medical advice, diagnosis, or treatment.
+    'disclaimerp1' => 'While based upon the guidelines and recommendations of the ',
+    'disclaimerp1.5'=>'and',
+    'disclaimerp2' => ' this content is not intended to be a substitute for professional medical advice, diagnosis, or treatment.
                         Always seek the advice of your physician or other qualified health provider with any questions
                         you may have regarding a medical condition.',
 
-    'mandatory' => 'The fields marked with * are required, the rest information is used for statistical
+    'mandatory' => 'The fields marked with * are required, the rest of the information is used for statistical
                         purposes',
     'age_required' => 'Attention! The Age is a required field!',
     'body_temperature_required' => 'Attention! The Body Temperature is a required field!',
