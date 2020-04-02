@@ -109,20 +109,63 @@
             border-radius: 50%;
         }
 
+        .btn-light:hover {
+
+            color: #1b4b72 !important;
+
+
+        }
+
     </style>
 </head>
 <body>
 
 <header>
-    <nav class="navbar fixed-top navbar-expand"
+
+
+    <nav class="navbar fixed-top navbar-expand "
          style="background-color:white;border-bottom: 2px solid rgb(44, 169, 240);">
-        <a class="navbar-brand" href="/">
+
+        <!-- Button trigger modal -->
+
+
+        <a class="navbar-brand" href="/" style="">
             <img src="{{asset('images/rise-new.png')}}" width="100" height="30" class="d-inline-block align-top" alt="">
             <span class="d-none d-sm-inline">
 		<img src="{{asset('images/brand.png')}}" width="235" height="30" class="d-inline-block align-top ml-2 mt-1"
              alt="">
 	</span>
+
+
         </a>
+
+        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#aboutRise"
+                style="background-color: transparent ;border-style: none; color: #5bc0de">
+            About RISE
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="aboutRise" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog mw-100 w-50" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">About RISE</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{asset('/images/acknoledgements_RISE.png')}}" width="100%" height="100%"
+                             class="d-inline-block align-top" alt="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
                 aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -180,13 +223,13 @@
         <div class="top-right links">
             @auth
                 <a href="{{ url('/home') }}">Home</a>
-                @else
-                    <a href="{{ route('login') }}">Login</a>
+            @else
+                <a href="{{ route('login') }}">Login</a>
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
-                    @endif
-                    @endauth
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}">Register</a>
+                @endif
+            @endauth
         </div>
 @endif
 
@@ -200,21 +243,21 @@
                     <center><img src="{{asset('images/RISE.png')}}" width="35%"></center>
                     </p>
                     <p> @lang('wizard.disclaimer')</p>
-                    <p>This test is intended for users in Cyprus. Use the Language tab on top for other
-                        language options.</p>
+                    <p>@lang('wizard.language_options')</p>
                     <p>@lang('wizard.mandatory')</p>
                     <div class="row">
+
                         <div class="col-md-12 mx-0">
                             <form id="msform" action=" {{ route('save-test', ['locale' => App::getLocale()]) }}"
                                   method="post">
                                 <ul id="progressbar">
                                     <li class="fas fa-user-alt active"><strong>@lang('wizard.demographic')</strong></li>
-                                    <li class="fas fa-notes-medical"><strong>@lang('wizard.chronic_conditions')</strong>
+                                    <li class="fas fa-notes-medical"><strong>@lang('wizard.medical')</strong>
                                     </li>
                                     <li class="fas fa-plane"><strong>@lang('wizard.travelling')</strong></li>
                                     <li class="fas fa-clipboard-check"><strong>@lang('wizard.symptoms')</strong></li>
                                     <li class="fas fa-comments"><strong>@lang('wizard.exposure')</strong></li>
-                                    <li></li>
+
                                 </ul>
 
                                 <fieldset name="first" id="1">
@@ -270,30 +313,29 @@
                                 <fieldset name="second" id="2">
                                     <div class="form-card">
                                         <h2 class="fs-title"><i
-                                                    class="fa fa-notes-medical"></i>@lang('wizard.chronic_conditions')
+                                                    class="fa fa-notes-medical"></i>@lang('wizard.medical')
                                         </h2>
 
 
-                                        <p>Do you have any of the following chronic conditions
-                                            (*)?@lang('wizard.symptomsSelection')</p>
+                                        <p>@lang('wizard.chronic_conditions_questions')</p>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">
-                                                Cardiovascular disease (including hypertension),
+                                                @lang('wizard.cardiovascular')
                                             </li>
                                             <li class="list-group-item">
-                                                diabetes,
+                                                @lang('wizard.diabetes')
                                             </li>
                                             <li class="list-group-item">
-                                                chronic diseases of the lung,
+                                                @lang('wizard.lung')
                                             </li>
                                             <li class="list-group-item">
-                                                respiratory problems,
+                                                @lang('wizard.respiratory')
                                             </li>
                                             <li class="list-group-item">
-                                                cancer,
+                                                @lang('wizard.cancer')
                                             </li>
                                             <li class="list-group-item">
-                                                immunodeficiency,
+                                                @lang('wizard.immunodeficiency')
                                             </li>
                                         </ul>
                                         <br/>
@@ -484,17 +526,68 @@
 
 
                                 </fieldset>
+
+
                                 <fieldset name="fifth" id="5">
+
+
                                     <div class="form-card">
                                         <h2 class="fs-title"><i
                                                     class="fa fa-comments"></i>@lang('wizard.covid_19_contact')</h2>
                                         <div class="form-group">
                                             <br/>
-                                            <div id="opener" class="button">See here for a definition of close contact
+                                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                    data-target="#closeContact">
+                                                Close contact definition
+                                            </button>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="closeContact" tabindex="-1" role="dialog"
+                                                 aria-labelledby="exampleModalLabel"
+                                                 aria-hidden="true">
+                                                <div class="modal-dialog mw-100 w-50" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Close Contact
+                                                                Definition</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+
+                                                            <p>
+                                                            <h1>@lang('wizard.close_contact')</h1>
+                                                            <ul>
+                                                                <li>@lang('wizard.same_household')</li>
+                                                                <li>@lang('wizard.direct_contact')</li>
+                                                                <li>@lang('wizard.unprotected_direct_contact')
+                                                                </li>
+                                                                <li>@lang('wizard.face-to-face')</li>
+                                                                <li>@lang('wizard.closed_environment')
+                                                                </li>
+                                                                <li>@lang('wizard.healthcare_worker')
+                                                                </li>
+                                                                <li>@lang('wizard.contact_aircraft')
+                                                                </li>
+                                                            </ul>
+                                                            </p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
+
+
                                             <br/>
                                             <br/>
-                                            <label for="vulnerable_group">@lang('wizard.covid_19_contact_short')</label>
+
+
+                                            <label for="vulnerable_group">@lang('wizard.covid_19_contact')</label>
                                             <label class="switch" style="text-align: right;float: right;">
                                                 <input type="checkbox" id="covid_19_contact"
                                                        name="covid_19_contact" value="true">
@@ -518,7 +611,6 @@
                                     >@lang('wizard.test')
                                     </button>
 
-
                                 </fieldset>
                                 <input type="hidden" id="lat" name="lat" value="0">
                                 <input type="hidden" id="long" name="long" value="0">
@@ -531,39 +623,35 @@
     </div>
 </div>
 <footer class="footer">
-        <div class="container text-center">
-            <span id="opener_about" class="button" style="text-align: center;margin-top: 1%;" >RISE About</span>
-        </div>
+    {{--        <div class="container text-center">--}}
+    {{--            <span id="opener_about" class="button" style="text-align: center;margin-top: 1%;" >RISE About</span>--}}
+    {{--        </div>--}}
     <div class="container">
-        <img src="{{asset('images/rise-new.png')}}" width="20%" height="20%"  style='float:left;'/>
-        <img src="{{asset('images/Department_of_Computer_Science_en.jpg')}}" width="20%" height="20%" style='float:right;'/>
+        <img class="py-5" src="{{asset('images/RISE.png')}}" width="20%" height="20%" style='float:left;'/>
+        <img class="py-5 mt-4" src="{{asset('images/Department_of_Computer_Science_en.jpg')}}" width="20%" height="20%"
+             style='float:right;'/>
     </div>
 </footer>
-<div id="dialog" title="Close Contact Definition">
-    <p>
-    <h1>Close contact of a probable or confirmed case is defined as:</h1>
-    <ul>
-        <li>A person living in the same household as a COVID-19 case</li>
-        <li>A person having had direct physical contact with a COVID-19 case (e.g. shaking hands)</li>
-        <li>A person having unprotected direct contact with infectious secretions of a COVID-19 case (e.g. being coughed
-            on, touching used paper tissues with a bare hand)
-        </li>
-        <li>A person having had face-to-face contact with a COVID-19 case within 2 metres and > 15 minutes</li>
-        <li>A person who was in a closed environment (e.g. classroom, meeting room, hospital waiting room, etc.) with a
-            COVID-19 case for 15 minutes or more and at a distance of less than 2 metres
-        </li>
-        <li>A healthcare worker (HCW) or other person providing direct care for a COVID-19 case, or laboratory workers
-            handling specimens from a COVID-19 case without recommended personal protective equipment (PPE) or with a
-            possible breach of PPE
-        </li>
-        <li>A contact in an aircraft sitting within two seats (in any direction) of the COVID-19 case, travel companions
-            or persons providing care, and crew members serving in the section of the aircraft where the index case was
-            seated (if severity of symptoms or movement of the case indicate more extensive exposure, passengers seated
-            in the entire section or all passengers on the aircraft may be considered close contacts)
-        </li>
-    </ul>
-    </p>
-</div>
+
+
+{{--<div id="dialog" title="Close Contact Definition">--}}
+{{--    <p>--}}
+{{--    <h1>@lang('wizard.close_contact')</h1>--}}
+{{--    <ul>--}}
+{{--        <li>@lang('wizard.same_household')</li>--}}
+{{--        <li>@lang('wizard.direct_contact')</li>--}}
+{{--        <li>@lang('wizard.unprotected_direct_contact')--}}
+{{--        </li>--}}
+{{--        <li>@lang('wizard.face-to-face')</li>--}}
+{{--        <li>@lang('wizard.closed_environment')--}}
+{{--        </li>--}}
+{{--        <li>@lang('wizard.healthcare_worker')--}}
+{{--        </li>--}}
+{{--        <li>@lang('wizard.contact_aircraft')--}}
+{{--        </li>--}}
+{{--    </ul>--}}
+{{--    </p>--}}
+{{--</div>--}}
 
 <div id="about_dialog" title="About">
     <p>
@@ -613,7 +701,6 @@
         //showPosition(); //to enable when wy have certificate
 
 
-
         $("#dialog").dialog({
             autoOpen: false,
             show: {
@@ -644,13 +731,13 @@
         });
 
 
-        $("#opener").on("click", function () {
-            $("#dialog").dialog("open");
-        });
-
-        $("#opener_about").on("click", function () {
-            $("#about_dialog").dialog("open");
-        });
+        // $("#opener").on("click", function () {
+        //     $("#dialog").dialog("open");
+        // });
+        //
+        // $("#opener_about").on("click", function () {
+        //     $("#about_dialog").dialog("open");
+        // });
 
 
         $("#niceCountryInputSelector").is(function (i, e) {
@@ -666,8 +753,7 @@
         $("#flight_country_div").is(function (i, e) {
             if ($("#flight_recently").is(':checked')) {
                 $("#flight_country").val("Cyprus (Κύπρος) CY");
-            }
-            else {
+            } else {
                 e.style.visibility = "hidden";
                 $("#flight_country").val("");
             }
@@ -959,6 +1045,8 @@
 
 
     });
+    $('#aboutRise').appendTo("body");
+    $('#closeContact').appendTo("body");
 </script>
 
 </html>

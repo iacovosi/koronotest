@@ -47,6 +47,24 @@
              alt="">
 	</span>
         </a>
+
+
+        <button id="myBtn" type="button" class="btn btn-light border-0 ml-auto" data-toggle="modal"
+                data-target="#about_rise"
+                style="color: #5bc0de; background-color: transparent; ">
+            About RISE
+        </button>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="{{asset('/images/acknoledgements_RISE.png')}}" width="100%" height="100%"
+                     class="d-inline-block align-top" alt="">
+            </div>
+        </div>
+
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars"
                 aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -102,13 +120,13 @@
         <div class="top-right links">
             @auth
                 <a href="{{ url('/home') }}">Home</a>
-                @else
-                    <a href="{{ route('login') }}">Login</a>
+            @else
+                <a href="{{ route('login') }}">Login</a>
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
-                    @endif
-                    @endauth
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}">Register</a>
+                @endif
+            @endauth
         </div>
 @endif
 
@@ -128,55 +146,41 @@
                             @switch($suggest)
 
                                 @case("CASE1")
-                                <h1><b>You are at a low risk for serious illness from COVID-19 and are not showing
-                                        concerning symptoms </b></h1>
+                                <h1><b>@lang("wizard.case1")</b></h1>
                                 <p style="text-align: left;float: left;">
-                                    It is unlikely that you have coronavirus
-                                    We still recommend following general precautionary measures to minimize your risk of
-                                    contracting the disease that are detailed at https://www.pio.gov.cy/coronavirus/
+                                    @lang("wizard.result1")
                                     <br/>
-                                    According to official instructions you should act as follows:
+                                @lang("wizard.case_instructions")
                                 <ul style="text-align: left;float: left;padding-left: 10%;">
-                                    <li>You don't need to stay in quarantine, but as a general rule, everyone who can
-                                        stay at home should do so. If you cannot stay at home, please maintain at least
-                                        a
-                                        2 metre distance with everyone.
+                                    <li> @lang("wizard.1instruction1")
                                     </li>
 
-                                    <li>Monitor your health, particularly if you are over 60 years old or suffer from a
-                                        chronic condition such as diabetes, lung disease or heart disease
+                                    <li> @lang("wizard.1instruction2")
                                     </li>
 
-                                    <li>In case you develop symptoms, retake this self-assessment questionnaire.</li>
+                                    <li> @lang("wizard.1instruction3")</li>
 
-                                    <li>The COVID19 Emergency Response Line (1420) should be called only in case of
-                                        emergency.
+                                    <li> @lang("wizard.1instruction4")
                                     </li>
                                 </ul>
                                 </p>
                                 @break
                                 @case("CASE2")
-                                <h1><b>You are at a high risk for getting infected from COVID-19, but are not showing
-                                        concerning symptoms</b></h1>
+                                <h1><b> @lang("wizard.case2")</b></h1>
                                 <p style="text-align: left;float: left;">
-                                    Your symptoms are not indicative of a respiratory virus. However, due to your age
-                                    and/or your chronic conditions, if you become infected, you are at risk of having a
-                                    more
-                                    severe course of the disease.
-                                    We still recommend following general precautionary measures to minimize your risk of
-                                    contracting the disease that are detailed at https://www.pio.gov.cy/coronavirus/
+                                    @lang("wizard.result2")
                                     <br/>
-                                    According to official instructions you should act as follows:
+                                @lang("wizard.case_instructions")
                                 <ul style="text-align: left;float: left; padding-left: 10%;">
-                                    <li>Remain secluded for two weeks.
+                                    <li>@lang("wizard.2instruction1")
                                     </li>
 
-                                    <li>Monitor your health
+                                    <li>
+                                    <li>@lang("wizard.2instruction2")
                                     </li>
 
-                                    <li>In case you develop symptoms, contact your General Practitioner.
-                                        The COVID19 Emergency Response Line (1420) should be called only in case of
-                                        emergency.
+                                    <li>
+                                    <li>@lang("wizard.2instruction3")
                                     </li>
 
                                 </ul>
@@ -184,76 +188,61 @@
                                 @break
                                 @case("CASE3")
 
-                                <h1><b>You are at low risk for serious illness from COVID-19, but might be infected by
-                                        the
-                                        virus</b></h1>
+                                <h1><b>@lang("wizard.case3")</b></h1>
                                 <p style="text-align: left;float: left;">
-                                    Your travel history or symptoms indicate that you may be infected by COVID-19.
+                                    @lang("wizard.result3")
                                     <br/>
-                                    According to official instructions you should act as follows:
+                                @lang("wizard.case_instructions")
                                 <ul style="text-align: left;float: left;padding-left: 10%;">
-                                    <li>Contact your general practitioner who will arrange your further examination and
-                                        treatment.*
+                                    <li>@lang("wizard.3instruction1")
                                     </li>
 
-                                    <li>Remain in quarantine for two weeks.
+                                    <li>@lang("wizard.3instruction2")
                                     </li>
 
-                                    <li>Monitor your health, particularly if you are over 60 years old or suffer from a
-                                        chronic condition such as diabetes, lung disease or heart disease.
+                                    <li>@lang("wizard.3instruction3")
                                     </li>
 
-                                    <li>In case you develop symptoms, retake this self-assessment questionnaire.
+                                    <li>@lang("wizard.3instruction4")
                                     </li>
                                 </ul>
 
                                 @break
                                 @case("CASE4")
-                                <h1><b>Your travel history and symptoms are indicative of a respiratory virus, which may
-                                        be
-                                        COVID-19.</b></h1>
+                                <h1><b>@lang("wizard.case4")</b></h1>
                                 <p style="text-align: left;float: left;">
-                                    According to official instructions you should act as follows:
+                                @lang("wizard.case_instructions")
                                 <ul style="text-align: left;float: left;padding-left: 10%;">
-                                    <li>Contact your general practitioner who will arrange your further examination and
-                                        treatment.*
+                                    <li>@lang("wizard.4instruction1")
                                     </li>
 
-                                    <li>Remain in quarantine for two weeks.
+                                    <li>@lang("wizard.4instruction2")
                                     </li>
 
-                                    <li>The COVID19 Emergency Response Line (1420) should be called only in case of
-                                        emergency.
+                                    <li>@lang("wizard.4instruction3")
                                     </li>
 
-                                    <li>Inform those you have been in close contact with to monitor their health, stay
-                                        home if possible, and to fill out this self-assessment questionnaire for further
-                                        instructions if necessary
+                                    <li>@lang("wizard.4instruction4")
                                     </li>
                                 </ul>
 
                                 @break
                                 @case("CASE5")
-                                <h1><b>You may have contracted COVID-19.</b></h1>
+                                <h1><b>@lang("wizard.case5")</b></h1>
                                 <p style="text-align: left;float: left;">
-                                    Your travel history and/or symptoms are indicative of a respiratory virus, which may
-                                    be
-                                    COVID-19. Due to your age and/or your chronic conditions, you are at risk of having
-                                    a
-                                    more severe course of the disease.
+                                    @lang("wizard.result5")
                                     <br/>
-                                    According to official instructions you should act as follows:
+                                @lang("wizard.case_instructions")
                                 <ul style="text-align: left;float: left;padding-left: 10%;">
-                                    <li>Contact the COVID19 Emergency Response Line (1420)
+                                    <li>@lang("wizard.5instruction1")
                                     </li>
 
-                                    <li>Remain in quarantine for two weeks.
+                                    <li>@lang("wizard.5instruction2")
                                     </li>
 
-                                    <li>Inform those you have been in close contact with to monitor their health, stay
-                                        home if possible, and to fill out this self-assessment questionnaire for further
-                                        instructions if necessary
+                                    <li>@lang("wizard.5instruction3")
                                     </li>
+
                                 </ul>
 
 
@@ -278,12 +267,13 @@
     </div>
 </div>
 <footer class="footer">
-    <div class="container text-center">
-        <span id="opener_about" class="button" style="text-align: center;margin-top: 1%;" >RISE About</span>
-    </div>
+    {{--        <div class="container text-center">--}}
+    {{--            <span id="opener_about" class="button" style="text-align: center;margin-top: 1%;" >RISE About</span>--}}
+    {{--        </div>--}}
     <div class="container">
-        <img src="{{asset('images/rise-new.png')}}" width="20%" height="20%"  style='float:left;'/>
-        <img src="{{asset('images/Department_of_Computer_Science_en.jpg')}}" width="20%" height="20%" style='float:right;'/>
+        <img class="py-5" src="{{asset('images/RISE.png')}}" width="20%" height="20%" style='float:left;'/>
+        <img class="py-5 mt-4" src="{{asset('images/Department_of_Computer_Science_en.jpg')}}" width="20%" height="20%"
+             style='float:right;'/>
     </div>
 </footer>
 
@@ -329,6 +319,33 @@
             $("#about_dialog").dialog("open");
         });
     });
+
+
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
 
 </script>
 </html>

@@ -46,7 +46,7 @@ class InvesticatedPersonController extends Controller
 
         //have to add the locale here
 
-//        App::setLocale();
+//
 
     }
 
