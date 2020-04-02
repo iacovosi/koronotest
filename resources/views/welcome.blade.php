@@ -269,21 +269,19 @@
                                                required oninvalid='alert("Please Insert a Number");'/>
                                         <div class="invalid-feedback">can't be blank, is a number</div>
                                         <br/>
-                                        <label for="gender">@lang('wizard.gender')</label>
+                                        
                                         <!-- Group of default radios - option 1 -->
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input" id="male"
-                                                   name="gender" value="male" checked>
-                                            <label class="custom-control-label"
-                                                   for="defaultGroupExample1">@lang('wizard.male')</label>
+                                            <input type="radio" class="custom-control-input" id="male"name="gender" value="male" checked>
+                                            <label class="custom-control-label" for="male">@lang('wizard.male')</label>
                                         </div>
+
                                         <!-- Group of default radios - option 2 -->
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input" id="female"
-                                                   name="gender" value="female">
-                                            <label class="custom-control-label"
-                                                   for="defaultGroupExample2">@lang('wizard.female')</label>
+                                            <input type="radio" class="custom-control-input" id="female" name="gender" value="female">
+                                            <label class="custom-control-label" for="female">@lang('wizard.female')</label>
                                         </div>
+                                        
                                         <br/>
                                         <label for="zipcode">@lang('wizard.zip')</label>
                                         <input type="number" name="zipcode" placeholder="" pattern="\d+" id="zipcode"
