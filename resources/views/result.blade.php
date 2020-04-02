@@ -49,20 +49,11 @@
         </a>
 
 
-        <button id="myBtn" type="button" class="btn btn-light border-0 ml-auto" data-toggle="modal"
+        <button id="opener_about" type="button" class="btn btn-light border-0 ml-auto" data-toggle="modal"
                 data-target="#about_rise"
                 style="color: #5bc0de; background-color: transparent; ">
             About RISE
         </button>
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <img src="{{asset('/images/acknoledgements_RISE.png')}}" width="100%" height="100%"
-                     class="d-inline-block align-top" alt="">
-            </div>
-        </div>
 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars"
@@ -319,33 +310,6 @@
             $("#about_dialog").dialog("open");
         });
     });
-
-
-    var modal = document.getElementById("myModal");
-
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
 
 </script>
 </html>
