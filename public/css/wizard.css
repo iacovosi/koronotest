@@ -35,7 +35,9 @@ html {
 #msform {
     text-align: center;
     position: relative;
-    margin-top: 20px
+    margin-top: 20px;
+    padding: 10px;
+
 }
 
 #msform fieldset .form-card {
@@ -67,7 +69,7 @@ html {
 
 #msform fieldset .form-card {
     text-align: left;
-    color: #696969;
+    color: #000000;
 }
 
 #msform input,
@@ -217,7 +219,8 @@ select.list-dt:focus {
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     cursor: pointer;
-    margin: 8px 2px
+    margin: 8px 2px;
+
 }
 
 .radio:hover {
@@ -278,4 +281,44 @@ select.list-dt:focus {
     cursor: pointer;
 }
 
+.slider{
+
+   width: 70px;
+
+
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/*#age{*/
+
+/*    border-bottom-color: red !important;*/
+
+/*}*/
+
+input:not(:placeholder-shown) {
+    border-color: hsl(0, 76%, 50%) !important;
+}
+
+/* Show green borders when valid */
+input:valid {
+    border-color: hsl(120, 76%, 50%)!important;
+}
+
+footer{
+    background-color: #f9f8fd;
+    color: black;
+
+
+}
 
