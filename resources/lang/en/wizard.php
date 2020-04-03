@@ -32,7 +32,7 @@ return [
     'gender_other' => 'Prefer not to say',
     'selection' => 'Please select what is right for your case',
     'contact' => 'Contact with a COVID-19 infected person within 14 days from today',
-    'travel' => 'Have you recently travelled abroad within the last 14 days?',
+    'travel' => 'Have you travelled abroad within the last 14 days?',
     'next' => 'Next',
     'medicalInfo' => ' Medical Information',
     'bodyTemp' => 'Body Temperature Measurement in Celsius (*)',

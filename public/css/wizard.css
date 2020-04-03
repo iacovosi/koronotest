@@ -11,7 +11,7 @@
 html body {
 
     font-family: 'Roboto light', sans-serif !important;
-    /*color: black; !important;*/
+    /*color: #00AEDF; !important;*/
 }
 
 
@@ -48,6 +48,7 @@ html {
     padding: 20px 40px 30px 40px;
     box-sizing: border-box;
     width: 94%;
+    height:70%;
     margin: 0 3% 20px 3%;
     position: relative
 }
