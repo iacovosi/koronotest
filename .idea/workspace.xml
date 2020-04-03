@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8196f3b-2965-49a3-81e5-98645de3b21b" name="Default" comment="">
+    <list default="true" id="f8196f3b-2965-49a3-81e5-98645de3b21b" name="Default" comment="fixed loc strings + design changes indicated by by all again">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/wizard.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/wizard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/wizard.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            <state relative-caret-position="180">
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -55,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10584">
-              <caret line="588" selection-start-line="588" selection-end-line="721" selection-end-column="15" />
+            <state relative-caret-position="179">
+              <caret line="956" column="62" selection-start-line="956" selection-start-column="62" selection-end-line="956" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -67,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/lang/en/wizard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+            <state relative-caret-position="-811">
+              <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -86,13 +86,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>about ri</find>
       <find>footer</find>
       <find>float</find>
       <find>dem</find>
       <find>symptoms</find>
       <find>exposu</find>
-      <find>card</find>
       <find>marios</find>
       <find>προσφα</find>
       <find>margin-l</find>
@@ -116,6 +114,8 @@
       <find>oth</find>
       <find>about R</find>
       <find>modal</find>
+      <find>card</find>
+      <find>rece</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,10 +131,10 @@
         <option value="$PROJECT_DIR$/database/migrations/2020_03_21_215552_create_investicated_people_table.php" />
         <option value="$PROJECT_DIR$/public/css/all.min.css" />
         <option value="$PROJECT_DIR$/resources/lang/gr/wizard.php" />
-        <option value="$PROJECT_DIR$/resources/lang/en/wizard.php" />
-        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/result.blade.php" />
         <option value="$PROJECT_DIR$/public/css/wizard.css" />
+        <option value="$PROJECT_DIR$/resources/lang/en/wizard.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
       </list>
     </option>
   </component>
@@ -390,7 +390,7 @@
       <workItem from="1585782380045" duration="9924000" />
       <workItem from="1585840750274" duration="8887000" />
       <workItem from="1585907977047" duration="15749000" />
-      <workItem from="1585927150511" duration="983000" />
+      <workItem from="1585927150511" duration="2171000" />
     </task>
     <task id="LOCAL-00001" summary="locale implementation + fix bugs">
       <created>1585195823878</created>
@@ -434,11 +434,25 @@
       <option name="project" value="LOCAL" />
       <updated>1585924458459</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fixed loc strings + design changes indicated by by all again">
+      <created>1585933519588</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1585933519588</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fixed loc strings + design changes indicated by by all again">
+      <created>1585934371540</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1585934371540</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80874000" />
+    <option name="totallyTimeSpent" value="82062000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -476,7 +490,8 @@
     <MESSAGE value="fixed modal bug" />
     <MESSAGE value="fixed loc strings + design changes indicated by Dr Vasos" />
     <MESSAGE value="fixed loc strings + design changes indicated by by all" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed loc strings + design changes indicated by by all" />
+    <MESSAGE value="fixed loc strings + design changes indicated by by all again" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed loc strings + design changes indicated by by all again" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -616,20 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10584">
-          <caret line="588" selection-start-line="588" selection-end-line="721" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/wizard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/lang/gr/wizard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
@@ -646,8 +647,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/wizard.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="180">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/wizard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-811">
+          <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="956" column="62" selection-start-line="956" selection-start-column="62" selection-end-line="956" selection-end-column="62" />
         </state>
       </provider>
     </entry>

@@ -954,7 +954,7 @@
                 },
                 duration: 600
             });
-
+            $("html, body").animate({ scrollTop: 0 }, "slow");
         });
 
         $(".previous").click(function () {
