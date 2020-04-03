@@ -28,7 +28,7 @@ return [
     'gender' => 'Seks*',
     'male' => 'Adam',
     'female' => 'Kadın',
-    'other' => 'Diğer',
+    'other' => 'Diğer (örneğin ishal)',
     'selection' => 'Lütfen seçiniz',
     'contact' => 'Son 14 gün içinde enfekte olmuş bir kişiyle iletişim',
     'travel' => 'Son zamanlarda yurt dışına seyahat ettin mi?',
