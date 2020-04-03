@@ -28,6 +28,7 @@ return [
     'gender' => 'Gender (*)',
     'male' => 'Male',
     'female' => 'Female',
+    'other' =>'Other',
     'gender_other' => 'Prefer not to say',
     'selection' => 'Please select what is right for your case',
     'contact' => 'Contact with a COVID-19 infected person within 14 days from today',

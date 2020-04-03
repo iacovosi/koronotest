@@ -48,35 +48,6 @@
 	</span>
         </a>
 
-
-        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#aboutRise"
-                style="background-color: transparent ;border-style: none; color: #5bc0de">
-            About RISE
-        </button>
-        <!-- Modal -->
-        <div class="modal fade" id="aboutRise" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog mw-100 w-50" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">About RISE</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="{{asset('/images/acknoledgements_RISE.png')}}" width="100%" height="100%"
-                             class="d-inline-block align-top" alt="">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars"
                 aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -283,24 +254,173 @@
         </div>
     </div>
 </div>
-<footer class="footer">
-    {{--        <div class="container text-center">--}}
-    {{--            <span id="opener_about" class="button" style="text-align: center;margin-top: 1%;" >RISE About</span>--}}
-    {{--        </div>--}}
-    <div class="container">
-        <img class="py-5" src="{{asset('images/RISE.png')}}" width="20%" height="20%" style='float:left;'/>
-        <img class="py-5 mt-4" src="{{asset('images/Department_of_Computer_Science_en.jpg')}}" width="20%" height="20%"
-             style='float:right;'/>
+{{--<footer class="footer">--}}
+{{--    --}}{{--        <div class="container text-center">--}}
+{{--    --}}{{--            <span id="opener_about" class="button" style="text-align: center;margin-top: 1%;" >RISE About</span>--}}
+{{--    --}}{{--        </div>--}}
+{{--    <div class="container">--}}
+{{--        <img class="py-5" src="{{asset('images/RISE.png')}}" width="20%" height="20%" style='float:left;'/>--}}
+{{--        <img class="py-5 mt-4" src="{{asset('images/Department_of_Computer_Science_en.jpg')}}" width="20%" height="20%"--}}
+{{--             style='float:right;'/>--}}
+{{--    </div>--}}
+{{--</footer>--}}
+
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color lighten-3 pt-4 ">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-3 mr-auto my-md-2 my-0 mt-4 mb-1">
+                <img  style="margin-left: 90px" class="py-0" src="{{asset('images/Department_of_Computer_Science_en.png')}}" width="50%"
+                      height="80%"/ >
+                {{--                <img class="py-2" src="{{asset('images/Department_of_Computer_Science_en.jpg')}}" width="80%" height="60%"/>--}}
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
+
+                <ul class="list-unstyled">
+
+                    <li>
+                        <p>
+                            <a data-toggle="modal" data-target="#aboutRise" href="#aboutRise" style="color: black">ABOUT
+                                US</a>
+                        </p>
+                    </li>
+
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+                <!-- Contact details -->
+                <h5 class="font-weight-bold text-uppercase mb-4">Contact</h5>
+
+                <ul class="list-unstyled">
+
+                    <li>
+                        <p>
+                            <i class="fas fa-envelope mr-3"></i> info@rise.org.cy</p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="fas fa-phone mr-3"></i> +357 22 747575</p>
+                    </li>
+
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+
+                <!-- Social buttons -->
+                <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
+
+                <!-- Facebook -->
+                <a type="button" class="btn-floating btn-fb" href="https://www.facebook.com/RISECyprus/"
+                   style="color: black">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <br>
+                <!-- Twitter -->
+                <a type="button" class="btn-floating btn-tw" href="https://twitter.com/risecyprus?lang=en"
+                   style="color: black">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <br>
+                <!-- Instagram -->
+                <a type="button" class="btn-floating btn-instagram" href="https://www.instagram.com/risecyprus/"
+                   style="color: black">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <br>
+                <a type="button" class="btn-floating btn-linkedin"
+                   href="https://www.linkedin.com/company/rise-ltd-cyprus/" style="color: black">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+
+            </div>
+            <!-- Grid column -->
+            <hr class="clearfix w-100 d-md-none">
+
+            <div class="col-md-2 col-lg-3 mr-auto my-md-2 my-0 mt-4 mb-1">
+
+                <img class="py-0" src="{{asset('images/RISE.png')}}" width="50%" height="30%" style="margin-top: 50px"/>
+
+                {{--                <img class="py-2" src="{{asset('images/Department_of_Computer_Science_en.jpg')}}" width="80%" height="60%"/>--}}
+
+            </div>
+        </div>
+        <!-- Grid row -->
+
+
     </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="http://www.rise.org.cy/en-gb/"> RISE</a>
+    </div>
+    <!-- Copyright -->
+
 </footer>
+<!-- Footer -->
+
+<!-- Modal -->
+<div class="modal fade" id="aboutRise" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog mw-100 w-50" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">About RISE</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="{{asset('/images/acknoledgements_RISE.png')}}" width="100%" height="100%"
+                     class="d-inline-block align-top" alt="">
+                <br><br>
+                <ul><strong>Contributors & Developers</strong></ul>
+                <li>Dr. Vasos Vassiliou</li>
+                <li>Dr. Loizos Michael</li>
+                <li>Dr. Kleanthis Neokleous</li>
+                <li>Iacovos Ioannou</li>
+                <li>Andreas Charalampous</li>
 
 
-<div id="about_dialog" title="About">
-    <p>
-    <h1>RISE</h1>
-    <img src="{{asset('images/acknoledgements_RISE.png')}}"/>
-    </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 </body>
 
 <!-- Optional JavaScript -->
