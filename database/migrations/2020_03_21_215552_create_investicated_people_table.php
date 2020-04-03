@@ -17,6 +17,7 @@ class CreateInvesticatedPeopleTable extends Migration
             $table->id();
             $table->integer("age")->nullable();
             $table->string("gender")->default("unknown");
+            $table->string("unique_identification")->nullable()->default("unknown");            
             $table->integer("zipcode")->nullable();
             $table->string("country")->nullable()->default("unknown");
             $table->string("flight_country")->nullable()->default("unknown");
