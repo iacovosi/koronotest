@@ -724,7 +724,7 @@
 
             <div class="col-md-2 col-lg-3 mr-auto my-md-2 my-0 mt-4 mb-1">
 
-                <img class="py-0" src="{{asset('images/RISE.png')}}" width="50%" height="30%" style="margin-top: 50px"/>
+                <img class="py-0" src="{{asset('images/RISE.png')}}" width="50%" height="40%" style="margin-top: 50px"/>
 
                 {{--                <img class="py-2" src="{{asset('images/Department_of_Computer_Science_en.jpg')}}" width="80%" height="60%"/>--}}
 
