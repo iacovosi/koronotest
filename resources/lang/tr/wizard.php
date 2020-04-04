@@ -82,7 +82,7 @@ return [
     'travelling' => 'Seyahat',
     'symptoms' => 'Belirtiler',
     'exposure' => 'Poz',
-    'country' => 'ülke',
+    'country' => 'Menşei ülke:',
     'flight_country' => 'Lütfen uçtuğunuz ülkeyi seçin:',
     'covid_19_contact' => 'COVID-19 virüsü teşhisi konmuş biriyle, daha önce veya sonra, belirtilerinizden önceki son iki hafta veya 14 gün boyunca yakın temasta bulundunuz mu?',
     'fever' => 'Ateş',
@@ -184,4 +184,5 @@ olmak
                                         mümkünse bu öz değerlendirme anketini doldurun.
 gerekirse talimatlar',
     'gender_other' => 'Belirtmemeyi tercih ederim',
+    'test_relying_on_guidelines' =>'Yönergeler Bu test aşağıdakilere dayanmaktadır',
 ];

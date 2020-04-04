@@ -81,7 +81,7 @@ return [
     'travelling' => 'Travelling',
     'symptoms' => 'Symptoms',
     'exposure' => 'Exposure',
-    'country' => 'Country',
+    'country' => 'Country of origin:',
     'flight_country' => 'Please choose the country you have flown to:',
     'covid_19_contact' => 'Have you been in close contact during the past two weeks or 14 days preceding your symptoms with someone who, before or after was diagnosed with the COVID-19 virus?',
     'fever' => 'Fever',
@@ -189,7 +189,7 @@ return [
                                         instructions if necessary',
     'yes' => 'YES',
     'no' => 'NO',
-
+    'test_relying_on_guidelines' =>'Guidelines This test is Based On',
 
 
 
