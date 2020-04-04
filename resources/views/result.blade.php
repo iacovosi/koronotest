@@ -401,17 +401,16 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img src="{{asset('/images/acknoledgements_RISE.png')}}" width="100%" height="100%"
+                <img src="{{asset('/images/acknoledgements_RISE.png')}}" width="100%" height="80%"
                      class="d-inline-block align-top" alt="">
-                <br><br>
-                <ul><strong>Contributors & Developers</strong></ul>
-                <li>Dr. Vasos Vassiliou</li>
-                <li>Dr. Loizos Michael</li>
-                <li>Dr. Kleanthis Neokleous</li>
-                <li>Iacovos Ioannou</li>
-                <li>Andreas Charalampous</li>
-
-
+                <div>
+                    <strong><b>Contributors & Developers</b></strong> <br/>
+                    Dr. Vasos Vassiliou<br/>
+                    Dr. Loizos Michael<br/>
+                    Dr. Kleanthis Neokleous<br/>
+                    Iacovos Ioannou<br/>
+                    Andreas Charalampous<br/>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
