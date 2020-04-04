@@ -52,15 +52,11 @@
         .switch {
             position: relative;
             display: inline-block;
-            width: 60px;
+            width: 90px;
             height: 34px;
         }
 
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
+        .switch input {display:none;}
 
         .slider {
             position: absolute;
@@ -69,9 +65,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: #ccc;
+            background-color: #5a6268;
             -webkit-transition: .4s;
             transition: .4s;
+            width:90px;
         }
 
         .slider:before {
@@ -87,7 +84,7 @@
         }
 
         input:checked + .slider {
-            background-color: #2196F3;
+            background-color: #138496;
         }
 
         input:focus + .slider {
@@ -95,10 +92,35 @@
         }
 
         input:checked + .slider:before {
-            -webkit-transform: translateX(26px);
-            -ms-transform: translateX(26px);
-            transform: translateX(26px);
+            -webkit-transform: translateX(55px);
+            -ms-transform: translateX(55px);
+            transform: translateX(55px);
         }
+
+        /*------ ADDED CSS ---------*/
+        .on
+        {
+            display: none;
+        }
+
+        .on, .off
+        {
+            color: white;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+            font-size: 12px;
+            font-family: Verdana, sans-serif;
+        }
+
+        input:checked+ .slider .on
+        {display: block;}
+
+        input:checked + .slider .off
+        {display: none;}
+
+        /*--------- END --------*/
 
         /* Rounded sliders */
         .slider.round {
@@ -106,8 +128,7 @@
         }
 
         .slider.round:before {
-            border-radius: 50%;
-        }
+            border-radius: 50%;}
 
         .btn-light:hover {
 
@@ -338,15 +359,14 @@
                                             </li>
                                         </ul>
                                         <br/>
-                                        {{--
-                                        <label for="vulnerable_group">@lang('wizard.chronic')*</label> --}}
-                                        <label class="switch" style="text-align: right;float: right;">
-                                            <input type="checkbox" id="vulnerable_group"
-                                                   name="vulnerable_group" value="true">
-                                            <span class="slider round"></span>
+                                        <label class="switch"  style="text-align: right;float: right;">
+                                            <input type="checkbox" id="vulnerable_group" name="vulnerable_group" value="true">
+                                            <div class="slider round">
+                                                <span class="on">YES</span>
+                                                <span class="off">NO</span>
+                                            </div>
                                         </label>
                                         <br/>
-
                                     </div>
                                     <button type="button" name="previous" class="previous btn btn-secondary"
                                             value="Previous">@lang('wizard.previous')</button>
@@ -365,10 +385,12 @@
                                                     class="fas fa-plane"></i> @lang('wizard.travelling')
                                         </h2>
                                         <label for="vulnerable_group">@lang('wizard.travel')</label>
-                                        <label class="switch" style="text-align: right;float: right;">
-                                            <input type="checkbox" id="flight_recently"
-                                                   name="flight_recently" value="true">
-                                            <span class="slider round"></span>
+                                        <label class="switch"  style="text-align: right;float: right;">
+                                            <input type="checkbox" id="flight_recently" name="flight_recently" value="true">
+                                            <div class="slider round">
+                                                <span class="on">YES</span>
+                                                <span class="off">NO</span>
+                                            </div>
                                         </label>
                                         <br/>
                                         <div name="flight_country_div" id="flight_country_div">
@@ -552,10 +574,12 @@
 
 
                                             <label for="vulnerable_group">@lang('wizard.covid_19_contact')</label>
-                                            <label class="switch" style="text-align: right;float: right;">
-                                                <input type="checkbox" id="covid_19_contact"
-                                                       name="covid_19_contact" value="true">
-                                                <span class="slider round"></span>
+                                            <label class="switch"  style="text-align: right;float: right;">
+                                                <input type="checkbox" id="covid_19_contact" name="covid_19_contact" value="true">
+                                                <div class="slider round">
+                                                    <span class="on">YES</span>
+                                                    <span class="off">NO</span>
+                                                </div>
                                             </label>
                                             <br/>
 
