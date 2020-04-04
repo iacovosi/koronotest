@@ -241,12 +241,14 @@
                     {{--                    <center><img src="{{asset('images/RISE.png')}}" width="35%"></center>--}}
                     {{--                    </p>--}}
                     <br><br>
-                    <div style="text-align: center">
-                        <button type="button" class="btn btn-light" data-toggle="modal"
-                                data-target="#test_relying_on_guidelines" style="background-color:#5bc0de;width:40%;text-align: center;">
-                            @lang('wizard.test_relying_on_guidelines')
-                        </button>
-                    </div>
+
+                    <p style="text-align: center; padding: 0 30px 0px 30px"> @lang('wizard.disclaimerp1')
+                        <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">WHO</a>,
+                        <a href="https://www.ecdc.europa.eu/en">ECDC </a>@lang('wizard.disclaimerp1.5')
+                        <a href="https://www.cdc.gov/">CDC</a>@lang('wizard.disclaimerp2')
+
+                    </p>
+
 
                     <p style="text-align: center; padding: 0px 20px 0px 20px">@lang('wizard.language_options')</p>
                     <p style="text-align: center; padding: 0px 20px 0px 20px">@lang('wizard.mandatory')</p>
@@ -792,32 +794,6 @@
     </div>
 </div>
 
-
-<div class="modal fade" id="test_relying_on_guidelines" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog mw-100 w-50" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">About RISE</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p style="text-align: center; padding: 0 30px 0px 30px"> @lang('wizard.disclaimerp1')
-                    <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">WHO</a>,
-                    <a href="https://www.ecdc.europa.eu/en">ECDC </a>@lang('wizard.disclaimerp1.5')
-                    <a href="https://www.cdc.gov/">CDC</a>@lang('wizard.disclaimerp2')
-
-                </p>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-    </div>
-</div>
-</div>
 
 <div class="modal fade" id="closeContact" tabindex="-1" role="dialog"
      aria-labelledby="exampleModalLabel"
