@@ -1005,6 +1005,7 @@
                 },
                 duration: 600
             });
+            $("html, body").animate({ scrollTop: 0 }, "slow");
         });
 
         $('.radio-group .radio').click(function () {
