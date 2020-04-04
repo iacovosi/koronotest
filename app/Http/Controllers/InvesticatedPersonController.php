@@ -146,21 +146,33 @@ class InvesticatedPersonController extends Controller
 
         $suggest = "error_occured";
 
-        if ($data["fever"] || $data["malaise"] || $data["cough"] || $data["myalgia"] || $data["breathing_difficulties"] || $data["loss_of_taste"] || $data["loss_of_smell"] || $data["chest_pain"] || $data["other_symptom"]) {
 
-            if ($data["flight_recently"] || $data["covid_19_contact"]) {
+        if ($data["flight_recently"] || $data["covid_19_contact"]) {
+            if ($data["fever"] || $data["malaise"] || $data["cough"] || $data["myalgia"] || $data["breathing_difficulties"] || $data["loss_of_taste"] || $data["loss_of_smell"] || $data["chest_pain"] || $data["other_symptom"]) {
                 if ($data['vulnerable_group'] || $data["age"] > 60) {
                     $suggest = "CASE5";
                 } else {
                     $suggest = "CASE4";
                 }
             } else {
+                if ($data['vulnerable_group'] || $data["age"] > 60) {
+                    $suggest = "CASE5";
+                } else {
+                    $suggest = "CASE3";
+                }
+            }
+        } elseif ($data["fever"] || $data["malaise"] || $data["cough"] || $data["myalgia"] || $data["breathing_difficulties"] || $data["loss_of_taste"] || $data["loss_of_smell"] || $data["chest_pain"] || $data["other_symptom"]) {
+            if ($data['vulnerable_group'] || $data["age"] > 60) {
+                $suggest = "CASE5";
+            } else {
                 $suggest = "CASE3";
             }
+        } elseif ($data['vulnerable_group'] || $data["age"] > 60) {
+            $suggest = "CASE2";
         } else {
             $suggest = "CASE1";
         }
-
+        
 
         $data["result"] = $suggest;
         //dd($data);
