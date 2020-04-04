@@ -28,7 +28,7 @@ return [
     'gender' => 'Gender (*)',
     'male' => 'Male',
     'female' => 'Female',
-    'other' =>'Other (i.e. diarrhea)',
+    'other' =>'Other (e.g. diarrhea)',
     'gender_other' => 'Prefer not to say',
     'selection' => 'Please select what is right for your case',
     'contact' => 'Contact with a COVID-19 infected person within 14 days from today',
@@ -82,7 +82,7 @@ return [
     'symptoms' => 'Symptoms',
     'exposure' => 'Exposure',
     'country' => 'Country',
-    'flight_country' => 'Please select the country you flight to:',
+    'flight_country' => 'Please choose the country you have flown to:',
     'covid_19_contact' => 'Have you been in close contact during the past two weeks or 14 days preceding your symptoms with someone who, before or after was diagnosed with the COVID-19 virus?',
     'fever' => 'Fever',
 
