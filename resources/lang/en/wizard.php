@@ -187,8 +187,8 @@ return [
     '5instruction3' => 'Inform those you have been in close contact with to monitor their health, stay
                                         home if possible, and to fill out this self-assessment questionnaire for further
                                         instructions if necessary',
-    'yes' => 'ΝΑΙ',
-    'no' => 'ΟΧΙ',
+    'yes' => 'YES',
+    'no' => 'NO',
 
 
 
