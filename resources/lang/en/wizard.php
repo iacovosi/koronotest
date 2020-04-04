@@ -48,7 +48,7 @@ return [
     'chest' => 'Chest Pain',
     'none' => 'None of the above',
     'previous' => 'Previous',
-    'test' => 'Test',
+    'test' => 'Evaluation',
     'results' => 'Test Results',
     'guides' => 'You should follow the directions given by the Goverment of Cyprus!',
     'caseResultsNot' => 'The results shown that you may have not been infected with Coronavirus (COVID-19)',
