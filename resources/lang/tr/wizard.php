@@ -169,7 +169,7 @@ olmak
 gerekirse talimatlar',
 
 
-        'case5' => 'COVID-19 sözleşmesi yapmış olabilirsiniz',
+    'case5' => 'COVID-19 sözleşmesi yapmış olabilirsiniz',
 
 
     'result5' => 'Seyahat geçmişiniz ve / veya semptomlarınız, bir solunum virüsünün göstergesidir.
@@ -183,5 +183,5 @@ olmak
     '5instruction3' => 'Yakın temasta bulunduklarınızı sağlıklarını izlemek, kalmak için bilgilendirin
                                         mümkünse bu öz değerlendirme anketini doldurun.
 gerekirse talimatlar',
-
+    'gender_other' => 'Belirtmemeyi tercih ederim',
 ];
