@@ -362,8 +362,8 @@
                                         <label class="switch"  style="text-align: right;float: right;">
                                             <input type="checkbox" id="vulnerable_group" name="vulnerable_group" value="true">
                                             <div class="slider round">
-                                                <span class="on">YES</span>
-                                                <span class="off">NO</span>
+                                                <span class="on">@lang('wizard.yes')</span>
+                                                <span class="off">@lang('wizard.no')</span>
                                             </div>
                                         </label>
                                         <br/>
@@ -388,8 +388,8 @@
                                         <label class="switch"  style="text-align: right;float: right;">
                                             <input type="checkbox" id="flight_recently" name="flight_recently" value="true">
                                             <div class="slider round">
-                                                <span class="on">YES</span>
-                                                <span class="off">NO</span>
+                                                <span class="on">@lang('wizard.yes')</span>
+                                                <span class="off">@lang('wizard.no')</span>
                                             </div>
                                         </label>
                                         <br/>
@@ -577,8 +577,8 @@
                                             <label class="switch"  style="text-align: right;float: right;">
                                                 <input type="checkbox" id="covid_19_contact" name="covid_19_contact" value="true">
                                                 <div class="slider round">
-                                                    <span class="on">YES</span>
-                                                    <span class="off">NO</span>
+                                                    <span class="on">@lang('wizard.yes')</span>
+                                                    <span class="off">@lang('wizard.no')</span>
                                                 </div>
                                             </label>
                                             <br/>

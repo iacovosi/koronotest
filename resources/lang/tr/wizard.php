@@ -74,6 +74,8 @@ return [
     'body_temperature_required' => 'Dikkat! Vücut Sıcaklığı zorunlu bir alandır!',
     'loss_of_taste' => 'Lezzet Kaybı',
     'loss_of_smell' => 'Koku Kaybı',
+    'yes' => 'EVET',
+    'no' => 'HAYIR',
 
 
 ];
