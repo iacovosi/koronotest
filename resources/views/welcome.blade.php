@@ -634,7 +634,7 @@
             <!-- Grid column -->
             <div class="col-md-2 col-lg-3 mr-auto my-md-2 my-0 mt-4 mb-1">
                 <img  style="margin-left: 90px" class="py-0" src="{{asset('images/Department_of_Computer_Science_en.png')}}" width="50%"
-                     height="80%"/ >
+                     height="80%"/>
                 {{--                <img class="py-2" src="{{asset('images/Department_of_Computer_Science_en.jpg')}}" width="80%" height="60%"/>--}}
 
             </div>
