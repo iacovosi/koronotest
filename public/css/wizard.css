@@ -173,23 +173,24 @@ select.list-dt:focus {
 
 #progressbar li {
     list-style-type: none;
-    font-size: 65%;
+    font-size: 50%;
     width: 18%;
     /*float: right;*/
     position: relative
 }
 
 #progressbar li:before {
-    width: 50px;
-    height: 50px;
-    line-height: 45px;
+    width: 20px;
+    height: 20px;
+    line-height: 15px;
     display: block;
     font-size: 18px;
     color: #ffffff;
     background: lightgray;
-    border-radius: 50%;
+    border-radius: 30%;
     margin: 0 auto 10px auto;
     padding: 1px
+
 }
 
 #progressbar li:after {
@@ -323,3 +324,28 @@ footer{
 
 }
 
+
+.regular-screen { display: none; }
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (min-width: 640px) {
+    #progressbar li {
+        font-size: 100%;
+    }
+
+    #progressbar li:before {
+        width: 50px;
+        height: 50px;
+        line-height: 45px;
+        display: block;
+        font-size: 18px;
+        color: #ffffff;
+        background: lightgray;
+        border-radius: 50%;
+        margin: 0 auto 10px auto;
+        padding: 1px
+    }
+    .regular-screen { display: inline-block; }
+    .mobile-screen { display: none; }
+
+}

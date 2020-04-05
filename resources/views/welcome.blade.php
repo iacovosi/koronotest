@@ -610,18 +610,19 @@
         </div>
     </div>
 </div>
-{{--<footer class="footer">--}}
-{{--    --}}{{--        <div class="container text-center">--}}
-{{--    --}}{{--            <span id="opener_about" class="button" style="text-align: center;margin-top: 1%;" >RISE About</span>--}}
-{{--    --}}{{--        </div>--}}
-{{--    <div class="container">--}}
-{{--        <img class="py-5" src="{{asset('images/RISE.png')}}" width="20%" height="20%" style='float:left;'/>--}}
-{{--        <img class="py-5 mt-4" src="{{asset('images/Department_of_Computer_Science_en.jpg')}}" width="20%" height="20%"--}}
-{{--             style='float:right;'/>--}}
-{{--    </div>--}}
-{{--</footer>--}}
 
+<span class="mobile-screen">
+<footer class="footer">
 
+<div class="container">
+       <img src="{{asset('images/RISE.png')}}" width="50%" height="50%" style='float:left;'/>
+       <img src="{{asset('images/logoUcy.png')}}" width="50%" height="50%"
+             style='float:right;'/>
+    </div>
+</footer>
+</span>
+
+<span class="regular-screen">
 <!-- Footer -->
 <footer class="page-footer font-small mdb-color lighten-3 pt-4 ">
 
@@ -744,7 +745,7 @@
 
 </footer>
 <!-- Footer -->
-
+</span>
 
 {{--<div id="dialog" title="Close Contact Definition">--}}
 {{--    <p>--}}
@@ -872,48 +873,6 @@
     $(document).ready(function () {
         var current_fs, next_fs, previous_fs; //fieldsets
         var opacity;
-
-        //showPosition(); //to enable when wy have certificate
-
-
-        $("#dialog").dialog({
-            autoOpen: false,
-            show: {
-                effect: "blind",
-                duration: 1000
-            },
-            hide: {
-                effect: "explode",
-                duration: 1000
-            },
-            width: "50%",
-            hight: "50%",
-        });
-
-
-        $("#about_dialog").dialog({
-            autoOpen: false,
-            show: {
-                effect: "blind",
-                duration: 1000
-            },
-            hide: {
-                effect: "explode",
-                duration: 1000
-            },
-            width: "50%",
-            hight: "50%",
-        });
-
-
-        // $("#opener").on("click", function () {
-        //     $("#dialog").dialog("open");
-        // });
-        //
-        // $("#opener_about").on("click", function () {
-        //     $("#about_dialog").dialog("open");
-        // });
-
 
         $("#niceCountryInputSelector").is(function (i, e) {
             new NiceCountryInput(e).init();
