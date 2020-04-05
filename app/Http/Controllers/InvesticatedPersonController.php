@@ -172,7 +172,6 @@ class InvesticatedPersonController extends Controller
         } else {
             $suggest = "CASE1";
         }
-        
 
         $data["result"] = $suggest;
         //dd($data);

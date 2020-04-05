@@ -162,7 +162,7 @@ select.list-dt:focus {
 }
 
 #progressbar {
-    margin-bottom: 5%;
+    margin-bottom: 30px;
     overflow: hidden;
     color: #C0C0C0
 }
@@ -173,7 +173,7 @@ select.list-dt:focus {
 
 #progressbar li {
     list-style-type: none;
-    font-size: 65%;
+    font-size: 14px;
     width: 18%;
     /*float: right;*/
     position: relative
@@ -284,7 +284,7 @@ select.list-dt:focus {
 
 .slider{
 
-   width: 70px;
+    width: 70px;
 
 
 }
