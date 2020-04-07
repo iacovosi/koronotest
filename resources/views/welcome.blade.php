@@ -602,6 +602,9 @@
                                 </fieldset>
                                 <input type="hidden" id="lat" name="lat" value="0">
                                 <input type="hidden" id="long" name="long" value="0">
+                                @if(isset($unique_identification))
+                                     <input type="hidden" id="unique_identification" name="unique_identification" value="{{$unique_identification}}">
+                                @endif
                             </form>
                         </div>
                     </div>

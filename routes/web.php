@@ -21,5 +21,12 @@ Route::get('/{locale}', function ($locale) {
     App::setLocale($locale);
     return view('welcome');
 });
-
-Route::post('/{locale}',  ['as' => 'save-test','uses'=>'InvesticatedPersonController@store']);
+Route::get('/unique_id/{id}', function ($unique_id) {
+    App::setLocale("en");
+    return view('welcome')->with('unique_identification', $unique_id);;
+});
+Route::get('/{locale}/unique_id/{id}', function ($locale, $unique_id) {
+    App::setLocale($locale);
+    return view('welcome')->with('unique_identification', $unique_id);;
+});
+Route::post('/{locale}', ['as' => 'save-test', 'uses' => 'InvesticatedPersonController@store']);
