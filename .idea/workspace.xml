@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8196f3b-2965-49a3-81e5-98645de3b21b" name="Default" comment="fixed loc strings + design changes indicated by by all again">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/InvesticatedPerson.php" afterPath="$PROJECT_DIR$/app/InvesticatedPerson.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
-    </list>
+    <list default="true" id="f8196f3b-2965-49a3-81e5-98645de3b21b" name="Default" comment="fixed loc strings + design changes indicated by by all again" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
-              <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="31" />
+              <caret line="27" column="14" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -248,7 +243,7 @@
       <path value="$PROJECT_DIR$/vendor/psr/container" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-277" />
     <option name="y" value="173" />
     <option name="width" value="1440" />
@@ -391,7 +386,7 @@
       <workItem from="1586069583294" duration="6327000" />
       <workItem from="1586106359280" duration="1033000" />
       <workItem from="1586246638836" duration="2612000" />
-      <workItem from="1586251074624" duration="951000" />
+      <workItem from="1586251074624" duration="1488000" />
     </task>
     <task id="LOCAL-00001" summary="locale implementation + fix bugs">
       <created>1585195823878</created>
@@ -453,11 +448,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103133000" />
+    <option name="totallyTimeSpent" value="103670000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -726,7 +720,7 @@
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="31" />
+          <caret line="27" column="14" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="36" />
           <folding />
         </state>
       </provider>

@@ -56,7 +56,9 @@
             height: 34px;
         }
 
-        .switch input {display:none;}
+        .switch input {
+            display: none;
+        }
 
         .slider {
             position: absolute;
@@ -68,7 +70,7 @@
             background-color: #5a6268;
             -webkit-transition: .4s;
             transition: .4s;
-            width:90px;
+            width: 90px;
         }
 
         .slider:before {
@@ -98,27 +100,27 @@
         }
 
         /*------ ADDED CSS ---------*/
-        .on
-        {
+        .on {
             display: none;
         }
 
-        .on, .off
-        {
+        .on, .off {
             color: white;
             position: absolute;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             top: 50%;
             left: 50%;
             font-size: 12px;
             font-family: Verdana, sans-serif;
         }
 
-        input:checked+ .slider .on
-        {display: block;}
+        input:checked + .slider .on {
+            display: block;
+        }
 
-        input:checked + .slider .off
-        {display: none;}
+        input:checked + .slider .off {
+            display: none;
+        }
 
         /*--------- END --------*/
 
@@ -128,12 +130,12 @@
         }
 
         .slider.round:before {
-            border-radius: 50%;}
+            border-radius: 50%;
+        }
 
         .btn-light:hover {
 
             color: #1b4b72 !important;
-
 
         }
 
@@ -221,13 +223,13 @@
         <div class="top-right links">
             @auth
                 <a href="{{ url('/home') }}">Home</a>
-            @else
-                <a href="{{ route('login') }}">Login</a>
+                @else
+                    <a href="{{ route('login') }}">Login</a>
 
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Register</a>
-                @endif
-            @endauth
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}">Register</a>
+                    @endif
+                    @endauth
         </div>
 @endif
 
@@ -359,8 +361,9 @@
                                             </li>
                                         </ul>
                                         <br/>
-                                        <label class="switch"  style="text-align: right;float: right;">
-                                            <input type="checkbox" id="vulnerable_group" name="vulnerable_group" value="true">
+                                        <label class="switch" style="text-align: right;float: right;">
+                                            <input type="checkbox" id="vulnerable_group" name="vulnerable_group"
+                                                   value="true">
                                             <div class="slider round">
                                                 <span class="on">@lang('wizard.yes')</span>
                                                 <span class="off">@lang('wizard.no')</span>
@@ -385,8 +388,9 @@
                                                     class="fas fa-plane"></i> @lang('wizard.travelling')
                                         </h2>
                                         <label for="vulnerable_group">@lang('wizard.travel')</label>
-                                        <label class="switch"  style="text-align: right;float: right;">
-                                            <input type="checkbox" id="flight_recently" name="flight_recently" value="true">
+                                        <label class="switch" style="text-align: right;float: right;">
+                                            <input type="checkbox" id="flight_recently" name="flight_recently"
+                                                   value="true">
                                             <div class="slider round">
                                                 <span class="on">@lang('wizard.yes')</span>
                                                 <span class="off">@lang('wizard.no')</span>
@@ -574,8 +578,9 @@
 
 
                                             <label for="vulnerable_group">@lang('wizard.covid_19_contact')</label>
-                                            <label class="switch"  style="text-align: right;float: right;">
-                                                <input type="checkbox" id="covid_19_contact" name="covid_19_contact" value="true">
+                                            <label class="switch" style="text-align: right;float: right;">
+                                                <input type="checkbox" id="covid_19_contact" name="covid_19_contact"
+                                                       value="true">
                                                 <div class="slider round">
                                                     <span class="on">@lang('wizard.yes')</span>
                                                     <span class="off">@lang('wizard.no')</span>
@@ -603,7 +608,11 @@
                                 <input type="hidden" id="lat" name="lat" value="0">
                                 <input type="hidden" id="long" name="long" value="0">
                                 @if(isset($unique_identification))
-                                     <input type="hidden" id="unique_identification" name="unique_identification" value="{{$unique_identification}}">
+                                    <input type="hidden" id="unique_identification" name="unique_identification"
+                                           value="{{$unique_identification}}">
+                                @else
+                                    <input type="hidden" id="unique_identification" name="unique_identification"
+                                           value="">
                                 @endif
                             </form>
                         </div>
@@ -620,7 +629,7 @@
 <div class="container">
        <img src="{{asset('images/RISE.png')}}" width="50%" height="50%" style='float:left;'/>
        <img src="{{asset('images/logoUcy.png')}}" width="50%" height="50%"
-             style='float:right;'/>
+            style='float:right;'/>
     </div>
 </footer>
 </span>
@@ -637,7 +646,8 @@
 
             <!-- Grid column -->
             <div class="col-md-2 col-lg-3 mr-auto my-md-2 my-0 mt-4 mb-1">
-                <img  style="margin-left: 90px" class="py-0" src="{{asset('images/Department_of_Computer_Science_en.png')}}" width="50%"
+                <img style="margin-left: 90px" class="py-0"
+                     src="{{asset('images/Department_of_Computer_Science_en.png')}}" width="50%"
                      height="80%"/>
                 {{--                <img class="py-2" src="{{asset('images/Department_of_Computer_Science_en.jpg')}}" width="80%" height="60%"/>--}}
 
@@ -747,7 +757,7 @@
     <!-- Copyright -->
 
 </footer>
-<!-- Footer -->
+    <!-- Footer -->
 </span>
 
 {{--<div id="dialog" title="Close Contact Definition">--}}
@@ -783,12 +793,12 @@
                 <img src="{{asset('/images/acknoledgements_RISE.png')}}" width="100%" height="80%"
                      class="d-inline-block align-top" alt="">
                 <div>
-                <strong><b>Contributors & Developers</b></strong> <br/>
-                Dr. Vasos Vassiliou<br/>
-                Dr. Loizos Michael<br/>
-                Dr. Kleanthis Neokleous<br/>
-                Iacovos Ioannou<br/>
-                Andreas Charalampous<br/>
+                    <strong><b>Contributors & Developers</b></strong> <br/>
+                    Dr. Vasos Vassiliou<br/>
+                    Dr. Loizos Michael<br/>
+                    Dr. Kleanthis Neokleous<br/>
+                    Iacovos Ioannou<br/>
+                    Andreas Charalampous<br/>
                 </div>
             </div>
             <div class="modal-footer">
@@ -864,6 +874,44 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
 <script>
+    function isEmpty(val){
+        return (val === undefined || val == null || val.length <= 0) ? true : false;
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+        var maxtime="Max-Age="+ d.toUTCString()+";";
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"+maxtime+"Version=1";
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+
+    function checkCookie(cname) {
+        var cname = getCookie(cname);
+        if (isEmpty(cname)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 
     function onChangeCallback(ctr) {
         $("#country").val(ctr);
@@ -876,7 +924,21 @@
     $(document).ready(function () {
         var current_fs, next_fs, previous_fs; //fieldsets
         var opacity;
+        var UUID;
 
+
+        if (isEmpty($("#unique_identification").val())) {
+            if (!isEmpty(getCookie('UUID'))) {
+                UUID = getCookie('UUID');
+                console.log("User UUID:"+UUID);
+            }
+            else {
+                UUID = generateUUID();
+                setCookie('UUID', UUID,365);
+                console.log(UUID);
+            }
+            $("#unique_identification").val(UUID);
+        }
         $("#niceCountryInputSelector").is(function (i, e) {
             new NiceCountryInput(e).init();
             $("#country").val("Cyprus (Κύπρος) CY");
@@ -905,9 +967,9 @@
             autoclose: true,
         }).datepicker("setDate", new Date());
 
-        
-        $(window).keydown(function(event){
-            if(event.keyCode == 13) {
+
+        $(window).keydown(function (event) {
+            if (event.keyCode == 13) {
                 event.preventDefault();
                 return false;
             }
@@ -948,7 +1010,7 @@
                 },
                 duration: 600
             });
-            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $("html, body").animate({scrollTop: 0}, "slow");
         });
 
         $(".previous").click(function () {
@@ -976,7 +1038,7 @@
                 },
                 duration: 600
             });
-            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $("html, body").animate({scrollTop: 0}, "slow");
         });
 
         $('.radio-group .radio').click(function () {
@@ -1205,9 +1267,21 @@
         }
     });
 
-
-
-
+    function generateUUID() { // Public Domain/MIT
+        var d = new Date().getTime();//Timestamp
+        var d2 = (performance && performance.now && (performance.now() * 1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16;//random number between 0 and 16
+            if (d > 0) {//Use timestamp until depleted
+                r = (d + r) % 16 | 0;
+                d = Math.floor(d / 16);
+            } else {//Use microseconds since page-load if supported
+                r = (d2 + r) % 16 | 0;
+                d2 = Math.floor(d2 / 16);
+            }
+            return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        });
+    }
 
 
 </script>
