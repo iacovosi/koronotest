@@ -162,7 +162,7 @@ return [
     'case4' => 'Your travel history and symptoms are indicative of a respiratory virus, which may
                                         be
                                         COVID-19.',
-
+    'result4' => '',
     '4instruction1' => 'Contact your general practitioner who will arrange your further examination and
                                         treatment.*',
     '4instruction2' => 'Remain in quarantine for two weeks.',

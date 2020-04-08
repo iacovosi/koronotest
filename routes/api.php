@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/records/store', ['as' => 'store-test', 'uses' => 'InvesticatedPersonController@storeAPI']);
+Route::get('/records/getRecords/', ['as' => 'getRecords-test', 'uses' => 'InvesticatedPersonController@getRecordsAPI']);
+Route::get('/records/getRecords/Unique_id/{id}', ['as' => 'getRecords-test-unique_id', 'uses' => 'InvesticatedPersonController@getRecordAPIForSpecificUnique_identifier']);

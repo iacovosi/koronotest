@@ -119,7 +119,7 @@ https://www.pio.gov.cy/coronavirus/ \'\' da ayrıntılı olarak verilen hastalı
 
 
     'case4' => 'Seyahat geçmişiniz ve semptomlarınız, bir solunum virüsünün göstergesidir. COVID-19 olma olasiligi vardir. ',
-
+    'result4' => '',
     '4instruction1' => 'İleri muayenenizi ve tedavisini ayarlayacak doktorunuza başvurun. *',
     '4instruction2' => '2 hafta karantinada kalin.',
     '4instruction3' => 'COVID19 Acil Müdahale Hattı (1420), yalnızca acil Durumlar icin.',

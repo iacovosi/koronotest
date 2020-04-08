@@ -16,8 +16,8 @@ class CreateInvesticatedPeopleTable extends Migration
         Schema::create('investicated_people', function (Blueprint $table) {
             $table->id();
             $table->integer("age")->nullable();
-            $table->string("gender")->default("unknown");
-            $table->string("unique_identification")->nullable()->default("unknown");            
+            $table->string("gender")->nullable()->default("unknown");
+            $table->string("unique_identification")->nullable()->default("unknown");
             $table->integer("zipcode")->nullable();
             $table->string("country")->nullable()->default("unknown");
             $table->string("flight_country")->nullable()->default("unknown");
