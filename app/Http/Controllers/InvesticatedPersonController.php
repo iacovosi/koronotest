@@ -71,7 +71,10 @@ class InvesticatedPersonController extends Controller
         $data = $this->returnSuggestion($data);
         $suggest = $data["result"];
         if (isset($data["unique_identification"])) {
-            Cookie::make('UUID', $data["unique_identification"]);
+            $unique_id = Cookie::get('UUID');
+            if (empty($unique_id)) {
+                Cookie::make('UUID', $data["unique_identification"]);
+            }
         }
 
         $id = InvesticatedPerson::create($data)->id;

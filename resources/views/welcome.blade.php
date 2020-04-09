@@ -882,7 +882,8 @@
         var d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
         var expires = "expires="+ d.toUTCString();
-        var maxtime="Max-Age="+ d.toUTCString()+";";
+        //var maxtime="Max-Age="+ d.toUTCString()+";";
+        var maxtime="supportsCredentials=true;allowedOrigins=[*];allowedOriginsPatterns=[];allowedHeaders=[]*;allowedMethods=[*];exposedHeaders=[];maxAge=0";
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"+maxtime+"Version=1";
     }
 
