@@ -9,6 +9,7 @@ use DateTime;
 use DatePeriod;
 use DateInterval;
 use App;
+use Cookie;
 
 
 class InvesticatedPersonController extends Controller
@@ -69,6 +70,10 @@ class InvesticatedPersonController extends Controller
         //dd($data);
         $data = $this->returnSuggestion($data);
         $suggest = $data["result"];
+        if (isset($data["unique_identification"])) {
+            Cookie::make('UUID', $data["unique_identification"]);
+        }
+
         $id = InvesticatedPerson::create($data)->id;
 
         //dd($suggest);
@@ -223,7 +228,10 @@ class InvesticatedPersonController extends Controller
     public function storeAPI(Request $request)
     {
         $data = json_decode($request->getContent(), true);
-        App::setLocale("en");
+        $locale = App::getLocale();
+        if (empty($locale)) {
+            App::setLocale("en");
+        }
         if (isset($data["id"]) && !empty($data["id"])) {
             unset($data["id"]);
         }
@@ -330,6 +338,13 @@ class InvesticatedPersonController extends Controller
                 $reply, 200);
         }
         // dd($data);
+    }
+
+    public function storeAPILocale(Request $request, $locale)
+    {
+
+        App::setLocale($locale);
+        return $this->storeAPI($request);
     }
 
 
@@ -460,22 +475,6 @@ class InvesticatedPersonController extends Controller
     }
 
 
-    public function getRecordsAPI()
-    {
-        $test = InvesticatedPerson::all();
-        return Response::json(
-            $test, 200);
-    }
-
-    public function getRecordAPIForSpecificUnique_identifier($identifier)
-    {
-        $tests = InvesticatedPerson::all();
-        $usersForSpecificU_id = $tests->intersect(InvesticatedPerson::whereIn('unique_identification', [$identifier])->get());
-        return Response::json(
-            $usersForSpecificU_id, 200);
-    }
-
-
     public function getText($result)
     {
         $txtresult = "";
@@ -542,6 +541,22 @@ class InvesticatedPersonController extends Controller
 
         }
         return $txtresult;
+    }
+
+
+    public function getRecordsAPI()
+    {
+        $test = InvesticatedPerson::all();
+        return Response::json(
+            $test, 200);
+    }
+
+    public function getRecordAPIForSpecificUnique_identifier($identifier)
+    {
+        $tests = InvesticatedPerson::all();
+        $usersForSpecificU_id = $tests->intersect(InvesticatedPerson::whereIn('unique_identification', [$identifier])->get());
+        return Response::json(
+            $usersForSpecificU_id, 200);
     }
 
 

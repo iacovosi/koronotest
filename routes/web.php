@@ -14,15 +14,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    App::setLocale("en");
-    return view('welcome');
+    $locale = App::getLocale();
+    if (empty($locale)) {
+        App::setLocale("en");
+    }
+    $unique_id = Cookie::get('UUID');
+    if (!empty($unique_id)) {
+        return view('welcome')->with('unique_identification', $unique_id);;
+    } else {
+        return view('welcome');
+    }
 });
 Route::get('/{locale}', function ($locale) {
     App::setLocale($locale);
-    return view('welcome');
+    $unique_id = Cookie::get('UUID');
+    if (!empty($unique_id)) {
+        return view('welcome')->with('unique_identification', $unique_id);;
+    } else {
+        return view('welcome');
+    }
 });
 Route::get('/unique_id/{id}', function ($unique_id) {
-    App::setLocale("en");
+    $locale = App::getLocale();
+    if (empty($locale)) {
+        App::setLocale("en");
+    }
     return view('welcome')->with('unique_identification', $unique_id);;
 });
 Route::get('/{locale}/unique_id/{id}', function ($locale, $unique_id) {
