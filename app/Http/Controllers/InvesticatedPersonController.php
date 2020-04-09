@@ -322,7 +322,8 @@ class InvesticatedPersonController extends Controller
             $data = $this->returnSuggestion($data);
             $suggest = $data["result"];
             $reply["suggest"] = $suggest;
-            $reply["html"] =$this->getHtml($suggest);
+            $reply["html"] = $this->getHtml($suggest);
+            $reply["text"] = $this->getText($suggest);
             $id = InvesticatedPerson::create($data)->id;
 
             return Response::json(
@@ -404,7 +405,7 @@ class InvesticatedPersonController extends Controller
                 $htmlresult .= '
                                 <h1><b>' . trans("wizard.case4") . '</b></h1>
                                 <p style="text-align: center; padding-left: 10px">
-                                    '. trans("wizard.result4") . '
+                                    ' . trans("wizard.result4") . '
                                     <br/>
                                <p class="text-center"><strong>' . trans("wizard.case_instructions") . '</strong></p>
                                 <ul style="text-align: left;float: left;padding-left: 10%;">
@@ -473,5 +474,75 @@ class InvesticatedPersonController extends Controller
         return Response::json(
             $usersForSpecificU_id, 200);
     }
+
+
+    public function getText($result)
+    {
+        $txtresult = "";
+        switch ($result) {
+
+            case "CASE1":
+                $txtresult .= trans("wizard.case1") . " |  " .
+                    trans("wizard.result1") . " |  " .
+                    trans("wizard.case_instructions") . " |  " .
+                    trans("wizard.1instruction1") . " |  " .
+                    trans("wizard.1instruction2") . " |  " .
+                    trans("wizard.1instruction3") . " |  " .
+                    trans("wizard.1instruction4");
+
+                break;
+            case "CASE2":
+                $txtresult .= trans("wizard.case2") . " |  " .
+                    trans("wizard.result2") . " |  " .
+                    trans("wizard.case_instructions") . " |  " .
+                    trans("wizard.2instruction1") . " |  " .
+                    trans("wizard.2instruction2") . " |  " .
+                    trans("wizard.2instruction3") . " |  " .
+                    trans("wizard.2instruction4");
+                break;
+            case "CASE3":
+                $txtresult .= trans("wizard.case3") . " |  " .
+                    trans("wizard.result3") . " |  " .
+                    trans("wizard.case_instructions") . " |  " .
+                    trans("wizard.3instruction1") . " |  " .
+                    trans("wizard.3instruction2") . " |  " .
+                    trans("wizard.3instruction3") . " |  " .
+                    trans("wizard.3instruction4");
+                break;
+            case "CASE4":
+                $txtresult .= trans("wizard.case4") . " |  " .
+                    trans("wizard.result4") . " |  " .
+                    trans("wizard.case_instructions") . " |  " .
+                    trans("wizard.4instruction1") . " |  " .
+                    trans("wizard.4instruction2") . " |  " .
+                    trans("wizard.4instruction3") . " |  " .
+                    trans("wizard.4instruction4");
+                break;
+            case "CASE5":
+                $txtresult .= trans("wizard.case5") . " |  " .
+                    trans("wizard.result5") . " |  " .
+                    trans("wizard.case_instructions") . " |  " .
+                    trans("wizard.5instruction1") . " |  " .
+                    trans("wizard.5instruction2") . " |  " .
+                    trans("wizard.5instruction3") . " |  ";
+                break;
+            case "error_occured":
+                $txtresult .= '
+                                <div style="background - color: #ffd000;">
+                                    <h1 ><b > ' . trans('wizard.systemError') . '</b ></h1 > <br />
+                                    <p >' . trans('wizard.error') . '</p >
+                                    </p >
+                                </div >';
+                break;
+
+            default:
+                $txtresult .= '
+                                <span>' . trans('wizard.tryAgain') . '</span>';
+                break;
+
+        }
+        return $txtresult;
+    }
+
 
 }
