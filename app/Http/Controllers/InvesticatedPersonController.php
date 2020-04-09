@@ -329,6 +329,7 @@ class InvesticatedPersonController extends Controller
             $reply["suggest"] = $suggest;
             $reply["html"] = $this->getHtml($suggest);
             $reply["text"] = $this->getText($suggest);
+            $reply["textArray"] = $this->getTextArray($suggest);
             $id = InvesticatedPerson::create($data)->id;
 
             return Response::json(
@@ -523,21 +524,80 @@ class InvesticatedPersonController extends Controller
                     trans("wizard.5instruction3") . " |  ";
                 break;
             case "error_occured":
-                $txtresult .= '
-                                <div style="background - color: #ffd000;">
-                                    <h1 ><b > ' . trans('wizard.systemError') . '</b ></h1 > <br />
-                                    <p >' . trans('wizard.error') . '</p >
-                                    </p >
-                                </div >';
+                $txtresult .= trans('wizard.systemError') . '|' . trans('wizard.error');
                 break;
 
             default:
-                $txtresult .= '
-                                <span>' . trans('wizard.tryAgain') . '</span>';
+                $txtresult .= trans('wizard.tryAgain');
                 break;
 
         }
         return $txtresult;
+    }
+
+
+    public function getTextArray($result)
+    {
+        $txtresultArray = Array();
+        switch ($result) {
+            case "CASE1":
+                $txtresultArray['title'] = trans("wizard.case1");
+                $txtresultArray['result'] = trans("wizard.result1");
+                $txtresultArray['instructions'][] = trans("wizard.case_instructions");
+                $txtresultArray['instructions'][] = trans("wizard.1instruction1");
+                $txtresultArray['instructions'][] = trans("wizard.1instruction2");
+                $txtresultArray['instructions'][] = trans("wizard.1instruction3");
+                $txtresultArray['instructions'][] = trans("wizard.1instruction4");
+                break;
+            case "CASE2":
+                $txtresultArray['title'] = trans("wizard.case2");
+                $txtresultArray['result'] = trans("wizard.result2");
+                $txtresultArray['instructions'][] = trans("wizard.case_instructions");
+                $txtresultArray['instructions'][] = trans("wizard.2instruction1");
+                $txtresultArray['instructions'][] = trans("wizard.2instruction2");
+                $txtresultArray['instructions'][] = trans("wizard.2instruction3");
+                $txtresultArray['instructions'][] = trans("wizard.2instruction4");
+                break;
+            case "CASE3":
+                $txtresultArray['title'] = trans("wizard.case3");
+                $txtresultArray['result'] = trans("wizard.result3");
+                $txtresultArray['instructions'][] = trans("wizard.case_instructions");
+                $txtresultArray['instructions'][] = trans("wizard.3instruction1");
+                $txtresultArray['instructions'][] = trans("wizard.3instruction2");
+                $txtresultArray['instructions'][] = trans("wizard.3instruction3");
+                $txtresultArray['instructions'][] = trans("wizard.3instruction4");
+                break;
+            case "CASE4":
+                $txtresultArray['title'] = trans("wizard.case4");
+                $txtresultArray['result'] = trans("wizard.result4");
+                $txtresultArray['instructions'][] = trans("wizard.case_instructions");
+                $txtresultArray['instructions'][] = trans("wizard.4instruction1");
+                $txtresultArray['instructions'][] = trans("wizard.4instruction2");
+                $txtresultArray['instructions'][] = trans("wizard.4instruction3");
+                $txtresultArray['instructions'][] = trans("wizard.4instruction4");
+                break;
+            case "CASE5":
+                $txtresultArray['title'] = trans("wizard.case5");
+                $txtresultArray['result'] = trans("wizard.result5");
+                $txtresultArray['instructions'][] = trans("wizard.case_instructions");
+                $txtresultArray['instructions'][] = trans("wizard.5instruction1");
+                $txtresultArray['instructions'][] = trans("wizard.5instruction2");
+                $txtresultArray['instructions'][] = trans("wizard.5instruction3");
+                break;
+            case "error_occured":
+                $txtresultArray['title'] = "Error";
+                $txtresultArray['result'] = trans('wizard.systemError');
+                $txtresultArray['instructions'][] = trans('wizard.error');
+                break;
+
+            default:
+                $txtresultArray['title'] = "Try Again";
+                $txtresultArray['result'] = trans('wizard.tryAgain');
+                $txtresultArray['instructions'][] = trans('wizard.tryAgain');
+                break;
+
+        }
+        return $txtresultArray;
     }
 
 
