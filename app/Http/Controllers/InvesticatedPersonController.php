@@ -16,6 +16,15 @@ class InvesticatedPersonController extends Controller
 {
 
 
+    public function __construct()
+    {
+
+        //have to add the locale here
+
+//
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -43,16 +52,6 @@ class InvesticatedPersonController extends Controller
     {
 
     }
-
-    public function __construct()
-    {
-
-        //have to add the locale here
-
-//
-
-    }
-
 
     /**
      * Store a newly created resource in storage.
@@ -222,6 +221,13 @@ class InvesticatedPersonController extends Controller
 
     }
 
+    public function storeAPILocale(Request $request, $locale)
+    {
+
+        App::setLocale($locale);
+        return $this->storeAPI($request);
+    }
+
     public function storeAPI(Request $request)
     {
         $data = json_decode($request->getContent(), true);
@@ -337,14 +343,6 @@ class InvesticatedPersonController extends Controller
         }
         // dd($data);
     }
-
-    public function storeAPILocale(Request $request, $locale)
-    {
-
-        App::setLocale($locale);
-        return $this->storeAPI($request);
-    }
-
 
     public function getHtml($result)
     {
@@ -543,7 +541,7 @@ class InvesticatedPersonController extends Controller
             case "CASE1":
                 $txtresultArray['title'] = trans("wizard.case1");
                 $txtresultArray['result'] = trans("wizard.result1");
-                $txtresultArray['instructions'][] = trans("wizard.case_instructions");
+                $txtresultArray['prompt'] = trans("wizard.case_instructions");
                 $txtresultArray['instructions'][] = trans("wizard.1instruction1");
                 $txtresultArray['instructions'][] = trans("wizard.1instruction2");
                 $txtresultArray['instructions'][] = trans("wizard.1instruction3");
@@ -552,7 +550,7 @@ class InvesticatedPersonController extends Controller
             case "CASE2":
                 $txtresultArray['title'] = trans("wizard.case2");
                 $txtresultArray['result'] = trans("wizard.result2");
-                $txtresultArray['instructions'][] = trans("wizard.case_instructions");
+                $txtresultArray['prompt'] = trans("wizard.case_instructions");
                 $txtresultArray['instructions'][] = trans("wizard.2instruction1");
                 $txtresultArray['instructions'][] = trans("wizard.2instruction2");
                 $txtresultArray['instructions'][] = trans("wizard.2instruction3");
@@ -561,7 +559,7 @@ class InvesticatedPersonController extends Controller
             case "CASE3":
                 $txtresultArray['title'] = trans("wizard.case3");
                 $txtresultArray['result'] = trans("wizard.result3");
-                $txtresultArray['instructions'][] = trans("wizard.case_instructions");
+                $txtresultArray['prompt'] = trans("wizard.case_instructions");
                 $txtresultArray['instructions'][] = trans("wizard.3instruction1");
                 $txtresultArray['instructions'][] = trans("wizard.3instruction2");
                 $txtresultArray['instructions'][] = trans("wizard.3instruction3");
@@ -570,7 +568,7 @@ class InvesticatedPersonController extends Controller
             case "CASE4":
                 $txtresultArray['title'] = trans("wizard.case4");
                 $txtresultArray['result'] = trans("wizard.result4");
-                $txtresultArray['instructions'][] = trans("wizard.case_instructions");
+                $txtresultArray['prompt'] = trans("wizard.case_instructions");
                 $txtresultArray['instructions'][] = trans("wizard.4instruction1");
                 $txtresultArray['instructions'][] = trans("wizard.4instruction2");
                 $txtresultArray['instructions'][] = trans("wizard.4instruction3");
@@ -579,7 +577,7 @@ class InvesticatedPersonController extends Controller
             case "CASE5":
                 $txtresultArray['title'] = trans("wizard.case5");
                 $txtresultArray['result'] = trans("wizard.result5");
-                $txtresultArray['instructions'][] = trans("wizard.case_instructions");
+                $txtresultArray['prompt'] = trans("wizard.case_instructions");
                 $txtresultArray['instructions'][] = trans("wizard.5instruction1");
                 $txtresultArray['instructions'][] = trans("wizard.5instruction2");
                 $txtresultArray['instructions'][] = trans("wizard.5instruction3");
@@ -587,12 +585,15 @@ class InvesticatedPersonController extends Controller
             case "error_occured":
                 $txtresultArray['title'] = "Error";
                 $txtresultArray['result'] = trans('wizard.systemError');
+                $txtresultArray['prompt'] = "";
                 $txtresultArray['instructions'][] = trans('wizard.error');
+
                 break;
 
             default:
                 $txtresultArray['title'] = "Try Again";
                 $txtresultArray['result'] = trans('wizard.tryAgain');
+                $txtresultArray['prompt'] = "";
                 $txtresultArray['instructions'][] = trans('wizard.tryAgain');
                 break;
 

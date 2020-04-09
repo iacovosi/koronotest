@@ -873,44 +873,12 @@
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
+<script type="text/javascript"
+        src="{{asset('js/jquery.cookie.js')}}"></script>
+
 <script>
     function isEmpty(val){
         return (val === undefined || val == null || val.length <= 0) ? true : false;
-    }
-
-    function setCookie(cname, cvalue, exdays) {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        var expires = "expires="+ d.toUTCString();
-        var maxtime="Max-Age="+ d.toUTCString()+";";
-        //var maxtime="supportsCredentials=true;allowedOrigins=[*];allowedOriginsPatterns=[];allowedHeaders=[]*;allowedMethods=[*];exposedHeaders=[];maxAge=0";
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"+maxtime+"Version=1";
-    }
-
-    function getCookie(cname) {
-        var name = cname + "=";
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var ca = decodedCookie.split(';');
-        for(var i = 0; i <ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-            }
-        }
-        return "";
-    }
-
-
-    function checkCookie(cname) {
-        var cname = getCookie(cname);
-        if (isEmpty(cname)) {
-            return false;
-        } else {
-            return true;
-        }
     }
 
 
@@ -929,14 +897,14 @@
 
 
         if (isEmpty($("#unique_identification").val())) {
-            if (!isEmpty(getCookie('UUID'))) {
-                UUID = getCookie('UUID');
-                console.log("User UUID:"+UUID);
+            if (!isEmpty($.cookie('UUID'))) {
+                UUID = $.cookie("UUID");
+                console.log("Use UUID:"+UUID);
             }
             else {
                 UUID = generateUUID();
-                setCookie('UUID', UUID,365);
-                console.log(UUID);
+                $.cookie("UUID", UUID);
+                console.log("Create UUID:"+UUID);
             }
             $("#unique_identification").val(UUID);
         }
