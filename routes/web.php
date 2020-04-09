@@ -18,22 +18,14 @@ Route::get('/', function () {
     if (empty($locale)) {
         App::setLocale("en");
     }
-    $unique_id = Cookie::get('UUID');
-    if (!empty($unique_id)) {
-        return view('welcome')->with('unique_identification', $unique_id);;
-    } else {
-        return view('welcome');
-    }
+    return view('welcome');
 });
+
 Route::get('/{locale}', function ($locale) {
     App::setLocale($locale);
-    $unique_id = Cookie::get('UUID');
-    if (!empty($unique_id)) {
-        return view('welcome')->with('unique_identification', $unique_id);;
-    } else {
-        return view('welcome');
-    }
+    return view('welcome');
 });
+
 Route::get('/unique_id/{id}', function ($unique_id) {
     $locale = App::getLocale();
     if (empty($locale)) {
@@ -41,8 +33,10 @@ Route::get('/unique_id/{id}', function ($unique_id) {
     }
     return view('welcome')->with('unique_identification', $unique_id);;
 });
+
 Route::get('/{locale}/unique_id/{id}', function ($locale, $unique_id) {
     App::setLocale($locale);
     return view('welcome')->with('unique_identification', $unique_id);;
 });
+
 Route::post('/{locale}', ['as' => 'save-test', 'uses' => 'InvesticatedPersonController@store']);
