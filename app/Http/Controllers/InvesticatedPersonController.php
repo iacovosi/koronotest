@@ -280,7 +280,7 @@ class InvesticatedPersonController extends Controller
         if (!isset($data['nothing'])) {
             $error .= "nothing is missing.";
         } else {
-            if (($data['nothing'] == false) || ($data['nothing'] == 0)) {
+            if (empty($data['nothing'])) {
                 if (!isset($data['malaise'])) {
                     $error .= "malaise is missing.";
                 }
