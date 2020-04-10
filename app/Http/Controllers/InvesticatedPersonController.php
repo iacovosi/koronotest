@@ -315,16 +315,6 @@ class InvesticatedPersonController extends Controller
                 if (!isset($data['other_symptom'])) {
                     $error .= "other_symptom is missing.";
                 }
-            } else {
-                $data['malaise'] = "0";
-                $data['fever'] = "0";
-                $data['cough'] = "0";
-                $data['myalgia'] = "0";
-                $data['loss_of_taste'] = "0";
-                $data['loss_of_smell'] = "0";
-                $data['breathing_difficulties'] = "0";
-                $data['chest_pain'] = "0";
-                $data['other_symptom'] = "0";
             }
         }
         if (!isset($data['flight_recently'])) {
