@@ -126,18 +126,6 @@ class InvesticatedPersonController extends Controller
             $data["other_symptom"] = 0;
         }
 
-        if (isset($data["flight_recently"]) && (!empty($data["flight_recently"]))) {
-            $data["flight_recently"] = 1;
-        } else {
-            $data["flight_recently"] = 0;
-        }
-
-
-        if (isset($data["covid_19_contact"]) && (!empty($data["covid_19_contact"]))) {
-            $data["covid_19_contact"] = 1;
-        } else {
-            $data["covid_19_contact"] = 0;
-        }
 
         if (isset($data["chest_pain"]) && (!empty($data["chest_pain"]))) {
             $data["chest_pain"] = 1;
@@ -146,11 +134,6 @@ class InvesticatedPersonController extends Controller
         }
 
 
-        if (isset($data["vulnerable_group"]) && (!empty($data["vulnerable_group"]))) {
-            $data["vulnerable_group"] = 1;
-        } else {
-            $data["vulnerable_group"] = 0;
-        }
 
         if (isset($data["fever"]) && (!empty($data["fever"]))) {
             $data["fever"] = 1;
@@ -172,6 +155,27 @@ class InvesticatedPersonController extends Controller
             $data['chest_pain'] = 0;
             $data['other_symptom'] = 0;
         }
+
+
+        if (isset($data["flight_recently"]) && (!empty($data["flight_recently"]))) {
+            $data["flight_recently"] = 1;
+        } else {
+            $data["flight_recently"] = 0;
+        }
+        
+        if (isset($data["covid_19_contact"]) && (!empty($data["covid_19_contact"]))) {
+            $data["covid_19_contact"] = 1;
+        } else {
+            $data["covid_19_contact"] = 0;
+        }
+
+        if (isset($data["vulnerable_group"]) && (!empty($data["vulnerable_group"]))) {
+            $data["vulnerable_group"] = 1;
+        } else {
+            $data["vulnerable_group"] = 0;
+        }
+
+
 
 
         $suggest = "error_occured";
