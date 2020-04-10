@@ -162,7 +162,6 @@ class InvesticatedPersonController extends Controller
 
         if (isset($data["nothing"]) && (!empty($data["nothing"]))) {
             $data["nothing"] = 1;
-            $data["nothing"] = 0;
             $data['malaise'] = 0;
             $data['fever'] = 0;
             $data['cough'] = 0;
@@ -172,7 +171,7 @@ class InvesticatedPersonController extends Controller
             $data['breathing_difficulties'] = 0;
             $data['chest_pain'] = 0;
             $data['other_symptom'] = 0;
-        } 
+        }
 
 
         $suggest = "error_occured";
