@@ -176,8 +176,6 @@ class InvesticatedPersonController extends Controller
         }
 
 
-
-
         $suggest = "error_occured";
 
 
