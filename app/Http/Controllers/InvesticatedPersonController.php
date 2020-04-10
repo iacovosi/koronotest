@@ -84,81 +84,81 @@ class InvesticatedPersonController extends Controller
         $clientIP = \Request::getClientIp(true);
         //dd($data);
         $data["ip"] = $clientIP;
-        if (isset($data["malaise"]) && (($data["malaise"] == "true") || $data["malaise"] == 1)) {
+        if (isset($data["malaise"]) && (!empty($data["malaise"]))) {
             $data["malaise"] = 1;
         } else {
             $data["malaise"] = 0;
         }
 
-        if (isset($data["cough"]) && (($data["cough"] == "true") || $data["cough"] == 1)) {
+        if (isset($data["cough"]) &&  (!empty($data["cough"]))) {
             $data["cough"] = 1;
         } else {
             $data["cough"] = 0;
         }
 
-        if (isset($data["myalgia"]) && (($data["myalgia"] == "true") || $data["myalgia"] == 1)) {
+        if (isset($data["myalgia"]) && (!empty($data["myalgia"]))) {
             $data["myalgia"] = 1;
         } else {
             $data["myalgia"] = 0;
         }
 
-        if (isset($data["breathing_difficulties"]) && (($data["breathing_difficulties"] == "true") || $data["breathing_difficulties"] == 1)) {
+        if (isset($data["breathing_difficulties"]) && (!empty($data["breathing_difficulties"]))) {
             $data["breathing_difficulties"] = 1;
         } else {
             $data["breathing_difficulties"] = 0;
         }
 
-        if (isset($data["loss_of_taste"]) && (($data["loss_of_taste"] == "true") || $data["loss_of_taste"] == 1)) {
+        if (isset($data["loss_of_taste"]) && (!empty($data["loss_of_taste"]))) {
             $data["loss_of_taste"] = 1;
         } else {
             $data["loss_of_taste"] = 0;
         }
 
-        if (isset($data["loss_of_smell"]) && (($data["loss_of_smell"] == "true") || $data["loss_of_smell"] == 1)) {
+        if (isset($data["loss_of_smell"]) && (!empty($data["loss_of_smell"]))) {
             $data["loss_of_smell"] = 1;
         } else {
             $data["loss_of_smell"] = 0;
         }
 
-        if (isset($data["other_symptom"]) && (($data["other_symptom"] == "true") || $data["other_symptom"] == 1)) {
+        if (isset($data["other_symptom"]) && (!empty($data["other_symptom"]))) {
             $data["other_symptom"] = 1;
         } else {
             $data["other_symptom"] = 0;
         }
 
-        if (isset($data["flight_recently"]) && (($data["flight_recently"] == "true") || $data["flight_recently"] == 1)) {
+        if (isset($data["flight_recently"]) && (!empty($data["flight_recently"]))) {
             $data["flight_recently"] = 1;
         } else {
             $data["flight_recently"] = 0;
         }
 
 
-        if (isset($data["covid_19_contact"]) && (($data["covid_19_contact"] == "true") || $data["covid_19_contact"] == 1)) {
+        if (isset($data["covid_19_contact"]) && (!empty($data["covid_19_contact"]))) {
             $data["covid_19_contact"] = 1;
         } else {
             $data["covid_19_contact"] = 0;
         }
 
-        if (isset($data["chest_pain"]) && (($data["chest_pain"] == "true") || $data["chest_pain"] == 1)) {
+        if (isset($data["chest_pain"]) && (!empty($data["chest_pain"]))) {
             $data["chest_pain"] = 1;
         } else {
             $data["chest_pain"] = 0;
         }
 
-        if (isset($data["nothing"]) && (($data["nothing"] == "true") || $data["nothing"] == 1)) {
+        if (isset($data["nothing"]) && (!empty($data["nothing"]))) {
             $data["nothing"] = 1;
         } else {
             $data["nothing"] = 0;
         }
 
 
-        if (isset($data["vulnerable_group"]) && (($data["vulnerable_group"] == "true") || $data["vulnerable_group"] == 1)) {
+        if (isset($data["vulnerable_group"]) && (!empty($data["vulnerable_group"]))) {
             $data["vulnerable_group"] = 1;
         } else {
             $data["vulnerable_group"] = 0;
         }
 
-        if (isset($data["fever"]) && (($data["fever"] == "true") || $data["fever"] == 1)) {
+        if (isset($data["fever"]) && (!empty($data["fever"]))) {
             $data["fever"] = 1;
         } else {
             $data["fever"] = 0;
@@ -304,15 +304,15 @@ class InvesticatedPersonController extends Controller
                     $error .= "other_symptom is missing.";
                 }
             } else {
-                $data['malaise'] = 0;
-                $data['fever'] = 0;
-                $data['cough'] = 0;
-                $data['myalgia'] = 0;
-                $data['loss_of_taste'] = 0;
-                $data['loss_of_smell'] = 0;
-                $data['breathing_difficulties'] = 0;
-                $data['chest_pain'] = 0;
-                $data['other_symptom'] = 0;
+                $data['malaise'] = "0";
+                $data['fever'] = "0";
+                $data['cough'] = "0";
+                $data['myalgia'] = "0";
+                $data['loss_of_taste'] = "0";
+                $data['loss_of_smell'] = "0";
+                $data['breathing_difficulties'] = "0";
+                $data['chest_pain'] = "0";
+                $data['other_symptom'] = "0";
             }
         }
         if (!isset($data['flight_recently'])) {
