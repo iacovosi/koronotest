@@ -162,7 +162,7 @@ class InvesticatedPersonController extends Controller
         } else {
             $data["flight_recently"] = 0;
         }
-        
+
         if (isset($data["covid_19_contact"]) && (!empty($data["covid_19_contact"]))) {
             $data["covid_19_contact"] = 1;
         } else {
