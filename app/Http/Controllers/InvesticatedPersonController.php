@@ -145,12 +145,6 @@ class InvesticatedPersonController extends Controller
             $data["chest_pain"] = 0;
         }
 
-        if (isset($data["nothing"]) && (!empty($data["nothing"]))) {
-            $data["nothing"] = 1;
-        } else {
-            $data["nothing"] = 0;
-        }
-
 
         if (isset($data["vulnerable_group"]) && (!empty($data["vulnerable_group"]))) {
             $data["vulnerable_group"] = 1;
@@ -163,6 +157,24 @@ class InvesticatedPersonController extends Controller
         } else {
             $data["fever"] = 0;
         }
+
+
+
+        if (isset($data["nothing"]) && (!empty($data["nothing"]))) {
+            $data["nothing"] = 1;
+        } else {
+            $data["nothing"] = 0;
+            $data['malaise'] = 0;
+            $data['fever'] = 0;
+            $data['cough'] = 0;
+            $data['myalgia'] = 0;
+            $data['loss_of_taste'] = 0;
+            $data['loss_of_smell'] = 0;
+            $data['breathing_difficulties'] = 0;
+            $data['chest_pain'] = 0;
+            $data['other_symptom'] = 0;
+        }
+
 
         $suggest = "error_occured";
 
