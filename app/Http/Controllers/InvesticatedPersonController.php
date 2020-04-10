@@ -259,6 +259,8 @@ class InvesticatedPersonController extends Controller
 
         if (!isset($data['zipcode'])) {
             $error .= "ZipCode is missing.";
+        }  else if (($data['zipcode'] > 99999) || ($data['zipcode'] < 0)) {
+            $error .= "Zipcode must be between 0 and 99999 .";
         }
 
         if (!isset($data['zipcode'])) {
