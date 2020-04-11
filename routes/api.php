@@ -22,3 +22,4 @@ Route::post('/records/{locale}/store', ['as' => 'store-test', 'uses' => 'Investi
 Route::get('/records/getRecords/', ['as' => 'getRecords-test', 'uses' => 'InvesticatedPersonController@getRecordsAPI']);
 Route::get('/records/getRecords/Unique_id/{id}', ['as' => 'getRecords-test-unique_id', 'uses' => 'InvesticatedPersonController@getRecordAPIForSpecificUnique_identifier']);
 Route::get('/records/getRecords/{datestart}/to/{dateend}', ['as' => 'getRecords-test-datestart-dateend', 'uses' => 'InvesticatedPersonController@getRecordsAPIStartDateEmdDate']);
+Route::get('/records/getRecords/zipcode/{zipcode}', ['as' => 'getRecords-test-zipcode', 'uses' => 'InvesticatedPersonController@getRecordsAPIZipCode']);

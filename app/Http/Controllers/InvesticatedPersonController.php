@@ -632,4 +632,11 @@ class InvesticatedPersonController extends Controller
 
     }
 
+    public function getRecordsAPIZipCode($zipcode) {
+        $tests = InvesticatedPerson::all();
+        $testZipCode = $tests->intersect(InvesticatedPerson::whereIn('zipcode', [$zipcode])->get());
+        return Response::json(
+            $testZipCode, 200);
+    }
+
 }
