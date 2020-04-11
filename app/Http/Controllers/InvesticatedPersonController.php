@@ -10,6 +10,7 @@ use DatePeriod;
 use DateInterval;
 use App;
 use Cookie;
+use Carbon\Carbon;
 
 
 class InvesticatedPersonController extends Controller
@@ -90,7 +91,7 @@ class InvesticatedPersonController extends Controller
             $data["malaise"] = 0;
         }
 
-        if (isset($data["cough"]) &&  (!empty($data["cough"]))) {
+        if (isset($data["cough"]) && (!empty($data["cough"]))) {
             $data["cough"] = 1;
         } else {
             $data["cough"] = 0;
@@ -134,13 +135,11 @@ class InvesticatedPersonController extends Controller
         }
 
 
-
         if (isset($data["fever"]) && (!empty($data["fever"]))) {
             $data["fever"] = 1;
         } else {
             $data["fever"] = 0;
         }
-
 
 
         if (isset($data["nothing"]) && (!empty($data["nothing"]))) {
@@ -259,7 +258,7 @@ class InvesticatedPersonController extends Controller
 
         if (!isset($data['zipcode'])) {
             $error .= "ZipCode is missing.";
-        }  else if (($data['zipcode'] > 99999) || ($data['zipcode'] < 0)) {
+        } else if (($data['zipcode'] > 99999) || ($data['zipcode'] < 0)) {
             $error .= "Zipcode must be between 0 and 99999 .";
         }
 
@@ -621,5 +620,16 @@ class InvesticatedPersonController extends Controller
             $usersForSpecificU_id, 200);
     }
 
+    public function getRecordsAPIStartDateEmdDate($datestart, $dateend)
+    {
+        if ((Carbon::createFromFormat('d-m-Y', $datestart) !== false) && (Carbon::createFromFormat('d-m-Y', $dateend) !== false)) {
+            $tests = InvesticatedPerson::whereBetween('created_at',array(Carbon::createFromFormat('d-m-Y', $datestart), Carbon::createFromFormat('d-m-Y', $dateend)->addDay()))->get();
+            return Response::json(
+                $tests, 200);
+        }
+        return Response::json(
+            "Not Valid Dates Given with format Date-Month-Year (e.g. 01/01/2020)", 500);
+
+    }
 
 }
