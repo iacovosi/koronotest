@@ -62,8 +62,10 @@ class InvesticatedPersonController extends Controller
      */
     public function store(Request $request, $locale)
     {
+
         App::setLocale($locale);
         $data = $request->all();
+        //dd($data);
         $clientIP = \Request::getClientIp(true);
         //dd($data);
         $data["ip"] = $clientIP;
@@ -174,6 +176,22 @@ class InvesticatedPersonController extends Controller
             $data["vulnerable_group"] = 0;
         }
 
+        if (!isset($data['country']) || empty($data['country'])) {
+            $data['country'] = "Cyprus (Κύπρος) CY";
+        }
+
+        if (!isset($data['country_iso']) || empty($data['country_iso'])) {
+            $data['country_iso'] = "CY"; //"N/A";//
+        }
+
+        if (!isset($data['flight_country']) || empty($data['flight_country'])) {
+            $data['flight_country'] = "unknown";
+        }
+
+        if (!isset($data['flight_country_iso']) || empty($data['flight_country_iso'])) {
+            $data['flight_country_iso'] = "N/A";
+        }
+
 
         $suggest = "error_occured";
 
@@ -264,22 +282,6 @@ class InvesticatedPersonController extends Controller
 
         if (!isset($data['zipcode'])) {
             $error .= "ZipCode is missing.";
-        }
-
-        if (!isset($data['country'])) {
-            $data['country'] = "Cyprus (Κύπρος) CY";
-        }
-
-        if (!isset($data['country_iso'])) {
-            $data['country_iso'] = "CY"; //"N/A";//
-        }
-
-        if (!isset($data['flight_country'])) {
-            $data['flight_country'] = "unknown";
-        }
-
-        if (!isset($data['flight_country_iso'])) {
-            $data['flight_country_iso'] = "N/A";
         }
 
         if (!isset($data['vulnerable_group'])) {
@@ -631,7 +633,7 @@ class InvesticatedPersonController extends Controller
     public function getRecordsAPIStartDateEmdDate($datestart, $dateend)
     {
         if ((Carbon::createFromFormat('d-m-Y', $datestart) !== false) && (Carbon::createFromFormat('d-m-Y', $dateend) !== false)) {
-            $tests = InvesticatedPerson::whereBetween('created_at',array(Carbon::createFromFormat('d-m-Y', $datestart), Carbon::createFromFormat('d-m-Y', $dateend)->addDay()))->get();
+            $tests = InvesticatedPerson::whereBetween('created_at', array(Carbon::createFromFormat('d-m-Y', $datestart), Carbon::createFromFormat('d-m-Y', $dateend)->addDay()))->get();
             return Response::json(
                 $tests, 200);
         }
@@ -640,7 +642,8 @@ class InvesticatedPersonController extends Controller
 
     }
 
-    public function getRecordsAPIZipCode($zipcode) {
+    public function getRecordsAPIZipCode($zipcode)
+    {
         $tests = InvesticatedPerson::all();
         $testZipCode = $tests->intersect(InvesticatedPerson::whereIn('zipcode', [$zipcode])->get());
         return Response::json(
