@@ -409,8 +409,8 @@
                                             >
                                             </div>
                                         </div>
-                                        <input type="hidden" id="flight_country" name="flight_country">
-                                        <input type="hidden" id="flight_country_iso" name="flight_country_iso">
+                                        <input type="hidden" id="flight_country" name="flight_country" value="Cyprus (Κύπρος) CY">
+                                        <input type="hidden" id="flight_country_iso" name="flight_country_iso" value="CY">
                                         <br/>
                                     </div>
                                     <button type="button" name="previous" class="previous btn btn-secondary"
