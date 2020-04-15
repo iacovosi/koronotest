@@ -321,8 +321,8 @@
                                                  data-onchangecallback="onChangeCallback">
                                             </div>
                                         </div>
-                                        <input type="hidden" id="country" name="country">
-                                        <input type="hidden" id="country_iso" name="country_iso">
+                                        <input type="hidden" id="country" name="country" value="Cyprus (Κύπρος) CY">
+                                        <input type="hidden" id="country_iso" name="country_iso" value="CY">
                                         <br/>
 
 
@@ -915,6 +915,7 @@
         $("#niceCountryInputSelector").is(function (i, e) {
             new NiceCountryInput(e).init();
             $("#country").val("Cyprus (Κύπρος) CY");
+            $("#country_iso").val("CY");
         });
 
         $("#niceCountryInputSelector2").is(function (i, e) {
