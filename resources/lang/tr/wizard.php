@@ -134,8 +134,8 @@ https://www.pio.gov.cy/coronavirus/ \'\' da ayrıntılı olarak verilen hastalı
     '5instruction1' => 'COVID19 Acil Müdahale Hattı (1420) ile iletişime geçin ',
     '5instruction2' => '2 hafta karantinada kalin',
     '5instruction3' => 'Yakın temasta bulunduklarınızı sağlıklarını izlemek, kalmak için bilgilendirin mümkünse bu öz değerlendirme anketini doldurun. Ayrica talimatlara bakin',
-    'yes' => 'YES',
-    'no' => 'NO',
+    'yes' => 'EVET',
+    'no' => 'HAYIR',
     'test_relying_on_guidelines' => 'Yönergeler Bu test aşağıdakilere dayanmaktadır:',
 
 
