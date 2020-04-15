@@ -72,8 +72,8 @@ class InvesticatedPersonController extends Controller
         //dd($data);
         $data = $this->returnSuggestion($data);
         $suggest = $data["result"];
-
-        $id = InvesticatedPerson::create($data)->id;
+        if (empty($data["test"]))
+            $id = InvesticatedPerson::create($data)->id;
 
         //dd($suggest);
         return view('result')->with([
@@ -190,6 +190,11 @@ class InvesticatedPersonController extends Controller
 
         if (!isset($data['flight_country_iso']) || empty($data['flight_country_iso'])) {
             $data['flight_country_iso'] = "N/A";
+        }
+
+
+        if (!isset($data['test']) || empty($data['test'])) {
+            $data['test'] = "0";
         }
 
 
@@ -330,6 +335,10 @@ class InvesticatedPersonController extends Controller
         }
         if (!isset($data['flight_recently'])) {
             $error .= "flight_recently is missing.";
+        } else {
+            if (!isset($data['flight_country'])) {
+                $error .= "flight_country is missing.";
+            }
         }
         if (!isset($data['covid_19_contact'])) {
             $error .= "covid_19_contact is missing.";
@@ -349,7 +358,9 @@ class InvesticatedPersonController extends Controller
             $reply["html"] = $this->getHtml($suggest);
             $reply["text"] = $this->getText($suggest);
             $reply["textArray"] = $this->getTextArray($suggest);
-            $id = InvesticatedPerson::create($data)->id;
+            //$id = InvesticatedPerson::create($data)->id;
+            if (empty($data["test"]))
+                $id = InvesticatedPerson::create($data)->id;
 
             return Response::json(
                 $reply, 200);

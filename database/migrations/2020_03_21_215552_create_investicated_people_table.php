@@ -40,6 +40,7 @@ class CreateInvesticatedPeopleTable extends Migration
             $table->float("long")->nullable();
             $table->string("result")->nullable();
             $table->string("ip")->nullable();
+            $table->boolean("test")->default(0);
             $table->timestamps();
         });
     }
