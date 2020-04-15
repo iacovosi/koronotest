@@ -429,7 +429,7 @@ NiceCountryInput.prototype.selectCountry = function (e) {
     //set the hidden input
     this.selectOneHiddenInput.val(countryiso.toUpperCase());
     if (this.onChangeCallback !== undefined && this.onChangeCallback !== "") {
-        window[this.onChangeCallback]( countryname + " " +   countryiso.toUpperCase());
+        window[this.onChangeCallback]( countryname + " " +   countryiso.toUpperCase(), countryiso.toUpperCase());
     }
     //reload flags
     this.getFlagJSON();

@@ -322,6 +322,7 @@
                                             </div>
                                         </div>
                                         <input type="hidden" id="country" name="country">
+                                        <input type="hidden" id="country_iso" name="country_iso">
                                         <br/>
 
 
@@ -409,6 +410,7 @@
                                             </div>
                                         </div>
                                         <input type="hidden" id="flight_country" name="flight_country">
+                                        <input type="hidden" id="flight_country_iso" name="flight_country_iso">
                                         <br/>
                                     </div>
                                     <button type="button" name="previous" class="previous btn btn-secondary"
@@ -882,12 +884,14 @@
     }
 
 
-    function onChangeCallback(ctr) {
+    function onChangeCallback(ctr,isocode) {
         $("#country").val(ctr);
+        $("#country_iso").val(isocode);
     }
 
-    function onChangeCallback2(ctr) {
+    function onChangeCallback2(ctr,isocode) {
         $("#flight_country").val(ctr);
+        $("#flight_country_iso").val(isocode);
     }
 
     $(document).ready(function () {

@@ -270,8 +270,16 @@ class InvesticatedPersonController extends Controller
             $data['country'] = "Cyprus (Κύπρος) CY";
         }
 
+        if (!isset($data['country_iso'])) {
+            $data['country_iso'] = "CY"; //"N/A";//
+        }
+
         if (!isset($data['flight_country'])) {
             $data['flight_country'] = "unknown";
+        }
+
+        if (!isset($data['flight_country_iso'])) {
+            $data['flight_country_iso'] = "N/A";
         }
 
         if (!isset($data['vulnerable_group'])) {

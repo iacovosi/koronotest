@@ -21,6 +21,8 @@ class CreateInvesticatedPeopleTable extends Migration
             $table->integer("zipcode")->nullable();
             $table->string("country")->nullable()->default("unknown");
             $table->string("flight_country")->nullable()->default("unknown");
+            $table->string("country_iso")->nullable()->default("CY");
+            $table->string("flight_country_iso")->nullable()->default("N/A");
             $table->boolean("vulnerable_group")->default(0);
             $table->boolean("malaise")->default(0);
             $table->boolean("fever")->default(0);
