@@ -926,9 +926,11 @@
         $("#flight_country_div").is(function (i, e) {
             if ($("#flight_recently").is(':checked')) {
                 $("#flight_country").val("Cyprus (Κύπρος) CY");
+                $("#flight_country_iso").val("CY");
             } else {
                 e.style.visibility = "hidden";
                 $("#flight_country").val("");
+                $("#flight_country_iso").val("");
             }
         });
 
