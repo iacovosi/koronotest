@@ -177,11 +177,11 @@ class InvesticatedPersonController extends Controller
         }
 
         if (!isset($data['country']) || empty($data['country'])) {
-            $data['country'] = "Cyprus (Κύπρος) CY";
+            $data['country'] =  "unknown";//"Cyprus (Κύπρος) CY";
         }
 
         if (!isset($data['country_iso']) || empty($data['country_iso'])) {
-            $data['country_iso'] = "CY"; //"N/A";//
+            $data['country_iso'] = "N/A";//"CY"; //
         }
 
         if (!isset($data['flight_country']) || empty($data['flight_country'])) {
