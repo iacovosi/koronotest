@@ -1042,10 +1042,12 @@
                 $(this).attr('value', 'true');
                 document.getElementById("flight_country_div").style.visibility = "visible";
                 document.getElementById("flight_country").value = "Cyprus (Κύπρος) CY";
+                document.getElementById("flight_country_iso").value = "CY";
             } else {
                 $(this).attr('value', 'false');
                 document.getElementById("flight_country_div").style.visibility = "hidden";
                 document.getElementById("flight_country").value = "";
+                document.getElementById("flight_country_iso").value = "";
             }
         });
 
