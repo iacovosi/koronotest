@@ -216,7 +216,7 @@
                         @elseif(App::isLocale('fr'))
                             <a class="nav-link dropdown-toggle" href="tr" id="dropdown"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
-                                        class="flag-icon flag-icon-tr"> </span> Turkish</a>
+                                        class="flag-icon flag-icon-fr"> </span> French</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown">
                                 <a class="dropdown-item" href="en"><span class="flag-icon flag-icon-us"> </span>
                                     English</a>
