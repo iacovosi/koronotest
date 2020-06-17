@@ -114,7 +114,7 @@ return [
             seated (if severity of symptoms or movement of the case indicate more extensive exposure, passengers seated
             in the entire section or all passengers on the aircraft may be considered close contacts)',
 
-
+  /*
     'case1' => 'You are at a low risk for serious illness from COVID-19 and are not showing
                                         concerning symptoms',
     'result1' => ' It is unlikely that you have coronavirus.
@@ -187,6 +187,51 @@ return [
     '5instruction3' => 'Inform those you have been in close contact with to monitor their health, stay
                                         home if possible, and to fill out this self-assessment questionnaire for further
                                         instructions if necessary',
+  */
+
+    'case1' => 'You are at a low risk for serious illness from COVID-19 and it is unlikely that you have coronavirus.',
+    'result1' => ' We still recommend following general precautionary measures to minimize your risk of contracting the disease that are detailed at https://www.pio.gov.cy/coronavirus/',
+    'case_instructions' => 'According to official instructions you should act as follows:',
+    '1instruction1' => 'Observe Social Distancing',
+    '1instruction2' => 'Monitor your health',
+    '1instruction3' => 'In case you develop symptoms, retake this self-assessment questionnaire',
+    '1instruction4' => 'The COVID19 Emergency Response Line is 1420 (24hours). In case of emergency please contact 112',
+
+    'case2' => 'You are at a high risk for getting infected from COVID-19, but are not showing concerning symptoms.',
+    'result2' => 'Due to your age and/or your chronic conditions, if you become infected, you are at risk of having a more severe course of the disease.We still recommend following general precautionary measures to minimize your risk of contracting the disease that are detailed at https://www.pio.gov.cy/coronavirus/',
+    'case_instructions' => 'According to official instructions you should act as follows:',
+    '2instruction1' => 'Monitor your health',
+    '2instruction2' => 'In case you develop symptoms, contact your General Practitioner',
+    '2instruction3' => 'The COVID19 Emergency Response Line is 1420 (24hours). In case of emergency please contact 112',
+
+
+    'case3' => 'You are at low risk for serious illness from COVID-19, but might be infected by the virus.',
+    'result3' => ' Your travel history or symptoms indicate that you may be infected by COVID-19.',
+    'case_instructions' => 'According to official instructions you should act as follows:',
+    '3instruction1' => 'Contact your general practitioner who will arrange your further examination and treatment',
+    '3instruction2' => 'Remain in quarantine for two weeks and follow your doctor’s orders',
+    '3instruction3' => 'In case you develop symptoms, contact your General Practitioner',
+    '3instruction4' => 'The COVID19 Emergency Response Line is 1420 (24hours). In case of emergency please contact 112',
+
+
+    'case4' => 'You may have contracted COVID-19.',
+    'result4' => 'Your travel history and symptoms are indicative of a respiratory virus, which may be COVID-19',
+    'case_instructions' => 'According to official instructions you should act as follows:',
+    '4instruction1' => 'Contact your general practitioner who will arrange your further examination and treatment',
+    '4instruction2' => 'Remain in quarantine for at least two weeks and follow your doctor’s orders',
+    '4instruction3' => 'The COVID-19 Response Line is 1420 (24hours). In case of emergency, please contact 112.',
+    '4instruction4' => 'Inform those you have been in close contact with to monitor their health, stay home if possible, and to fill out this self-assessment questionnaire for further instructions if necessary',
+
+
+    'case5' => 'You may have contracted COVID-19',
+    'result5' => ' Your travel history and/or symptoms are indicative of a respiratory virus, which may be  COVID-19. Due to your age and/or your chronic conditions, you are at risk of having a more severe course of the disease.',
+    'case_instructions' => 'According to official instructions you should act as follows:',
+    '5instruction1' => 'Contact your general practitioner who will arrange your further examination and treatment',
+    '5instruction2' => 'Remain in quarantine for at least two weeks and follow your doctor’s orders',
+    '5instruction3' => 'The COVID-19 Response Line is 1420 (24hours). In case of emergency, please contact 112.',
+    '5instruction4' => 'Inform those you have been in close contact with to monitor their health, stay home if possible, and to fill out this self-assessment questionnaire for further instructions if necessary',
+
+
     'yes' => 'YES',
     'no' => 'NO',
     'test_relying_on_guidelines' =>'Guidelines This test is Based On',
